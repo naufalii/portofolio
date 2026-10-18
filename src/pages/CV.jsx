@@ -118,10 +118,10 @@ export function CVPage() {
 
         {/* 4. Technical Skills (Tanpa persentase karangan, berbasis label bukti) */}
         <Panel title="KOMPETENSI KEAHLIAN (SKILLS)" variant="default">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Database Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--sunset)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+              <h3 className="font-pixel text-xs font-bold text-[var(--sunset)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
                 DATABASE & ORACLE DBA
               </h3>
               <div className="space-y-2">
@@ -129,9 +129,14 @@ export function CVPage() {
                   <div key={i} className="text-xs">
                     <div className="flex items-center justify-between font-pixel gap-1">
                       <span className="font-bold truncate">{s.name}</span>
-                      <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap flex-shrink-0">
-                        {s.proof}
-                      </span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>
@@ -141,7 +146,7 @@ export function CVPage() {
 
             {/* Linux SysAdmin Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--moss-dark)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+              <h3 className="font-pixel text-xs font-bold text-[var(--moss-dark)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
                 LINUX & SYSADMIN
               </h3>
               <div className="space-y-2">
@@ -149,9 +154,14 @@ export function CVPage() {
                   <div key={i} className="text-xs">
                     <div className="flex items-center justify-between font-pixel gap-1">
                       <span className="font-bold truncate">{s.name}</span>
-                      <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap flex-shrink-0">
-                        {s.proof}
-                      </span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>
@@ -161,17 +171,47 @@ export function CVPage() {
 
             {/* Web Dev Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--ink)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
-                WEB DEVELOPMENT & TOOLS
+              <h3 className="font-pixel text-xs font-bold text-[var(--ink)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+                WEB DEVELOPMENT & CMS
               </h3>
               <div className="space-y-2">
                 {profile.skillTree.webDev.map((s, i) => (
                   <div key={i} className="text-xs">
                     <div className="flex items-center justify-between font-pixel gap-1">
                       <span className="font-bold truncate">{s.name}</span>
-                      <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap flex-shrink-0">
-                        {s.proof}
-                      </span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Soft Skills & Tools Branch */}
+            <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
+              <h3 className="font-pixel text-xs font-bold text-[#E8793A] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+                SOFT SKILLS & ALAT KERJA
+              </h3>
+              <div className="space-y-2">
+                {profile.skillTree.softSkills.map((s, i) => (
+                  <div key={i} className="text-xs">
+                    <div className="flex items-center justify-between font-pixel gap-1">
+                      <span className="font-bold truncate">{s.name}</span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>

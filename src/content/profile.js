@@ -111,54 +111,63 @@ export const profile = {
     database: [
       {
         name: "Oracle 19c",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Instalasi, konfigurasi lab mandiri di Linux, arsitektur CDB/PDB, dan troubleshooting permission."
       },
       {
         name: "Oracle SQL Developer",
+        level: "",
         proof: "Tercantum di CV",
         source: "CV",
         detail: "Query editor, pengelolaan objek basis data, navigasi skema, dan pengujian query."
       },
       {
         name: "Linux",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Administrasi Linux server, file permissions, arsitektur direktori Oracle, tuning kernel params."
       },
       {
         name: "Data Guard (HA/DR)",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Implementasi arsitektur High Availability & Disaster Recovery pada primary dan standby database."
       },
       {
         name: "Switchover/Failover",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Eksekusi role transition: Switchover terencana, Switchback, dan simulasi Failover darurat."
       },
       {
-        name: "Automasi Data Broker & Failover",
+        name: "Automasi Data Broker dan Failover",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Konfigurasi Data Guard Broker (DGMGRL) dan otomasi failover untuk ketahanan sistem."
       },
       {
         name: "RMAN Backup",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Strategi backup full & incremental, pemeliharaan archive log, dan prosedur restorasi bencana."
       },
       {
         name: "Shell Scripting",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Otomasi rutin pemeliharaan server, penjadwalan script backup RMAN, dan monitoring log."
       },
       {
         name: "SQL Queries",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Perancangan query relasional terstruktur, DDL, DML, indexing, dan manipulasi data."
@@ -167,36 +176,42 @@ export const profile = {
     sysAdmin: [
       {
         name: "Linux",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Administrasi sistem operasi Linux, manajemen user/grup, permission POSIX, dan systemd."
       },
       {
         name: "Shell Scripting",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
         detail: "Pembuatan skrip bash otomasi backup sistem, sanitasi log, dan verifikasi status layanan."
       },
       {
         name: "Troubleshooting",
+        level: "",
         proof: "Pengalaman",
         source: "[EX1], [EX2], [PR1]",
         detail: "Investigasi dan pemecahan kendala teknis jaringan lab, peralatan on-site, serta error sistem."
       },
       {
         name: "Problem Solving",
+        level: "",
         proof: "Pengalaman",
         source: "[EX2], [EX3]",
         detail: "Pendekatan metodis dalam menyelesaikan masalah teknis operasional dan alur sistem."
       },
       {
         name: "Time Management",
+        level: "",
         proof: "Tercantum di CV",
         source: "CV",
         detail: "Manajemen alokasi waktu yang disiplin antara kegiatan akademik, riset lab, dan kepanitiaan."
       },
       {
         name: "Adaptasi",
+        level: "",
         proof: "Tercantum di CV",
         source: "CV",
         detail: "Cepat mempelajari teknologi baru, konfigurasi arsitektur baru, dan dinamika tim kerja."
@@ -205,36 +220,42 @@ export const profile = {
     webDev: [
       {
         name: "JavaScript",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR2]",
         detail: "Pengembangan logika interaktif modern berbasis ES6+, asynchronous API handling, dan DOM."
       },
       {
         name: "React JS",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR2]",
         detail: "Pembuatan antarmuka web reaktif berbasis komponen modular, custom hooks, dan state management."
       },
       {
         name: "Tailwind CSS",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR2]",
         detail: "Perancangan antarmuka responsif utilitas tinggi, adaptasi tema desain retro, dan CSS variables."
       },
       {
         name: "HTML/CSS",
+        level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR2]",
         detail: "Struktur markup semantik standar, styling pixelated retro, dan rendering lintas peramban."
       },
       {
         name: "WordPress",
+        level: "",
         proof: "Sertifikat",
         source: "[CE1]",
         detail: "Pembuatan dan penataan situs web fungsional menggunakan platform CMS WordPress."
       },
       {
         name: "Content Management Systems (CMS)",
+        level: "",
         proof: "Sertifikat",
         source: "[CE1]",
         detail: "Pengelolaan struktur konten digital, tata kelola media, dan konfigurasi tema/plugin CMS."
@@ -243,30 +264,35 @@ export const profile = {
     softSkills: [
       {
         name: "Public Speaking",
+        level: "",
         proof: "Pengalaman",
         source: "[EX1], [CE4]",
         detail: "Pengalaman sebagai MC TechnoFair 12.0 memandu acara teknologi skala besar dan interaksi audiens."
       },
       {
         name: "Microsoft Excel",
+        level: "",
         proof: "Sertifikat",
         source: "[CE5]",
         detail: "Pengolahan lembar kerja, formula kalkulasi data, dan analisis tabular bersertifikat."
       },
       {
         name: "Microsoft Office",
+        level: "",
         proof: "Tercantum di CV",
         source: "CV",
         detail: "Penyusunan dokumen formal, pengolahan laporan kegiatan, dan pembuatan materi presentasi."
       },
       {
         name: "Team Coordination",
+        level: "",
         proof: "Pengalaman",
         source: "[EX2], [EX3]",
         detail: "Koordinasi operasional logistik perlengkapan dan kolaborasi tim perancangan produk."
       },
       {
         name: "Kerja Tim",
+        level: "",
         proof: "Pengalaman",
         source: "[EX2], [EX3]",
         detail: "Kolaborasi aktif lintas divisi organisasi kampus demi kelancaran eksekusi acara."
