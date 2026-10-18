@@ -9,19 +9,44 @@ import storage from '../../lib/storage';
  * - aria-pressed attribute for accessibility
  */
 export function AudioPlayer() {
-  const [isPlaying, setIsPlaying] = useState(() =>
-    storage.get('portfolio_audio_enabled', false)
-  );
+  // Always default to false on load per Item 3 (silent first visit, label OFF, aria-pressed false)
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const audioCtxRef = useRef(null);
   const windGainRef = useRef(null);
   const windNoiseRef = useRef(null);
+  const hasUserGestureRef = useRef(false);
+
+  // Read saved preference safely with try/catch fallback via storage helper
+  const savedPref = useRef(storage.get('portfolio_audio_enabled', false));
+
+  // If preference was saved as ON, never autoplay on load; start only upon first user gesture
+  useEffect(() => {
+    if (!savedPref.current) return;
+
+    const handleFirstGesture = () => {
+      if (hasUserGestureRef.current) return;
+      hasUserGestureRef.current = true;
+      setIsPlaying(true);
+      startAmbientSound();
+    };
+
+    window.addEventListener('pointerdown', handleFirstGesture, { once: true });
+    window.addEventListener('keydown', handleFirstGesture, { once: true });
+
+    return () => {
+      window.removeEventListener('pointerdown', handleFirstGesture);
+      window.removeEventListener('keydown', handleFirstGesture);
+    };
+  }, []);
 
   // Initialize and toggle Web Audio
   const toggleAudio = () => {
+    hasUserGestureRef.current = true;
     const nextState = !isPlaying;
     setIsPlaying(nextState);
     storage.set('portfolio_audio_enabled', nextState);
+    savedPref.current = nextState;
 
     if (nextState) {
       startAmbientSound();
