@@ -19,18 +19,19 @@ export const LOCATIONS = [
  */
 export function OverworldMapNav({
   activeLocation = 'hero',
+  targetLocation = null,
   onSelectLocation,
   isMobile = false,
 }) {
   const handleKeyDown = (e, index) => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    if (e.key === 'ArrowRight') {
       e.preventDefault();
       const nextIndex = (index + 1) % LOCATIONS.length;
-      onSelectLocation(LOCATIONS[nextIndex].id);
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      onSelectLocation(LOCATIONS[nextIndex].id, 'keyboard');
+    } else if (e.key === 'ArrowLeft') {
       e.preventDefault();
       const prevIndex = (index - 1 + LOCATIONS.length) % LOCATIONS.length;
-      onSelectLocation(LOCATIONS[prevIndex].id);
+      onSelectLocation(LOCATIONS[prevIndex].id, 'keyboard');
     }
   };
 
@@ -46,8 +47,10 @@ export function OverworldMapNav({
           return (
             <button
               key={loc.id}
+              id={`mobile-tab-${loc.id}`}
+              data-location-id={loc.id}
               type="button"
-              onClick={() => onSelectLocation(loc.id)}
+              onClick={() => onSelectLocation(loc.id, 'nav')}
               onKeyDown={(e) => handleKeyDown(e, i)}
               className={`flex flex-col items-center justify-center min-w-[48px] min-h-[46px] px-1 py-1 font-pixel transition-all cursor-pointer ${
                 isActive
@@ -84,22 +87,32 @@ export function OverworldMapNav({
         <div className="flex items-center gap-2 lg:gap-3 flex-1 justify-around">
           {LOCATIONS.map((loc, i) => {
             const isActive = activeLocation === loc.id;
+            const isTarget = targetLocation === loc.id && !isActive;
+
+            let buttonClass = 'bg-transparent text-[#24160B] hover:bg-[#FFFDF8] border border-transparent';
+            if (isActive) {
+              buttonClass = 'bg-[#5E8B4A] text-[#F6EBD3] border-2 border-[#24160B] shadow-[2px_2px_0_#24160B] -translate-y-0.5 font-bold';
+            } else if (isTarget) {
+              buttonClass = 'bg-[#FFFDF8] text-[#24160B] border-2 border-dashed border-[#E8793A] shadow-[2px_2px_0_#E8793A] -translate-y-0.5 font-bold';
+            }
+
             return (
               <button
                 key={loc.id}
+                id={`map-tab-${loc.id}`}
+                data-location-id={loc.id}
                 type="button"
-                onClick={() => onSelectLocation(loc.id)}
+                onClick={() => onSelectLocation(loc.id, 'nav')}
                 onKeyDown={(e) => handleKeyDown(e, i)}
-                className={`relative flex items-center gap-2 px-3 py-1.5 min-h-[44px] font-pixel text-xs lg:text-sm tracking-wide transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-[#5E8B4A] text-[#F6EBD3] border-2 border-[#24160B] shadow-[2px_2px_0_#24160B] -translate-y-0.5 font-bold'
-                    : 'bg-transparent text-[#24160B] hover:bg-[#FFFDF8] border border-transparent'
-                }`}
+                className={`relative flex items-center gap-2 px-3 py-1.5 min-h-[44px] font-pixel text-xs lg:text-sm tracking-wide transition-all cursor-pointer ${buttonClass}`}
                 aria-current={isActive ? 'location' : undefined}
-                title={`Beralih ke ${loc.name}`}
+                title={isTarget ? `Sedang menuju ke ${loc.name}` : `Beralih ke ${loc.name}`}
               >
                 {isActive && (
                   <span className="w-2 h-2 bg-[#E8793A] border border-[#F6EBD3] inline-block animate-ping" />
+                )}
+                {isTarget && (
+                  <span className="w-2 h-2 bg-[#E8793A] inline-block animate-pulse" />
                 )}
                 <span>{loc.icon}</span>
                 <span className="font-bold">{loc.name}</span>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useMotionValue, animate } from 'motion/react';
 import { WorldCanvas } from '../components/world/WorldCanvas';
 import { Sprite } from '../components/world/Sprite';
 import { OverworldMapNav, LOCATIONS } from '../components/world/OverworldMapNav';
@@ -24,35 +24,288 @@ export function HomePage() {
   const { isMobile } = useDeviceType();
   const reducedMotion = useReducedMotion();
 
-  const [activeLocation, setActiveLocation] = useState('hero');
-  const [isTraveling, setIsTraveling] = useState(false);
-  const [travelDir, setTravelDir] = useState(false); // false = right, true = left
+  // Helper to determine initial location from URL hash or default to hero
+  const getInitialLocation = () => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '').trim();
+      const match = LOCATIONS.find((l) => l.id === hash);
+      if (match) return match.id;
+    }
+    return 'hero';
+  };
 
-  const activeIndex = LOCATIONS.findIndex((loc) => loc.id === activeLocation);
-  // Calculate horizontal camera offset for desktop parallax (0 to 1200px)
+  const [currentLocation, setCurrentLocation] = useState(getInitialLocation);
+  const [targetLocation, setTargetLocation] = useState(null);
+  const [isTraveling, setIsTraveling] = useState(false);
+  const [travelDir, setTravelDir] = useState(false); // false = facing right, true = facing left
+  const [isWavingHero, setIsWavingHero] = useState(false);
+
+  // Panel state: panel is hidden during travel and opens when mascot arrives
+  const [panelLocation, setPanelLocation] = useState(getInitialLocation);
+  const [panelVisible, setPanelVisible] = useState(true);
+
+  // Screen reader polite announcement
+  const [announcement, setAnnouncement] = useState('');
+
+  // Motion value for mascot horizontal travel (without React state updates per frame)
+  const mascotX = useMotionValue(0);
+
+  // Active refs to guard callbacks against stale closures and race conditions
+  const currentLocationRef = useRef(currentLocation);
+  currentLocationRef.current = currentLocation;
+
+  const targetLocationRef = useRef(targetLocation);
+  targetLocationRef.current = targetLocation;
+
+  const isTravelingRef = useRef(isTraveling);
+  isTravelingRef.current = isTraveling;
+
+  const stageRef = useRef(null);
+  const travelSeqRef = useRef(0);
+  const currentAnimRef = useRef(null);
+
+  // Parallax camera offset
+  const activeIndex = LOCATIONS.findIndex(
+    (loc) => loc.id === (targetLocation || currentLocation)
+  );
   const cameraX = activeIndex * 240;
 
-  const handleSelectLocation = (id) => {
-    if (id === activeLocation) return;
-    const newIndex = LOCATIONS.findIndex((loc) => loc.id === id);
-    setTravelDir(newIndex < activeIndex);
-    setIsTraveling(true);
-    setActiveLocation(id);
+  // Calculates the horizontal pixel offset relative to the stage center for a given location tab
+  const calculateTargetX = (locId) => {
+    if (!stageRef.current) return 0;
+    const tabEl = document.querySelector(`[data-location-id="${locId}"]`);
+    if (!tabEl) return 0;
+    const tabRect = tabEl.getBoundingClientRect();
+    const stageRect = stageRef.current.getBoundingClientRect();
 
+    const tabCenterX = tabRect.left + tabRect.width / 2;
+    const stageCenterX = stageRect.left + stageRect.width / 2;
+    return tabCenterX - stageCenterX;
+  };
+
+  // Focus helper to guide keyboard & screen readers after arrival
+  const focusSectionHeading = (locId) => {
+    const container = document.getElementById(`active-section-${locId}`);
+    if (container) {
+      const heading = container.querySelector(
+        'h1, h2, h3, [role="region"], [data-section-focus]'
+      );
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      } else {
+        container.focus({ preventScroll: true });
+      }
+    }
+  };
+
+  // Centralized Navigation Dispatcher: all desktop triggers pass through goTo
+  const goTo = (targetId, source = 'nav') => {
     if (isMobile) {
-      const el = document.getElementById(`section-${id}`);
+      if (targetId === currentLocationRef.current) return;
+      setCurrentLocation(targetId);
+      currentLocationRef.current = targetId;
+      const el = document.getElementById(`section-${targetId}`);
       if (el) {
         el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
       }
+      return;
     }
 
-    setTimeout(() => {
+    // 1. Same location check
+    if (targetId === currentLocationRef.current && !isTravelingRef.current) {
+      return;
+    }
+    // Already traveling to this exact destination
+    if (isTravelingRef.current && targetId === targetLocationRef.current) {
+      return;
+    }
+
+    // 2. Interruption token: cancel any pending arrival from previous target
+    const thisSeq = ++travelSeqRef.current;
+
+    // Stop currently running motion tween immediately (takes over from exact current X)
+    if (currentAnimRef.current) {
+      currentAnimRef.current.stop();
+      currentAnimRef.current = null;
+    }
+
+    // Close the old panel quickly (duration <= 150ms)
+    setPanelVisible(false);
+
+    const targetMeta = LOCATIONS.find((l) => l.id === targetId) || LOCATIONS[0];
+    targetLocationRef.current = targetId;
+    setTargetLocation(targetId);
+
+    const startX = mascotX.get();
+    const targetX = calculateTargetX(targetId);
+    const distance = Math.abs(targetX - startX);
+    const movingLeft = targetX < startX;
+
+    setTravelDir(movingLeft);
+    setIsTraveling(true);
+    isTravelingRef.current = true;
+
+    // 3. Reduced Motion: instant jump without walking
+    if (reducedMotion) {
+      mascotX.set(targetX);
       setIsTraveling(false);
-    }, 400);
+      isTravelingRef.current = false;
+      setCurrentLocation(targetId);
+      currentLocationRef.current = targetId;
+      setTargetLocation(null);
+      targetLocationRef.current = null;
+      setPanelLocation(targetId);
+      setPanelVisible(true);
+      setAnnouncement(`Tiba di ${targetMeta.name}`);
+      setTimeout(() => focusSectionHeading(targetId), 50);
+      if (window.location.hash !== `#${targetId}`) {
+        window.history.replaceState(null, '', `#${targetId}`);
+      }
+      return;
+    }
+
+    // 4. Constant speed (~550 px/s) clamped between 450ms and 1100ms
+    const speed = 550;
+    const rawDuration = (distance / speed) * 1000;
+    const durationMs = Math.min(1100, Math.max(450, rawDuration));
+
+    // 5. Linear Motion Tween via transform
+    const anim = animate(mascotX, targetX, {
+      duration: durationMs / 1000,
+      ease: 'linear',
+      onComplete: () => {
+        // Interrupted by newer goTo call
+        if (travelSeqRef.current !== thisSeq) return;
+
+        setIsTraveling(false);
+        isTravelingRef.current = false;
+        setCurrentLocation(targetId);
+        currentLocationRef.current = targetId;
+        setTargetLocation(null);
+        targetLocationRef.current = null;
+
+        // Wave once if returning to starting village
+        if (targetId === 'hero') {
+          setIsWavingHero(true);
+          setTimeout(() => setIsWavingHero(false), 1200);
+        }
+
+        // Open destination panel (duration <= 300ms, easeOut)
+        setPanelLocation(targetId);
+        setPanelVisible(true);
+
+        // Announce arrival politely
+        setAnnouncement(`Tiba di ${targetMeta.name}`);
+
+        // Shift keyboard/screen-reader focus to section
+        setTimeout(() => {
+          focusSectionHeading(targetId);
+        }, 50);
+
+        // Sync URL hash without adding extra history entries
+        if (window.location.hash !== `#${targetId}`) {
+          window.history.replaceState(null, '', `#${targetId}`);
+        }
+      },
+    });
+
+    currentAnimRef.current = anim;
   };
 
-  const currentLocationMeta =
-    LOCATIONS.find((l) => l.id === activeLocation) || LOCATIONS[0];
+  // Align mascot instantly on mount (supports direct URL hash loading)
+  useLayoutEffect(() => {
+    if (isMobile) return;
+    const initialLoc = getInitialLocation();
+    const initialX = calculateTargetX(initialLoc);
+    mascotX.set(initialX);
+  }, [isMobile]);
+
+  // Recalculate mascot position on window resize and container observer
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleResize = () => {
+      if (!isTravelingRef.current) {
+        const x = calculateTargetX(currentLocationRef.current);
+        mascotX.set(x);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    let observer = null;
+    if (stageRef.current && typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver(handleResize);
+      observer.observe(stageRef.current);
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (observer) observer.disconnect();
+    };
+  }, [isMobile]);
+
+  // URL Hash change listener
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hashLoc = getInitialLocation();
+      if (hashLoc !== currentLocationRef.current) {
+        goTo(hashLoc, 'hash');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Global Keyboard Navigation (Arrow keys & A/D)
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleKeyDown = (e) => {
+      if (e.repeat) return;
+
+      // Ignore when focused in form fields, textareas, or open dialogs/menus
+      const activeEl = document.activeElement;
+      if (activeEl) {
+        const tag = activeEl.tagName.toLowerCase();
+        if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+        if (activeEl.isContentEditable) return;
+        if (
+          activeEl.closest &&
+          (activeEl.closest('[role="dialog"]') || activeEl.closest('[role="menu"]'))
+        ) {
+          return;
+        }
+      }
+
+      // Next Location: ArrowRight or D / d
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+        if (e.key === 'ArrowRight') e.preventDefault();
+        const baseLoc = targetLocationRef.current || currentLocationRef.current;
+        const curIndex = LOCATIONS.findIndex((l) => l.id === baseLoc);
+        const nextIndex = (curIndex + 1) % LOCATIONS.length;
+        goTo(LOCATIONS[nextIndex].id, 'keyboard');
+      }
+      // Previous Location: ArrowLeft or A / a
+      else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+        if (e.key === 'ArrowLeft') e.preventDefault();
+        const baseLoc = targetLocationRef.current || currentLocationRef.current;
+        const curIndex = LOCATIONS.findIndex((l) => l.id === baseLoc);
+        const prevIndex = (curIndex - 1 + LOCATIONS.length) % LOCATIONS.length;
+        goTo(LOCATIONS[prevIndex].id, 'keyboard');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobile, reducedMotion]);
+
+  const currentMeta =
+    LOCATIONS.find((l) => l.id === currentLocation) || LOCATIONS[0];
+  const targetMeta =
+    LOCATIONS.find((l) => l.id === targetLocation) || currentMeta;
 
   return (
     <div className="relative min-h-[100dvh] text-[var(--ink)] overflow-x-hidden flex flex-col justify-between select-text">
@@ -143,41 +396,76 @@ export function HomePage() {
 
           {/* Overworld Map Navigation Bar (Desktop) */}
           <OverworldMapNav
-            activeLocation={activeLocation}
-            onSelectLocation={handleSelectLocation}
+            activeLocation={currentLocation}
+            targetLocation={targetLocation}
+            onSelectLocation={(id, src) => goTo(id, src || 'nav')}
             isMobile={false}
           />
         </header>
       )}
 
-      {/* 3. Upgraded Mascot Traveling Sprite Anchor (No random debug string!) */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none">
-        <div className="flex flex-col items-center">
-          <div className="pointer-events-auto">
-            <Sprite
-              animation={isTraveling ? 'walk' : 'idle'}
-              scale={isMobile ? 'responsive' : 2.2}
-              flip={travelDir}
-              onWave={() => {}}
-            />
-          </div>
+      {/* 3. Upgraded Mascot Traveling Sprite Anchor (Desktop: Linear Track Motion, Mobile: Unaltered) */}
+      {isMobile ? (
+        <div className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none">
+          <div className="flex flex-col items-center">
+            <div className="pointer-events-auto">
+              <Sprite
+                animation="idle"
+                scale="responsive"
+                flip={false}
+                onWave={() => {}}
+              />
+            </div>
 
-          {/* Clean Location Badge without any extraneous debug code */}
-          <div className="font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold">
-            <span>{currentLocationMeta.icon}</span>
-            <span>Lokasi: {currentLocationMeta.name}</span>
-          </div>
+            <div className="font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold">
+              <span>{currentMeta.icon}</span>
+              <span>Lokasi: {currentMeta.name}</span>
+            </div>
 
-          {/* Role Subtitle: Only on mobile (<1024px) below mascot. On desktop, role is in the header & dialog! */}
-          {isMobile && (
             <div className="text-center w-full px-4 mt-2 font-pixel text-xs text-[#3B5E34] font-bold tracking-wider select-text">
               {profile.target}
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div
+          ref={stageRef}
+          className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none overflow-visible"
+        >
+          <motion.div
+            style={{ x: mascotX }}
+            className="flex flex-col items-center will-change-transform"
+          >
+            <div className="pointer-events-auto">
+              <Sprite
+                animation={isTraveling ? 'walk' : isWavingHero ? 'wave' : 'idle'}
+                scale={2.2}
+                flip={travelDir}
+                className="!transition-none"
+                onWave={() => setIsWavingHero(true)}
+              />
+            </div>
 
-      {/* 4. Overworld Sections (Desktop: Horizontal Stage, Mobile: Vertical Scroll) */}
+            {/* Dynamic Location Badge: displays 'Menuju:' while walking and 'Lokasi:' when arrived */}
+            <div
+              className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none ${
+                isTraveling
+                  ? 'border-[#E8793A] bg-[#FFF8F0]'
+                  : 'border-[#24160B]'
+              }`}
+            >
+              <span>{isTraveling ? targetMeta.icon : currentMeta.icon}</span>
+              <span>
+                {isTraveling
+                  ? `Menuju: ${targetMeta.name}`
+                  : `Lokasi: ${currentMeta.name}`}
+              </span>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* 4. Overworld Sections (Desktop: Sequential Panel Transitions, Mobile: Vertical Scroll) */}
       <main className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-5 flex flex-col justify-center overflow-visible">
         {isMobile ? (
           // Mobile: Vertical flow of sections with safe-area clearance (Fase 3 & 4)
@@ -188,7 +476,6 @@ export function HomePage() {
                 id={`section-${loc.id}`}
                 className="scroll-mt-16"
               >
-                {/* Deduplicate hero location tag (Fase 2) */}
                 {loc.id !== 'hero' && (
                   <div className="mb-2 font-pixel text-xs font-bold text-[#24160B]/80 uppercase flex items-center gap-1.5">
                     <span>{loc.icon}</span>
@@ -197,48 +484,72 @@ export function HomePage() {
                 )}
                 <LocationSectionContent
                   locId={loc.id}
-                  onStartExplore={() => handleSelectLocation('quests')}
+                  onStartExplore={() => goTo('quests', 'cta')}
                   isMobile={true}
                 />
               </section>
             ))}
           </div>
         ) : (
-          // Desktop: Animated horizontal stage transitions via Motion
+          // Desktop: Panel closes when departing (<=150ms), and opens when mascot arrives (<=300ms, easeOut)
           <div className="w-full overflow-visible">
             <AnimatePresence mode="wait">
-              <motion.div
-                key={activeLocation}
-                initial={
-                  reducedMotion
-                    ? { opacity: 0 }
-                    : { opacity: 0, x: travelDir ? -40 : 40 }
-                }
-                animate={{ opacity: 1, x: 0 }}
-                exit={
-                  reducedMotion
-                    ? { opacity: 0 }
-                    : { opacity: 0, x: travelDir ? 40 : -40 }
-                }
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="w-full"
-              >
-                <LocationSectionContent
-                  locId={activeLocation}
-                  onStartExplore={() => handleSelectLocation('quests')}
-                  isMobile={false}
-                />
-              </motion.div>
+              {panelVisible && (
+                <motion.div
+                  key={panelLocation}
+                  initial={
+                    reducedMotion ? { opacity: 0 } : { opacity: 0, y: 10 }
+                  }
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.25, ease: 'easeOut' },
+                  }}
+                  exit={
+                    reducedMotion
+                      ? { opacity: 0 }
+                      : {
+                          opacity: 0,
+                          y: -8,
+                          transition: { duration: 0.12, ease: 'easeIn' },
+                        }
+                  }
+                  className="w-full"
+                >
+                  <div
+                    id={`active-section-${panelLocation}`}
+                    tabIndex={-1}
+                    className="outline-none"
+                  >
+                    <LocationSectionContent
+                      locId={panelLocation}
+                      onStartExplore={() => goTo('quests', 'cta')}
+                      isMobile={false}
+                    />
+                  </div>
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
         )}
       </main>
 
+      {/* Screen Reader Live Region for polite arrival announcements */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {announcement}
+      </div>
+
       {/* 5. Mobile Bottom Dock Navigation */}
       {isMobile && (
         <OverworldMapNav
-          activeLocation={activeLocation}
-          onSelectLocation={handleSelectLocation}
+          activeLocation={currentLocation}
+          targetLocation={null}
+          onSelectLocation={(id, src) => goTo(id, src || 'nav')}
           isMobile={true}
         />
       )}

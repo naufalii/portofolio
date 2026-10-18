@@ -1,0 +1,96 @@
+{
+  "testDate": "2026-10-18T15:54:54.587Z",
+  "durations": [
+    {
+      "from": "hero",
+      "to": "quests",
+      "durationMs": 573,
+      "passed": true
+    },
+    {
+      "from": "quests",
+      "to": "skills",
+      "durationMs": 654,
+      "passed": true
+    },
+    {
+      "from": "skills",
+      "to": "guild",
+      "durationMs": 591,
+      "passed": true
+    },
+    {
+      "from": "guild",
+      "to": "contact",
+      "durationMs": 566,
+      "passed": true
+    },
+    {
+      "from": "contact",
+      "to": "guestbook",
+      "durationMs": 530,
+      "passed": true
+    },
+    {
+      "from": "guestbook",
+      "to": "hero",
+      "durationMs": 1184,
+      "passed": true
+    },
+    {
+      "from": "hero",
+      "to": "guestbook",
+      "durationMs": 1258,
+      "passed": true
+    }
+  ],
+  "fpsAudit": {
+    "frameCount": 69,
+    "avgIntervalMs": 17.15,
+    "p95IntervalMs": 17.2,
+    "avgFps": 58.3
+  },
+  "tests": {
+    "midWalkFrames": true,
+    "keyboardNav": {
+      "arrowRight": true,
+      "keyD": true,
+      "arrowLeft": true,
+      "keyA": true
+    },
+    "inputGuard": true,
+    "interruption": {
+      "finalLoc": true,
+      "guestbookNeverOpened": true,
+      "skillsOpened": true
+    },
+    "hashLoading": {
+      "tab": true,
+      "panel": true
+    }
+  },
+  "desktopMetrics": {
+    "1280x720": {
+      "dialog": {
+        "y": 376.59375,
+        "top": 376.59375,
+        "height": 218
+      },
+      "ctaButton": {
+        "y": 532.59375,
+        "top": 532.59375,
+        "height": 46
+      },
+      "nav": {
+        "y": 104,
+        "bottom": 188,
+        "height": 84
+      },
+      "sprite": {
+        "y": 212,
+        "bottom": 324.59375,
+        "height": 112.59375
+      }
+    }
+  }
+}

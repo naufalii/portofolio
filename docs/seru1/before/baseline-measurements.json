@@ -1,0 +1,1437 @@
+{
+  "measuredAt": "2026-10-18T15:36:25.555Z",
+  "desktop": {
+    "1024x768": {
+      "sections": {
+        "hero": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 116,
+              "width": 135.65625,
+              "height": 56,
+              "centerX": 254.078125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 333.90625,
+              "y": 119,
+              "width": 120.578125,
+              "height": 54,
+              "centerX": 394.1953125
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 466.484375,
+              "y": 119,
+              "width": 112.703125,
+              "height": 54,
+              "centerX": 522.8359375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 591.1875,
+              "y": 119,
+              "width": 110.296875,
+              "height": 54,
+              "centerX": 646.3359375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 713.484375,
+              "y": 119,
+              "width": 120.4375,
+              "height": 54,
+              "centerX": 773.703125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 845.921875,
+              "y": 119,
+              "width": 138.078125,
+              "height": 54,
+              "centerX": 914.9609375
+            }
+          ]
+        },
+        "quests": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 119,
+              "width": 118.765625,
+              "height": 54,
+              "centerX": 245.6328125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 317.015625,
+              "y": 116,
+              "width": 137.46875,
+              "height": 56,
+              "centerX": 385.75
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 466.484375,
+              "y": 119,
+              "width": 112.703125,
+              "height": 54,
+              "centerX": 522.8359375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 591.1875,
+              "y": 119,
+              "width": 110.296875,
+              "height": 54,
+              "centerX": 646.3359375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 713.484375,
+              "y": 119,
+              "width": 120.4375,
+              "height": 54,
+              "centerX": 773.703125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 845.921875,
+              "y": 119,
+              "width": 138.078125,
+              "height": 54,
+              "centerX": 914.9609375
+            }
+          ]
+        },
+        "skills": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 119,
+              "width": 118.765625,
+              "height": 54,
+              "centerX": 245.6328125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 317.015625,
+              "y": 119,
+              "width": 120.578125,
+              "height": 54,
+              "centerX": 377.3046875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 449.59375,
+              "y": 116,
+              "width": 129.59375,
+              "height": 56,
+              "centerX": 514.390625
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 591.1875,
+              "y": 119,
+              "width": 110.296875,
+              "height": 54,
+              "centerX": 646.3359375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 713.484375,
+              "y": 119,
+              "width": 120.4375,
+              "height": 54,
+              "centerX": 773.703125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 845.921875,
+              "y": 119,
+              "width": 138.078125,
+              "height": 54,
+              "centerX": 914.9609375
+            }
+          ]
+        },
+        "guild": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 119,
+              "width": 118.765625,
+              "height": 54,
+              "centerX": 245.6328125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 317.015625,
+              "y": 119,
+              "width": 120.578125,
+              "height": 54,
+              "centerX": 377.3046875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 449.59375,
+              "y": 119,
+              "width": 112.703125,
+              "height": 54,
+              "centerX": 505.9453125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 574.296875,
+              "y": 116,
+              "width": 127.1875,
+              "height": 56,
+              "centerX": 637.890625
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 713.484375,
+              "y": 119,
+              "width": 120.4375,
+              "height": 54,
+              "centerX": 773.703125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 845.921875,
+              "y": 119,
+              "width": 138.078125,
+              "height": 54,
+              "centerX": 914.9609375
+            }
+          ]
+        },
+        "contact": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 119,
+              "width": 118.765625,
+              "height": 54,
+              "centerX": 245.6328125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 317.015625,
+              "y": 119,
+              "width": 120.578125,
+              "height": 54,
+              "centerX": 377.3046875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 449.59375,
+              "y": 119,
+              "width": 112.703125,
+              "height": 54,
+              "centerX": 505.9453125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 574.296875,
+              "y": 119,
+              "width": 110.296875,
+              "height": 54,
+              "centerX": 629.4453125
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 696.59375,
+              "y": 116,
+              "width": 137.328125,
+              "height": 56,
+              "centerX": 765.2578125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 845.921875,
+              "y": 119,
+              "width": 138.078125,
+              "height": 54,
+              "centerX": 914.9609375
+            }
+          ]
+        },
+        "guestbook": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 186.25,
+              "y": 119,
+              "width": 118.765625,
+              "height": 54,
+              "centerX": 245.6328125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 317.015625,
+              "y": 119,
+              "width": 120.578125,
+              "height": 54,
+              "centerX": 377.3046875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 449.59375,
+              "y": 119,
+              "width": 112.703125,
+              "height": 54,
+              "centerX": 505.9453125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 574.296875,
+              "y": 119,
+              "width": 110.296875,
+              "height": 54,
+              "centerX": 629.4453125
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 696.59375,
+              "y": 119,
+              "width": 120.4375,
+              "height": 54,
+              "centerX": 756.8125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 829.03125,
+              "y": 116,
+              "width": 154.96875,
+              "height": 56,
+              "centerX": 906.515625
+            }
+          ]
+        }
+      }
+    },
+    "1280x720": {
+      "sections": {
+        "hero": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 116,
+              "width": 143.078125,
+              "height": 56,
+              "centerX": 365.7890625
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 449.328125,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 512.8828125
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 588.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 647.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 719.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 777.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 847.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 910.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 986.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1059.09375
+            }
+          ]
+        },
+        "quests": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 356.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 431.40625,
+              "y": 116,
+              "width": 145.03125,
+              "height": 56,
+              "centerX": 503.921875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 588.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 647.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 719.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 777.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 847.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 910.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 986.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1059.09375
+            }
+          ]
+        },
+        "skills": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 356.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 431.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 494.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 570.515625,
+              "y": 116,
+              "width": 136.609375,
+              "height": 56,
+              "centerX": 638.8203125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 719.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 777.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 847.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 910.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 986.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1059.09375
+            }
+          ]
+        },
+        "guild": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 356.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 431.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 494.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 570.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 629.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 701.203125,
+              "y": 116,
+              "width": 134.03125,
+              "height": 56,
+              "centerX": 768.21875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 847.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 910.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 986.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1059.09375
+            }
+          ]
+        },
+        "contact": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 356.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 431.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 494.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 570.515625,
+              "y": 119,
+              "width": 118.703125,
+              "height": 54,
+              "centerX": 629.8671875
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 701.21875,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 759.2734375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 829.328125,
+              "y": 116,
+              "width": 144.859375,
+              "height": 56,
+              "centerX": 901.7578125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 986.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1059.09375
+            }
+          ]
+        },
+        "guestbook": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 294.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 356.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 431.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 494.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 570.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 629.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 701.203125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 759.2578125
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 829.3125,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 892.7890625
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 968.265625,
+              "y": 116,
+              "width": 163.734375,
+              "height": 56,
+              "centerX": 1050.1328125
+            }
+          ]
+        }
+      }
+    },
+    "1440x900": {
+      "sections": {
+        "hero": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 116,
+              "width": 143.078125,
+              "height": 56,
+              "centerX": 445.7890625
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 529.328125,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 592.8828125
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 668.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 727.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 799.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 857.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 927.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 990.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1066.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1139.09375
+            }
+          ]
+        },
+        "quests": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 436.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 511.40625,
+              "y": 116,
+              "width": 145.03125,
+              "height": 56,
+              "centerX": 583.921875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 668.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 727.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 799.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 857.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 927.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 990.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1066.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1139.09375
+            }
+          ]
+        },
+        "skills": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 436.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 511.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 574.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 650.515625,
+              "y": 116,
+              "width": 136.609375,
+              "height": 56,
+              "centerX": 718.8203125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 799.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 857.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 927.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 990.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1066.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1139.09375
+            }
+          ]
+        },
+        "guild": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 436.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 511.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 574.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 650.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 709.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 781.203125,
+              "y": 116,
+              "width": 134.03125,
+              "height": 56,
+              "centerX": 848.21875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 927.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 990.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1066.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1139.09375
+            }
+          ]
+        },
+        "contact": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 436.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 511.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 574.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 650.515625,
+              "y": 119,
+              "width": 118.703125,
+              "height": 54,
+              "centerX": 709.8671875
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 781.21875,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 839.2734375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 909.328125,
+              "y": 116,
+              "width": 144.859375,
+              "height": 56,
+              "centerX": 981.7578125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1066.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1139.09375
+            }
+          ]
+        },
+        "guestbook": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 374.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 436.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 511.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 574.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 650.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 709.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 781.203125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 839.2578125
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 909.3125,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 972.7890625
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1048.265625,
+              "y": 116,
+              "width": 163.734375,
+              "height": 56,
+              "centerX": 1130.1328125
+            }
+          ]
+        }
+      }
+    },
+    "1920x1080": {
+      "sections": {
+        "hero": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 116,
+              "width": 143.078125,
+              "height": 56,
+              "centerX": 685.7890625
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 769.328125,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 832.8828125
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 908.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 967.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1039.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 1097.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1167.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 1230.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1306.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1379.09375
+            }
+          ]
+        },
+        "quests": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 676.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 751.40625,
+              "y": 116,
+              "width": 145.03125,
+              "height": 56,
+              "centerX": 823.921875
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 908.4375,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 967.78125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1039.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 1097.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1167.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 1230.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1306.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1379.09375
+            }
+          ]
+        },
+        "skills": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 676.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 751.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 814.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 890.515625,
+              "y": 116,
+              "width": 136.609375,
+              "height": 56,
+              "centerX": 958.8203125
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1039.125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 1097.1796875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1167.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 1230.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1306.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1379.09375
+            }
+          ]
+        },
+        "guild": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 676.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 751.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 814.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 890.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 949.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1021.203125,
+              "y": 116,
+              "width": 134.03125,
+              "height": 56,
+              "centerX": 1088.21875
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1167.234375,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 1230.7109375
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1306.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1379.09375
+            }
+          ]
+        },
+        "contact": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 676.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 751.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 814.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 890.515625,
+              "y": 119,
+              "width": 118.703125,
+              "height": 54,
+              "centerX": 949.8671875
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1021.21875,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 1079.2734375
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1149.328125,
+              "y": 116,
+              "width": 144.859375,
+              "height": 56,
+              "centerX": 1221.7578125
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1306.1875,
+              "y": 119,
+              "width": 145.8125,
+              "height": 54,
+              "centerX": 1379.09375
+            }
+          ]
+        },
+        "guestbook": {
+          "navBottom": 188,
+          "mainTop": 356.59375,
+          "emptyStageHeight": 168.59375,
+          "spriteHeight": 112.59375,
+          "spriteWidth": 105.59375,
+          "spriteY": 212,
+          "tabs": [
+            {
+              "text": "🏡Desa Awal",
+              "x": 614.25,
+              "y": 119,
+              "width": 125.15625,
+              "height": 54,
+              "centerX": 676.828125
+            },
+            {
+              "text": "📜Quest Log",
+              "x": 751.40625,
+              "y": 119,
+              "width": 127.109375,
+              "height": 54,
+              "centerX": 814.9609375
+            },
+            {
+              "text": "⚡Skill Tree",
+              "x": 890.515625,
+              "y": 119,
+              "width": 118.6875,
+              "height": 54,
+              "centerX": 949.859375
+            },
+            {
+              "text": "🏛️Guild Hall",
+              "x": 1021.203125,
+              "y": 119,
+              "width": 116.109375,
+              "height": 54,
+              "centerX": 1079.2578125
+            },
+            {
+              "text": "📬Kotak Pos",
+              "x": 1149.3125,
+              "y": 119,
+              "width": 126.953125,
+              "height": 54,
+              "centerX": 1212.7890625
+            },
+            {
+              "text": "📝Papan Pesan",
+              "x": 1288.265625,
+              "y": 116,
+              "width": 163.734375,
+              "height": 56,
+              "centerX": 1370.1328125
+            }
+          ]
+        }
+      }
+    }
+  },
+  "mobile": {},
+  "heroBaseline1280": {
+    "dialog": {
+      "y": 376.59375,
+      "top": 376.59375,
+      "height": 218
+    },
+    "ctaButton": {
+      "y": 532.59375,
+      "top": 532.59375,
+      "height": 46
+    },
+    "panel": null,
+    "nav": {
+      "y": 104,
+      "bottom": 188,
+      "height": 84
+    },
+    "sprite": {
+      "y": 212,
+      "bottom": 324.59375,
+      "height": 112.59375
+    }
+  }
+}
