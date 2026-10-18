@@ -26,15 +26,16 @@ export function DialogBox({
     <div className={`relative w-full select-text ${className}`}>
       {/* Outer Border & Box */}
       <div
-        className="relative w-full border-3 lg:border-4 border-[#24160B] bg-[#FFFDF8] shadow-[3px_3px_0_#24160B] lg:shadow-[4px_4px_0_#24160B]"
+        className="relative w-full border-3 lg:border-4 border-[#24160B] bg-[#FFFDF8] shadow-[3px_3px_0_#24160B] lg:shadow-[4px_4px_0_#24160B] lg:cursor-pointer"
         role="region"
         aria-label={`Dialog dari ${speaker}`}
+        onClick={onNext}
       >
         {/* Corner Pixel Accents */}
-        <div className="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#24160B]" />
-        <div className="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#24160B]" />
-        <div className="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#24160B]" />
-        <div className="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#24160B]" />
+        <div className="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 lg:-top-[4px] lg:-left-[4px] lg:w-2 lg:h-2 bg-[#24160B]" />
+        <div className="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 lg:-top-[4px] lg:-right-[4px] lg:w-2 lg:h-2 bg-[#24160B]" />
+        <div className="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 lg:-bottom-[4px] lg:-left-[4px] lg:w-2 lg:h-2 bg-[#24160B]" />
+        <div className="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 lg:-bottom-[4px] lg:-right-[4px] lg:w-2 lg:h-2 bg-[#24160B]" />
 
         {/* Integrated Speaker Nameplate Bar: Nama di mobile, Nama + Role di desktop */}
         {speaker && (
@@ -52,7 +53,7 @@ export function DialogBox({
             </div>
 
             <span className="text-[11px] font-pixel text-[#24160B]/60 hidden lg:inline flex-shrink-0 ml-2">
-              *Klik dialog / tombol panah untuk lanjut
+              *Klik kotak untuk memajukan dialog
             </span>
           </div>
         )}
@@ -66,22 +67,37 @@ export function DialogBox({
           {children}
         </div>
 
-        {/* Bottom bar with action buttons and LANJUT button */}
+        {/* Bottom bar with action buttons and LANJUT indicator */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 px-3.5 lg:px-6 pb-3.5 lg:pb-3 pt-2 border-t-2 border-[#24160B]/15 bg-[#F6EBD3]/40">
-          <div className="w-full lg:w-auto">
+          <div
+            className="w-full lg:w-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             {actions}
           </div>
 
           {showBlinker && (
-            <button
-              type="button"
-              onClick={onNext}
-              className="self-end lg:self-auto flex items-center gap-2 px-3 py-1.5 min-h-[44px] lg:min-h-[38px] border-2 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-xs font-bold shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
-              aria-label="Lanjut ke dialog berikutnya"
-            >
-              <span>LANJUT</span>
-              <span className="text-sm font-bold">&rarr;</span>
-            </button>
+            <>
+              {/* Mobile (<1024px): Tombol interaktif min 44x44px sesuai Fase 2 */}
+              <button
+                type="button"
+                onClick={onNext}
+                className="lg:hidden self-end flex items-center gap-2 px-3 py-1.5 min-h-[44px] border-2 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-xs font-bold shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
+                aria-label="Lanjut ke dialog berikutnya"
+              >
+                <span>LANJUT</span>
+                <span className="text-sm font-bold">&rarr;</span>
+              </button>
+
+              {/* Desktop (>=1024px): RPG bouncing indicator persis c383241 */}
+              <div
+                className="hidden lg:flex items-center gap-1.5 text-xs font-pixel text-[#3B5E34] font-bold select-none animate-bounce cursor-pointer"
+                onClick={onNext}
+              >
+                <span>LANJUT</span>
+                <span className="inline-block w-2.5 h-2.5 bg-[#E8793A] border border-[#24160B]" />
+              </div>
+            </>
           )}
         </div>
       </div>

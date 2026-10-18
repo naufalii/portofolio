@@ -71,63 +71,105 @@ export function HeroSection({ onStartExplore }) {
         onNext={handleAdvanceDialog}
         actions={
           <div
-            className="flex flex-col lg:flex-row lg:items-center gap-2.5 lg:gap-2 w-full lg:w-auto pt-1"
+            className="w-full lg:w-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* CTA 1: Mulai Jelajah */}
-            <button
-              type="button"
-              onClick={onStartExplore}
-              className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-4 py-2 border-3 lg:border-2 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm font-bold tracking-wider shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
-              aria-label="Mulai jelajahi quest log"
-            >
-              Mulai Jelajah &rarr;
-            </button>
-
-            {/* CTA 2: Mode CV */}
-            <Link to="/cv" className="w-full lg:w-auto block">
-              <button
-                type="button"
-                className="w-full lg:w-auto flex flex-col lg:flex-row items-center justify-center min-h-[48px] lg:min-h-[38px] px-4 py-1.5 lg:py-2 border-3 lg:border-2 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center whitespace-nowrap"
+            {/* Desktop (>=1024px): Exact c383241 PixelButtons */}
+            <div className="hidden lg:flex items-center gap-2 pt-1">
+              <PixelButton
+                variant="primary"
+                size="md"
+                onClick={onStartExplore}
+                aria-label="Mulai jelajahi quest log"
               >
-                <span className="text-sm font-bold leading-tight tracking-wider">
-                  Mode CV
-                </span>
-                <span className="text-[11px] font-body text-white/90 leading-none lg:hidden">
-                  Tampilan halaman biasa (dokumen linear)
-                </span>
-              </button>
-            </Link>
+                Mulai Jelajah &rarr;
+              </PixelButton>
 
-            {/* CTA 3 & 4: GitHub & LinkedIn (2 Columns on mobile, inline on desktop) */}
-            <div className="grid grid-cols-2 lg:flex lg:items-center gap-2.5 lg:gap-2 w-full lg:w-auto">
+              <Link to="/cv">
+                <PixelButton
+                  variant="secondary"
+                  size="md"
+                  title="Buka ringkasan CV linear untuk recruiter"
+                >
+                  Mode CV (Format Dokumen)
+                </PixelButton>
+              </Link>
+
               <a
                 href={profile.sosial.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full lg:w-auto block"
               >
-                <button
-                  type="button"
-                  className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-3 py-2 border-3 lg:border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs lg:text-sm font-bold shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
-                >
+                <PixelButton variant="neutral" size="sm">
                   GitHub &rarr;
-                </button>
+                </PixelButton>
               </a>
 
               <a
                 href={profile.sosial.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full lg:w-auto block"
               >
+                <PixelButton variant="neutral" size="sm">
+                  LinkedIn &rarr;
+                </PixelButton>
+              </a>
+            </div>
+
+            {/* Mobile (<1024px): Exact mobile-current layout */}
+            <div className="flex flex-col gap-2.5 w-full lg:hidden pt-1">
+              <button
+                type="button"
+                onClick={onStartExplore}
+                className="w-full flex items-center justify-center min-h-[48px] px-4 py-2 border-3 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm font-bold tracking-wider shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
+                aria-label="Mulai jelajahi quest log"
+              >
+                Mulai Jelajah &rarr;
+              </button>
+
+              <Link to="/cv" className="w-full block">
                 <button
                   type="button"
-                  className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-3 py-2 border-3 lg:border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs lg:text-sm font-bold shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
+                  className="w-full flex flex-col items-center justify-center min-h-[48px] px-4 py-1.5 border-3 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center whitespace-nowrap"
                 >
-                  LinkedIn &rarr;
+                  <span className="text-sm font-bold leading-tight tracking-wider">
+                    Mode CV
+                  </span>
+                  <span className="text-[11px] font-body text-white/90 leading-none">
+                    Tampilan halaman biasa (dokumen linear)
+                  </span>
                 </button>
-              </a>
+              </Link>
+
+              <div className="grid grid-cols-2 gap-2.5 w-full">
+                <a
+                  href={profile.sosial.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block"
+                >
+                  <button
+                    type="button"
+                    className="w-full flex items-center justify-center min-h-[48px] px-3 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
+                  >
+                    GitHub &rarr;
+                  </button>
+                </a>
+
+                <a
+                  href={profile.sosial.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block"
+                >
+                  <button
+                    type="button"
+                    className="w-full flex items-center justify-center min-h-[48px] px-3 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
+                  >
+                    LinkedIn &rarr;
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         }
