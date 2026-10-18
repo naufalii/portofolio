@@ -103,30 +103,21 @@ export function SkillTreeSection({ isMobile = false }) {
                       onClick={() =>
                         setExpandedSkill(isExpanded ? null : skill.name)
                       }
-                      className="w-full text-left p-3 flex flex-col gap-1.5 cursor-pointer min-h-[52px] active:bg-[#F6EBD3]/60"
+                      className="w-full text-left p-3 flex items-center justify-between gap-2 cursor-pointer min-h-[48px] active:bg-[#F6EBD3]/60"
                       aria-expanded={isExpanded}
                     >
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="font-pixel text-xs font-bold text-[#24160B]">
-                          {skill.name}
-                        </span>
-                        <span className="font-pixel text-xs font-bold text-[#E8793A]">
-                          {skill.level}%
-                        </span>
-                      </div>
-
-                      <div className="w-full h-3 bg-[#F6EBD3] border border-[#24160B] p-[1px] overflow-hidden">
-                        <div
-                          className="h-full bg-[#5E8B4A] transition-all duration-300"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+                      <span className="font-pixel text-xs sm:text-sm font-bold text-[#24160B]">
+                        {skill.name}
+                      </span>
+                      <span className="font-pixel text-[10px] sm:text-xs font-bold text-[#3B5E34] bg-[#F6EBD3] px-2 py-0.5 border border-[#24160B]/40 flex-shrink-0">
+                        {skill.proof}
+                      </span>
                     </button>
 
                     {isExpanded && (
                       <div className="px-3 pb-3 pt-1 border-t border-[#24160B]/15 bg-[#F6EBD3]/30 text-xs font-body text-[#24160B] leading-relaxed">
                         <div className="font-pixel text-[11px] text-[#3B5E34] font-bold mb-0.5">
-                          LINGKUP KOMPETENSI PRAKTIKUM:
+                          LINGKUP KOMPETENSI TEKNIS:
                         </div>
                         <p>{skill.detail}</p>
                       </div>
@@ -137,7 +128,7 @@ export function SkillTreeSection({ isMobile = false }) {
             </div>
 
             <div className="mt-4 pt-2 border-t border-[#24160B]/15 text-[11px] font-pixel text-[#24160B]/60 text-center">
-              *Tingkat keahlian dinilai jujur berdasarkan praktikum dan administrasi lab mandiri.
+              *Label bukti merujuk pada proyek, pengalaman organisasi, atau sertifikat terverifikasi tanpa angka klaim buatan.
             </div>
           </>
         ) : (
@@ -187,22 +178,18 @@ export function SkillTreeSection({ isMobile = false }) {
                             : 'bg-[#FFFDF8] hover:bg-[#F6EBD3]/60 shadow-[1px_1px_0_#24160B]'
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-1.5">
+                        <div className="flex items-center justify-between mb-1">
                           <span className="font-pixel text-sm font-bold text-[#24160B]">
                             {skill.name}
                           </span>
-                          <span className="font-pixel text-xs font-bold text-[#3B5E34] bg-[#FFFDF8] px-1.5 py-0.5 border border-[#24160B]/30">
-                            LVL {skill.level}%
+                          <span className="font-pixel text-xs font-bold text-[#3B5E34] bg-[#FFFDF8] px-2 py-0.5 border border-[#24160B]/30 shadow-[1px_1px_0_#24160B]">
+                            {skill.proof}
                           </span>
                         </div>
 
-                        {/* Pixel Progress Bar */}
-                        <div className="w-full h-3 bg-[#FFFDF8] border border-[#24160B] p-0.5 overflow-hidden">
-                          <div
-                            className="h-full bg-[#5E8B4A] transition-all duration-300"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
+                        <p className="text-xs font-body text-[#24160B]/75 line-clamp-1">
+                          {skill.detail}
+                        </p>
                       </button>
                     );
                   })}
@@ -221,10 +208,15 @@ export function SkillTreeSection({ isMobile = false }) {
                       <h4 className="font-pixel text-lg font-bold text-[#24160B]">
                         {selectedSkill.name}
                       </h4>
-                      <div className="mt-1 flex items-center gap-2">
+                      <div className="mt-1.5 flex flex-wrap items-center gap-2">
                         <span className="font-pixel text-xs px-2 py-0.5 bg-[#5E8B4A] text-white border border-[#24160B]">
-                          KEMAMPUAN: {selectedSkill.level}%
+                          BUKTI: {selectedSkill.proof}
                         </span>
+                        {selectedSkill.source && (
+                          <span className="font-pixel text-xs px-2 py-0.5 bg-[#F6EBD3] text-[#24160B] border border-[#24160B]/40">
+                            SUMBER: {selectedSkill.source}
+                          </span>
+                        )}
                       </div>
                     </div>
 

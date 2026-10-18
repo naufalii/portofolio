@@ -15,7 +15,7 @@ import React from 'react';
  */
 export function DialogBox({
   speaker = 'Naufal Ali Hilmi',
-  speakerRole = 'System Administrator / Oracle DBA Aspirant',
+  speakerRole = 'Junior DBA | System Administrator | Web Developer',
   children,
   actions,
   showBlinker = true,

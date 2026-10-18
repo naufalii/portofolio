@@ -214,9 +214,9 @@ export function HeroSection({ onStartExplore }) {
               <span className="lg:hidden">Gunakan peta navigasi di bawah</span> untuk menjelajahi seluruh area:
             </p>
             <ul className="list-disc list-inside space-y-1 text-xs">
-              <li><strong>Quest Log:</strong> Praktikum Oracle Database & web solver.</li>
-              <li><strong>Skill Tree:</strong> 3 cabang keahlian (DBA, Linux, Web).</li>
-              <li><strong>Guild Hall:</strong> Organisasi BEM FIKTI & UGPreneurs.</li>
+              <li><strong>Quest Log:</strong> Lab Oracle 19c Data Guard & Portofolio Overworld.</li>
+              <li><strong>Skill Tree:</strong> 3 cabang keahlian (Database, SysAdmin, Web Dev).</li>
+              <li><strong>Guild Hall:</strong> Organisasi BEM FIKTI, UGPreneurs, GDGoC & Piagam.</li>
             </ul>
           </div>
         </div>
