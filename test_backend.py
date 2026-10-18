@@ -1,4 +1,5 @@
 import os
+import time
 from fastapi.testclient import TestClient
 from api.index import app
 from api.db import get_db
@@ -31,20 +32,21 @@ with get_db() as conn:
 print("OK: Honeypot silently dropped and not stored in DB")
 
 print("\n--- TEST 4: Guestbook Submission & Moderation ---")
-res = client.post("/api/guestbook", json={"name": "Petualang 1", "message": "Semangat praktikumnya!"})
+test_user = f"Petualang_{int(time.time())}"
+res = client.post("/api/guestbook", json={"name": test_user, "message": "Semangat praktikumnya!"})
 assert res.status_code == 200
 # Unapproved must NOT appear in public GET /api/guestbook
 res = client.get("/api/guestbook")
 assert res.status_code == 200
 entries = res.json()["entries"]
-found = any(e["name"] == "Petualang 1" for e in entries)
+found = any(e["name"] == test_user for e in entries)
 assert not found, "Unapproved message must NOT appear publicly"
-print("OK: New guestbook message is unapproved and does not appear on public board")
+print(f"OK: New guestbook message from {test_user} is unapproved and does not appear on public board")
 
 print("\n--- TEST 5: Admin approve guestbook ---")
 with get_db() as conn:
     cur = conn.cursor()
-    cur.execute("SELECT id FROM guestbook WHERE name = 'Petualang 1' AND approved = 0")
+    cur.execute(f"SELECT id FROM guestbook WHERE name = '{test_user}' AND approved = 0")
     row = cur.fetchone()
     entry_id = row[0]
 
@@ -53,20 +55,21 @@ assert res.status_code == 200
 # Now verify it DOES appear in public GET /api/guestbook
 res = client.get("/api/guestbook")
 entries = res.json()["entries"]
-found = any(e["name"] == "Petualang 1" for e in entries)
+found = any(e["name"] == test_user for e in entries)
 assert found, "Approved message MUST appear on public board"
-print("OK: Approved guestbook message now appears on public board")
+print(f"OK: Approved guestbook message from {test_user} now appears on public board")
 
-print("\n--- TEST 6: Rate Limiting (4th request in 1h rejected) ---")
-res1 = client.post("/api/contact", json={"name": "Test User", "email": "user1@example.com", "message": "Msg 1"})
-assert res1.status_code == 200
-res2 = client.post("/api/contact", json={"name": "Test User", "email": "user2@example.com", "message": "Msg 2"})
-assert res2.status_code == 200
-res3 = client.post("/api/contact", json={"name": "Test User", "email": "user3@example.com", "message": "Msg 3"})
-assert res3.status_code == 200
-# 4th request must be rejected with 429
-res4 = client.post("/api/contact", json={"name": "Test User", "email": "user4@example.com", "message": "Msg 4"})
-assert res4.status_code == 429, f"Expected 429 but got {res4.status_code}"
+print("\n--- TEST 6: Rate Limiting Enforcement ---")
+# Send 4 requests from unique test IP to test rate limiting
+headers = {"X-Forwarded-For": f"192.168.1.{int(time.time()) % 250}"}
+r1 = client.post("/api/contact", json={"name": "RateTest", "email": "r1@test.com", "message": "M1"}, headers=headers)
+assert r1.status_code == 200
+r2 = client.post("/api/contact", json={"name": "RateTest", "email": "r2@test.com", "message": "M2"}, headers=headers)
+assert r2.status_code == 200
+r3 = client.post("/api/contact", json={"name": "RateTest", "email": "r3@test.com", "message": "M3"}, headers=headers)
+assert r3.status_code == 200
+r4 = client.post("/api/contact", json={"name": "RateTest", "email": "r4@test.com", "message": "M4"}, headers=headers)
+assert r4.status_code == 429, f"Expected 429 but got {r4.status_code}"
 print("OK: Rate limiting enforced (4th attempt rejected with 429 Too Many Requests)")
 
 print("\nALL BACKEND ACCEPTANCE CRITERIA PASSED!")

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PixelButton } from '../ui/PixelButton';
 import { Panel } from '../ui/Panel';
@@ -8,8 +8,8 @@ import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 /**
  * HeroSection - Desa Awal (Starting Village)
- * Metaphor per Section 5: Mascot + RPG dialogue box with typewriter effect (30ms/char),
- * skip on click/tap, and quick action buttons.
+ * Metaphor: Mascot + RPG dialogue box with typewriter effect (30ms/char),
+ * skip on click/tap, and clear action buttons.
  */
 export function HeroSection({ onStartExplore }) {
   const reducedMotion = useReducedMotion();
@@ -55,7 +55,6 @@ export function HeroSection({ onStartExplore }) {
     if (dialogIndex < profile.bio_dialog.length - 1) {
       setDialogIndex((prev) => prev + 1);
     } else {
-      // Loop back or stay at end
       setDialogIndex(0);
     }
   };
@@ -68,7 +67,6 @@ export function HeroSection({ onStartExplore }) {
         speakerRole={profile.target}
         showBlinker={!isTyping}
         onNext={handleAdvanceDialog}
-        className="cursor-pointer"
         actions={
           <div className="flex flex-wrap items-center gap-2 pt-1" onClick={(e) => e.stopPropagation()}>
             <PixelButton
@@ -81,8 +79,8 @@ export function HeroSection({ onStartExplore }) {
             </PixelButton>
 
             <Link to="/cv">
-              <PixelButton variant="secondary" size="md">
-                Mode CV (Linear)
+              <PixelButton variant="secondary" size="md" title="Buka ringkasan CV linear untuk recruiter">
+                Mode CV (Format Dokumen)
               </PixelButton>
             </Link>
 
@@ -92,7 +90,7 @@ export function HeroSection({ onStartExplore }) {
               rel="noopener noreferrer"
             >
               <PixelButton variant="neutral" size="sm">
-                GitHub
+                GitHub &rarr;
               </PixelButton>
             </a>
 
@@ -102,31 +100,28 @@ export function HeroSection({ onStartExplore }) {
               rel="noopener noreferrer"
             >
               <PixelButton variant="neutral" size="sm">
-                LinkedIn
+                LinkedIn &rarr;
               </PixelButton>
             </a>
           </div>
         }
       >
-        <div className="min-h-[56px] select-text">
-          <p className="font-medium text-base sm:text-lg leading-relaxed">
+        <div className="min-h-[58px] select-text">
+          <p className="font-medium text-base sm:text-lg leading-relaxed text-[#24160B]">
             {displayedText}
             {isTyping && (
-              <span className="inline-block w-2 h-4 ml-1 bg-[var(--sunset)] animate-pulse" />
+              <span className="inline-block w-2 h-4 ml-1 bg-[#E8793A] animate-pulse" />
             )}
           </p>
         </div>
       </DialogBox>
 
       {/* Starting Village Info Board */}
-      <Panel
-        title="PAPAN GERBANG DESA AWAL"
-        variant="default"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm leading-relaxed">
-          <div className="space-y-2 border-b md:border-b-0 md:border-r border-[var(--ink)]/20 pb-3 md:pb-0 md:pr-4">
-            <div className="font-pixel text-sm font-bold text-[var(--sunset)]">
-              IDENTITAS PETUALANG
+      <Panel title="PAPAN GERBANG DESA AWAL" variant="default">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm leading-relaxed text-[#24160B]">
+          <div className="space-y-2 border-b md:border-b-0 md:border-r border-[#24160B]/20 pb-3 md:pb-0 md:pr-4">
+            <div className="font-pixel text-sm font-bold text-[#E8793A]">
+              PROFIL PETUALANG
             </div>
             <p>
               <strong>Nama:</strong> {profile.nama}
@@ -135,24 +130,25 @@ export function HeroSection({ onStartExplore }) {
               <strong>Institusi:</strong> {profile.kampus}
             </p>
             <p>
-              <strong>Fokus Karir:</strong> {profile.target}
+              <strong>Target Karir:</strong> {profile.target}
             </p>
-            <p className="text-[11px] text-[var(--ink)]/70">
-              *Klik kotak dialog di atas untuk membaca baris percakapan berikutnya (tekan untuk skip efek ketik).
+            <p className="text-[11px] text-[#24160B]/70 pt-1">
+              *Klik kotak dialog di atas untuk membaca baris percakapan berikutnya (tekan untuk lewati efek ketik).
             </p>
           </div>
 
           <div className="space-y-2">
-            <div className="font-pixel text-sm font-bold text-[var(--moss-dark)]">
-              PETUNJUK EKSPLORASI
+            <div className="font-pixel text-sm font-bold text-[#3B5E34]">
+              PANDUAN EKSPLORASI
             </div>
             <p>
-              Kamu sedang berada di <strong>Desa Awal</strong>. Gunakan peta dunia di atas untuk berpindah lokasi:
+              Kamu berada di <strong>Desa Awal</strong>. Pilih lokasi di navigasi peta untuk menjelajahi:
             </p>
-            <ul className="list-disc list-inside space-y-1 text-xs">
-              <li><strong>Quest Log:</strong> Proyek praktikum DBA Oracle & web solver.</li>
-              <li><strong>Skill Tree:</strong> 3 cabang keahlian Database, Linux SysAdmin, dan Web.</li>
-              <li><strong>Guild Hall:</strong> Jejak kepengurusan BEM FIKTI & UGPreneurs.</li>
+            <ul className="list-disc list-inside space-y-1.5 text-xs">
+              <li><strong>Quest Log:</strong> Laporan praktikum administrasi Oracle Database & web solver.</li>
+              <li><strong>Skill Tree:</strong> 3 cabang pohon keahlian (Database Oracle, Linux SysAdmin, Web).</li>
+              <li><strong>Guild Hall:</strong> Rekam jejak organisasi BEM FIKTI & UGPreneurs.</li>
+              <li><strong>Kotak Pos & Papan Pesan:</strong> Kirim surat kontak langsung atau tempel pesan di buku tamu.</li>
             </ul>
           </div>
         </div>

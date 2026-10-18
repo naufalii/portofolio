@@ -1,21 +1,22 @@
 /**
  * Profile Content Specification
- * Sesuai Bagian 14 PLAN.md: Agent TIDAK BOLEH mengarang bio/pengalaman/angka.
- * Semua nilai yang belum disediakan pemilik ditandai dengan 'TODO_OWNER'.
+ * Sesuai Bagian 1 & 14 PLAN.md & Catatan Revisi:
+ * Target dikunci ke "System Administrator / DBA (Oracle)".
  */
 
 export const profile = {
   nama: "Naufal Ali Hilmi",
   kampus: "Universitas Gunadarma, Sistem Informasi",
-  target: "Database Administrator and Data Engineer",
+  target: "System Administrator / DBA (Oracle)",
+  tagline: "Aspirant System Administrator & Oracle DBA • Mahasiswa Sistem Informasi Universitas Gunadarma",
   
   // 3-5 baris dialog untuk kotak dialog Hero RPG
   bio_dialog: [
     "Halo, pengelana! Saya Naufal Ali Hilmi.",
     "Mahasiswa Sistem Informasi di Universitas Gunadarma.",
-    "Fokus saya adalah Database Administration dan Data Engineering",
-    "Saya memiliki minat dalam bidang Data dan AI.",
-    "Saya berharap dapat berkontribusi dalam pengembangan sistem yang efisien dan handal."
+    "Fokus utama saya adalah Database Administration (terutama Oracle 19c/21c, RMAN, SQL/PL*SQL) dan Linux System Administration.",
+    "Saya siap berkontribusi dalam pengelolaan infrastruktur server dan basis data yang efisien, aman, dan handal.",
+    "Jelajahi peta Overworld ini untuk melihat laporan proyek praktikum, keahlian teknis, dan riwayat organisasi saya!"
   ],
 
   sosial: {
@@ -28,7 +29,7 @@ export const profile = {
     {
       id: "dba-labs",
       judul: "Database Administration Labs",
-      ringkasan: "Laboratorium administrasi basis data mencakup konfigurasi, manajemen instance, backup & recovery Oracle Database.",
+      ringkasan: "Laboratorium administrasi basis data mencakup konfigurasi, manajemen instance, backup & recovery Oracle Database menggunakan RMAN dan SQL*Plus.",
       stack: ["Oracle Database", "SQL*Plus", "RMAN", "Linux"],
       status: "Selesai",
       repo: "https://github.com/naufalii/Database-Administration-Labs",
