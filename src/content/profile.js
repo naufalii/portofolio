@@ -42,9 +42,9 @@ export const profile = {
   bio_dialog: [
     "Halo, pengelana! Saya Naufal Ali Hilmi.",
     "Mahasiswa Sistem Informasi di Universitas Gunadarma sejak 2024, IPK 3,90.",
-    "Saya lagi mendalami Oracle Database dan administrasi sistem Linux, plus bikin web yang nyaman dipakai.",
+    "Saya mendalami Oracle Database dan administrasi sistem Linux, plus bikin web yang nyaman dipakai.",
     "Proyek utama saya sekarang: lab Oracle 19c dengan Data Guard, failover, dan backup otomatis RMAN.",
-    "Di kampus saya terlibat di BEM FIKTI, UGPreneurs, dan GDGoC, dari jadi MC sampai urus logistik acara.",
+    "Di kampus saya aktif di BEM FIKTI, UGPreneurs, dan GDGoC, dari jadi MC sampai urus logistik acara.",
     "Silakan jelajahi desa ini, atau buka Mode CV kalau butuh versi ringkasnya."
   ],
 
@@ -76,12 +76,12 @@ export const profile = {
       periode: "2026",
       tipe: "Personal Project",
       ringkasan: "Website portofolio interaktif bertema Ghibli × pixel game dengan frontend React dan backend Python di Vercel.",
-      stack: ["React 18", "Tailwind CSS v4", "Vite", "Motion", "Python 3.12", "FastAPI", "PostgreSQL (Neon)"],
+      stack: ["React", "Tailwind CSS", "Vite", "Motion", "FastAPI", "Psycopg"],
       detail: [
         "Website portofolio personal interaktif bergaya game overworld 2D retro dengan canvas parallax bertema Ghibli.",
         "Dual interface: Mode Overworld eksploratif dan Mode CV linear dokumen kilat untuk recruiter.",
-        "Frontend dibangun dengan React 18, Tailwind CSS v4, dan animasi Motion.",
-        "Backend serverless Python 3.12 + FastAPI terintegrasi di folder /api dengan database PostgreSQL Neon dan hosting Vercel.",
+        "Frontend dibangun dengan React, Tailwind CSS, dan animasi Motion.",
+        "Backend serverless FastAPI terintegrasi di folder /api dengan driver Psycopg dan hosting Vercel.",
         "Fitur interaktif: siklus waktu dinamis (Siang/Sore/Malam), Web Audio ambient synthesizer, form kontak berproteksi honeypot, dan buku tamu dengan moderasi."
       ],
       repo: "https://github.com/naufalii/portofolio",
@@ -149,7 +149,8 @@ export const profile = {
         level: "",
         proof: "Dipraktikkan di proyek",
         source: "[PR1]",
-        detail: "Konfigurasi Data Guard Broker (DGMGRL) dan otomasi failover untuk ketahanan sistem."
+        catatan: "wording menunggu konfirmasi pemilik",
+        detail: "Konfigurasi Data Guard Broker (DGMGRL) dan otomasi failover untuk ketahanan sistem (wording menunggu konfirmasi pemilik)."
       },
       {
         name: "RMAN Backup",
