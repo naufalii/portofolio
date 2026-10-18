@@ -139,7 +139,7 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
             {/* Left Column: Form */}
             <div className="lg:col-span-8 space-y-4">
               <p className="text-xs lg:text-sm text-[#24160B]/80 leading-relaxed">
-                Ingin mendiskusikan peluang internship System Administrator / Oracle DBA, kolaborasi teknis, atau sekadar bertukar wawasan? Tuliskan suratmu di bawah ini:
+                Ingin mendiskusikan peluang kerja, internship, kolaborasi teknis, atau sekadar bertukar wawasan? Tuliskan suratmu di bawah ini:
               </p>
 
               <form onSubmit={handleContactSubmit} className="space-y-3.5" noValidate>
@@ -363,7 +363,7 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
           {activeTab === 'contact' && (
             <div className="space-y-4">
               <p className="text-xs text-[#24160B]/80 leading-relaxed">
-                Tuliskan pesanmu untuk mendiskusikan peluang internship System Administrator / Oracle DBA atau kolaborasi:
+                Tuliskan pesanmu untuk mendiskusikan peluang kerja, internship, atau kolaborasi teknis:
               </p>
 
               <form onSubmit={handleContactSubmit} className="space-y-3.5" noValidate>

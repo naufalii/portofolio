@@ -15,7 +15,10 @@ import { getGitHubRepos } from '../../lib/api';
 export function QuestsSection({ isMobile: isMobileProp }) {
   const { isMobile: isMobileDevice } = useDeviceType();
   const isMobile = isMobileProp !== undefined ? isMobileProp : isMobileDevice;
-  const [selectedQuestId, setSelectedQuestId] = useState(profile.quests[0]?.id || '');
+
+  // Filter out any quests marked with needsOwnerConfirm (K2)
+  const visibleQuests = profile.quests.filter((q) => !q.needsOwnerConfirm);
+  const [selectedQuestId, setSelectedQuestId] = useState(visibleQuests[0]?.id || '');
   // Mobile: closed by default per Fase 5
   const [openAccordionId, setOpenAccordionId] = useState('');
   const [liveRepos, setLiveRepos] = useState([]);
@@ -33,7 +36,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
   }, []);
 
   const selectedQuest =
-    profile.quests.find((q) => q.id === selectedQuestId) || profile.quests[0];
+    visibleQuests.find((q) => q.id === selectedQuestId) || visibleQuests[0];
 
   const toggleAccordion = (id) => {
     // Only one accordion open at a time (Fase 5)
@@ -50,7 +53,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
         {isMobile ? (
           /* Mobile: Clean Accordion (Closed by default, no nested box clutter) */
           <div className="divide-y-2 divide-[#24160B]/15 border-2 border-[#24160B] bg-[#FFFDF8]">
-            {profile.quests.map((quest) => {
+            {visibleQuests.map((quest) => {
               const isOpen = openAccordionId === quest.id;
               return (
                 <div key={quest.id} className="transition-colors">
@@ -103,6 +106,19 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                         {quest.ringkasan}
                       </p>
 
+                      {quest.detail && quest.detail.length > 0 && (
+                        <div>
+                          <div className="font-pixel text-xs text-[#3B5E34] font-bold mb-1">
+                            CAKUPAN TEKNIS & HASIL LAB:
+                          </div>
+                          <ul className="list-disc list-inside space-y-1 text-xs text-[#24160B]/90 font-body leading-relaxed">
+                            {quest.detail.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
                       <div>
                         <div className="font-pixel text-xs text-[#3B5E34] font-bold mb-1">
                           STACK TEKNOLOGI LENGKAP:
@@ -119,7 +135,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                         </div>
                       </div>
 
-                      {quest.repo && quest.repo !== 'TODO_OWNER' ? (
+                      {quest.repo ? (
                         <div className="pt-2">
                           <a
                             href={quest.repo}
@@ -135,11 +151,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                             </button>
                           </a>
                         </div>
-                      ) : (
-                        <div className="text-[11px] font-pixel text-[#24160B]/60 italic">
-                          Repositori: Menunggu input pemilik
-                        </div>
-                      )}
+                      ) : null}
                     </div>
                   )}
                 </div>
@@ -155,7 +167,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                 Pilih Misi Petualangan
               </div>
 
-              {profile.quests.map((quest) => {
+              {visibleQuests.map((quest) => {
                 const isSelected = selectedQuestId === quest.id;
                 return (
                   <button
@@ -218,6 +230,19 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                   <p className="text-[#24160B]">{selectedQuest.ringkasan}</p>
                 </div>
 
+                {selectedQuest.detail && selectedQuest.detail.length > 0 && (
+                  <div>
+                    <div className="font-pixel text-xs text-[#3B5E34] font-bold mb-1.5">
+                      CAKUPAN TEKNIS & HASIL LAB:
+                    </div>
+                    <ul className="list-disc list-inside space-y-1 text-xs text-[#24160B]/90 font-body leading-relaxed">
+                      {selectedQuest.detail.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div>
                   <div className="font-pixel text-xs text-[#3B5E34] font-bold mb-1.5">
                     STACK TEKNOLOGI:
@@ -235,7 +260,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                 </div>
 
                 <div className="pt-3 border-t-2 border-[#24160B]/15 flex items-center justify-between">
-                  {selectedQuest.repo && selectedQuest.repo !== 'TODO_OWNER' ? (
+                  {selectedQuest.repo ? (
                     <a
                       href={selectedQuest.repo}
                       target="_blank"
@@ -245,11 +270,7 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                         Buka Repositori GitHub &rarr;
                       </PixelButton>
                     </a>
-                  ) : (
-                    <span className="font-pixel text-xs text-[#24160B]/60 italic">
-                      Repositori: Menunggu input pemilik
-                    </span>
-                  )}
+                  ) : null}
 
                   <span className="text-[11px] font-pixel text-[#24160B]/60">
                     Bisa diverifikasi &bull; No AI Slop

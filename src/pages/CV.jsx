@@ -10,6 +10,8 @@ import { profile } from '../content/profile';
  * Menggunakan palet, font, dan data profile.js yang sama.
  */
 export function CVPage() {
+  const visibleQuests = profile.quests.filter((q) => !q.needsOwnerConfirm);
+
   return (
     <div className="min-h-screen bg-[var(--cream)] text-[var(--ink)] p-4 sm:p-8 font-body selection:bg-[var(--sunset)] selection:text-[var(--cloud)]">
       <div className="max-w-4xl mx-auto space-y-6">
@@ -40,10 +42,10 @@ export function CVPage() {
                   {profile.nama}
                 </h1>
                 <p className="font-pixel text-base sm:text-lg text-[var(--sunset)] mt-1 font-bold">
-                  {profile.target}
+                  {profile.tagline}
                 </p>
                 <p className="text-sm sm:text-base text-[var(--ink)]/80 mt-0.5">
-                  {profile.kampus}
+                  {profile.lokasi} &bull; {profile.kampus}
                 </p>
               </div>
 
@@ -73,30 +75,68 @@ export function CVPage() {
               <span className="w-2 h-2 bg-[var(--sunset)] inline-block" />
               LinkedIn: {profile.sosial.linkedin}
             </a>
+            <a
+              href={profile.sosial.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-pixel text-xs sm:text-sm text-[var(--moss-dark)] hover:underline flex items-center gap-1.5"
+            >
+              <span className="w-2 h-2 bg-[var(--moss)] inline-block" />
+              Portofolio Live: {profile.sosial.website}
+            </a>
           </div>
         </Panel>
 
-        {/* 2. Professional Summary */}
-        <Panel title="RINGKASAN & ASPIRASI KARIR" variant="default">
-          <p className="text-sm sm:text-base leading-relaxed">
-            Mahasiswa Sistem Informasi Universitas Gunadarma dengan dedikasi tinggi pada spesialisasi <strong>Database Administration (Oracle)</strong> dan <strong>Linux System Administration</strong>. Berpengalaman dalam pengelolaan instance Oracle, arsitektur basis data relasional, backup dan recovery menggunakan RMAN, administrasi server Linux, serta pengembangan aplikasi web berbasis API. Siap berkontribusi secara profesional dalam program internship System Administrator / Oracle DBA.
+        {/* 2. Professional Summary [SM] */}
+        <Panel title="RINGKASAN & PROFIL PROFESIONAL" variant="default">
+          <p className="text-sm sm:text-base leading-relaxed text-[var(--ink)]">
+            {profile.summary}
           </p>
         </Panel>
 
-        {/* 3. Technical Skills (3 Branches) */}
-        <Panel title="KOMPETENSI TEKNIS" variant="default">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* 3. Pendidikan [ED1] */}
+        <Panel title="PENDIDIKAN" variant="default">
+          <div className="space-y-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--ink)]/15 pb-2">
+              <h3 className="font-pixel text-base font-bold text-[var(--ink)]">
+                {profile.pendidikan.institusi}
+              </h3>
+              <span className="font-pixel text-xs text-[var(--sunset)] font-bold">
+                {profile.pendidikan.periode}
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+              <p className="font-medium text-[var(--ink)]/90">
+                {profile.pendidikan.jurusan}
+              </p>
+              <span className="font-pixel text-xs font-bold text-[var(--moss-dark)] bg-[var(--cloud)] px-2 py-0.5 border border-[var(--ink)]/30">
+                IPK: {profile.pendidikan.ipk}
+              </span>
+            </div>
+          </div>
+        </Panel>
+
+        {/* 4. Technical Skills (Tanpa persentase karangan, berbasis label bukti) */}
+        <Panel title="KOMPETENSI KEAHLIAN (SKILLS)" variant="default">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Database Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--sunset)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+              <h3 className="font-pixel text-xs font-bold text-[var(--sunset)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
                 DATABASE & ORACLE DBA
               </h3>
               <div className="space-y-2">
                 {profile.skillTree.database.map((s, i) => (
                   <div key={i} className="text-xs">
-                    <div className="flex justify-between font-pixel">
-                      <span>{s.name}</span>
-                      <span className="font-bold text-[var(--moss-dark)]">{s.level}%</span>
+                    <div className="flex items-center justify-between font-pixel gap-1">
+                      <span className="font-bold truncate">{s.name}</span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>
@@ -106,15 +146,22 @@ export function CVPage() {
 
             {/* Linux SysAdmin Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--moss-dark)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+              <h3 className="font-pixel text-xs font-bold text-[var(--moss-dark)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
                 LINUX & SYSADMIN
               </h3>
               <div className="space-y-2">
                 {profile.skillTree.sysAdmin.map((s, i) => (
                   <div key={i} className="text-xs">
-                    <div className="flex justify-between font-pixel">
-                      <span>{s.name}</span>
-                      <span className="font-bold text-[var(--moss-dark)]">{s.level}%</span>
+                    <div className="flex items-center justify-between font-pixel gap-1">
+                      <span className="font-bold truncate">{s.name}</span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>
@@ -124,15 +171,47 @@ export function CVPage() {
 
             {/* Web Dev Branch */}
             <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
-              <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--ink)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
-                WEB & DEVOPS DASAR
+              <h3 className="font-pixel text-xs font-bold text-[var(--ink)] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+                WEB DEVELOPMENT & CMS
               </h3>
               <div className="space-y-2">
                 {profile.skillTree.webDev.map((s, i) => (
                   <div key={i} className="text-xs">
-                    <div className="flex justify-between font-pixel">
-                      <span>{s.name}</span>
-                      <span className="font-bold text-[var(--moss-dark)]">{s.level}%</span>
+                    <div className="flex items-center justify-between font-pixel gap-1">
+                      <span className="font-bold truncate">{s.name}</span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Soft Skills & Tools Branch */}
+            <div className="border-2 border-[var(--ink)] bg-[var(--cloud)] p-3.5 shadow-[2px_2px_0_var(--ink)]">
+              <h3 className="font-pixel text-xs font-bold text-[#E8793A] border-b-2 border-[var(--ink)] pb-1 mb-2.5">
+                SOFT SKILLS & ALAT KERJA
+              </h3>
+              <div className="space-y-2">
+                {profile.skillTree.softSkills.map((s, i) => (
+                  <div key={i} className="text-xs">
+                    <div className="flex items-center justify-between font-pixel gap-1">
+                      <span className="font-bold truncate">{s.name}</span>
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        {s.level ? (
+                          <span className="text-[10px] text-[var(--moss-dark)] font-bold">{s.level}</span>
+                        ) : null}
+                        <span className="text-[10px] text-[var(--moss-dark)] bg-[var(--cream)] px-1.5 py-0.5 border border-[var(--ink)]/30 whitespace-nowrap">
+                          {s.proof}
+                        </span>
+                      </div>
                     </div>
                     <p className="text-[11px] text-[var(--ink)]/70 mt-0.5 line-clamp-1">{s.detail}</p>
                   </div>
@@ -142,10 +221,10 @@ export function CVPage() {
           </div>
         </Panel>
 
-        {/* 4. Projects & Quests */}
-        <Panel title="PENGALAMAN PROYEK & PRAKTIKUM" variant="default">
-          <div className="space-y-4">
-            {profile.quests.map((quest) => (
+        {/* 5. Projects & Quests [PR1], [PR2] */}
+        <Panel title="PENGALAMAN PROYEK & LAB" variant="default">
+          <div className="space-y-5">
+            {visibleQuests.map((quest) => (
               <div
                 key={quest.id}
                 className="border-b-2 border-[var(--ink)]/15 pb-4 last:border-b-0 last:pb-0"
@@ -154,14 +233,27 @@ export function CVPage() {
                   <h3 className="font-pixel text-base sm:text-lg font-bold text-[var(--ink)]">
                     {quest.judul}
                   </h3>
-                  <span className="text-[10px] font-pixel px-2 py-0.5 bg-[var(--moss)] text-[var(--cloud)] border border-[var(--ink)]">
-                    {quest.status}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-pixel px-2 py-0.5 bg-[var(--cream)] text-[var(--ink)] border border-[var(--ink)]">
+                      {quest.periode}
+                    </span>
+                    <span className="text-[10px] font-pixel px-2 py-0.5 bg-[var(--moss)] text-[var(--cloud)] border border-[var(--ink)]">
+                      {quest.status}
+                    </span>
+                  </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-[var(--ink)] leading-relaxed mb-2">
                   {quest.ringkasan}
                 </p>
+
+                {quest.detail && quest.detail.length > 0 && (
+                  <ul className="list-disc list-inside space-y-1 text-xs text-[var(--ink)]/90 mb-2">
+                    {quest.detail.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="flex flex-wrap items-center gap-1.5 mb-2">
                   <span className="font-pixel text-[11px] text-[var(--ink)]/70 mr-1">Stack:</span>
@@ -175,14 +267,25 @@ export function CVPage() {
                   ))}
                 </div>
 
-                {quest.repo && quest.repo !== 'TODO_OWNER' && (
+                {quest.repo && (
                   <a
                     href={quest.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block font-pixel text-xs text-[var(--sunset)] hover:underline"
+                    className="inline-block font-pixel text-xs text-[var(--sunset)] hover:underline mr-4"
                   >
                     Tautan Repositori GitHub &rarr;
+                  </a>
+                )}
+
+                {quest.demo && (
+                  <a
+                    href={quest.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block font-pixel text-xs text-[var(--moss-dark)] hover:underline"
+                  >
+                    Tautan Demo Live &rarr;
                   </a>
                 )}
               </div>
@@ -190,7 +293,7 @@ export function CVPage() {
           </div>
         </Panel>
 
-        {/* 5. Organizations */}
+        {/* 6. Organizations [EX1]-[EX3] */}
         <Panel title="PENGALAMAN ORGANISASI" variant="default">
           <div className="space-y-4">
             {profile.organisasi.map((org) => (
@@ -209,9 +312,57 @@ export function CVPage() {
                 <p className="font-pixel text-xs text-[var(--moss-dark)] font-bold mb-1">
                   Peran: {org.peran}
                 </p>
-                <p className="text-xs sm:text-sm text-[var(--ink)]/90 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[var(--ink)]/90 leading-relaxed mb-1.5">
                   {org.deskripsi}
                 </p>
+                {org.poin && org.poin.length > 0 && (
+                  <ul className="list-disc list-inside space-y-1 text-xs text-[var(--ink)]/80">
+                    {org.poin.map((p, idx) => (
+                      <li key={idx}>{p}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </Panel>
+
+        {/* 7. Piagam & Sertifikat [CE1]-[CE5] */}
+        <Panel title="PIAGAM & SERTIFIKASI" variant="default">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {profile.sertifikat.map((cert) => (
+              <div
+                key={cert.id}
+                className="border border-[var(--ink)]/30 bg-[var(--cloud)] p-3 shadow-[1px_1px_0_var(--ink)] flex flex-col justify-between"
+              >
+                <div>
+                  <h4 className="font-pixel text-xs font-bold text-[var(--ink)] mb-1">
+                    {cert.judul}
+                  </h4>
+                  <p className="text-xs font-body text-[#3B5E34]">
+                    {cert.penerbit}
+                  </p>
+                </div>
+                <div className="pt-2 mt-2 border-t border-[var(--ink)]/10 text-right">
+                  <span className="font-pixel text-[10px] px-1.5 py-0.5 bg-[var(--cream)] border border-[var(--ink)]/30">
+                    Tahun {cert.tahun}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Panel>
+
+        {/* 8. Kemampuan Bahasa [LG] */}
+        <Panel title="KEMAMPUAN BAHASA" variant="default">
+          <div className="flex flex-wrap gap-4 text-xs font-pixel">
+            {profile.bahasa.map((b, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 bg-[var(--cloud)] border border-[var(--ink)]/30 px-3 py-1.5 shadow-[1px_1px_0_var(--ink)]"
+              >
+                <span className="font-bold text-[var(--ink)]">{b.nama}:</span>
+                <span className="text-[var(--sunset)] font-bold">{b.level}</span>
               </div>
             ))}
           </div>
