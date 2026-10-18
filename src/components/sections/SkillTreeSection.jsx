@@ -50,12 +50,6 @@ export function SkillTreeSection({ isMobile = false }) {
   return (
     <div className="space-y-4 max-w-5xl mx-auto">
       <Panel title="SKILL TREE (AKADEMI KEAHLIAN TEKNIS)" icon="⚡" variant="default">
-        <p className="text-xs lg:text-sm text-[#24160B]/80 mb-4 leading-relaxed">
-          {isMobile
-            ? 'Keahlian teknis Naufal Ali Hilmi yang dipetakan ke 3 cabang kemampuan. Ketuk simpul skill untuk melihat cakupan kompetensi praktikum.'
-            : 'Visualisasi keahlian Naufal Ali Hilmi yang dipetakan ke dalam 3 cabang pohon kemampuan. Klik atau hover pada simpul skill untuk melihat rincian kompetensi teknis.'}
-        </p>
-
         {isMobile ? (
           /* Mobile View (Fase 6): 3 Tabs + Accordion per Node */
           <>

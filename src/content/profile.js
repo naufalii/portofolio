@@ -11,8 +11,8 @@
 export const profile = {
   // [ID] Identitas
   nama: "Naufal Ali Hilmi",
-  tagline: "Junior DBA | System Administrator | Web Developer",
-  target: "Junior DBA | System Administrator | Web Developer",
+  tagline: "Junior DBA | Data Engineer | Web Developer",
+  target: "Junior DBA | Data Engineer | Web Developer",
   lokasi: "Depok, Indonesia",
   kampus: "Universitas Gunadarma, Sistem Informasi",
 
@@ -343,30 +343,36 @@ export const profile = {
   sertifikat: [
     {
       id: "ce-1",
+      judul: "Oracle AI Database Certified Foundations Associate",
+      penerbit: "Oracle",
+      tahun: "2026"
+    },
+    {
+      id: "ce-2",
       judul: "Build a Free Website with WordPress",
       penerbit: "Coursera",
       tahun: "2025"
     },
     {
-      id: "ce-2",
+      id: "ce-3",
       judul: "The AI Ignition Training: From Basics to Breakthroughs in AI",
       penerbit: "KUMPUL",
       tahun: "2025"
     },
     {
-      id: "ce-3",
+      id: "ce-4",
       judul: "FIKTI Learning 2025 Bootcamp \"Exploring the Data Universe: Hands-On Learning for Beginners\"",
       penerbit: "BEM FIKTI Universitas Gunadarma",
       tahun: "2025"
     },
     {
-      id: "ce-4",
+      id: "ce-5",
       judul: "Master of Ceremony in Workshop TechnoFair 12.0",
       penerbit: "BEM FIKTI Universitas Gunadarma",
       tahun: "2025"
     },
     {
-      id: "ce-5",
+      id: "ce-6",
       judul: "Bootcamp Excel",
       penerbit: "Zennit.id",
       tahun: "2024"

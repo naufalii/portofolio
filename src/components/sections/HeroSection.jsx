@@ -91,7 +91,7 @@ export function HeroSection({ onStartExplore }) {
                   size="md"
                   title="Buka ringkasan CV linear untuk recruiter"
                 >
-                  Mode CV (Format Dokumen)
+                  Mode CV &rarr;
                 </PixelButton>
               </Link>
 
@@ -199,9 +199,6 @@ export function HeroSection({ onStartExplore }) {
             </p>
             <p className="hidden lg:block">
               <strong>Fokus Karir:</strong> {profile.target}
-            </p>
-            <p className="text-[11px] text-[#24160B]/70 pt-1">
-              *Klik kotak dialog di atas untuk membaca baris percakapan berikutnya (tekan untuk lewati efek ketik).
             </p>
           </div>
 

@@ -271,10 +271,6 @@ export function QuestsSection({ isMobile: isMobileProp }) {
                       </PixelButton>
                     </a>
                   ) : null}
-
-                  <span className="text-[11px] font-pixel text-[#24160B]/60">
-                    Bisa diverifikasi &bull; No AI Slop
-                  </span>
                 </div>
               </div>
             </div>

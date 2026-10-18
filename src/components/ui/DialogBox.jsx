@@ -15,7 +15,7 @@ import React from 'react';
  */
 export function DialogBox({
   speaker = 'Naufal Ali Hilmi',
-  speakerRole = 'Junior DBA | System Administrator | Web Developer',
+  speakerRole = 'Junior DBA | Data Engineer | Web Developer',
   children,
   actions,
   showBlinker = true,
@@ -51,10 +51,6 @@ export function DialogBox({
                 </span>
               )}
             </div>
-
-            <span className="text-[11px] font-pixel text-[#24160B]/60 hidden lg:inline flex-shrink-0 ml-2">
-              *Klik kotak untuk memajukan dialog
-            </span>
           </div>
         )}
 
