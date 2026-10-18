@@ -1,0 +1,28 @@
+:root {
+  /* Ghibli x Pixel Palette - Section 4.1 */
+  --cream: #F6EBD3;
+  --cloud: #FFFFFF;
+  --sky-day: #8FC6E8;
+  --sky-dusk: #F2A66B;
+  --sky-night: #1F2A44;
+  --moss: #5E8B4A;
+  --moss-dark: #3B5E34;
+  --sunset: #E8793A;
+  --ink: #3A2A1E;
+
+  /* Typography */
+  --font-pixel: 'Pixelify Sans', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* Pixel UI kit theming tokens (--retro-*) */
+  --retro-primary: var(--moss);
+  --retro-primary-hover: var(--moss-dark);
+  --retro-secondary: var(--sunset);
+  --retro-background: var(--cream);
+  --retro-foreground: var(--ink);
+  --retro-border: var(--ink);
+  --retro-shadow: var(--ink);
+
+  /* Spacing unit base: 4px */
+  --pixel-unit: 4px;
+}
