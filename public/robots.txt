@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://naufalalihilmi.vercel.app/sitemap.xml
+Sitemap: https://portofolio-naufalalihilmi.vercel.app/sitemap.xml

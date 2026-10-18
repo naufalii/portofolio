@@ -11,8 +11,8 @@
 export const profile = {
   // [ID] Identitas
   nama: "Naufal Ali Hilmi",
-  tagline: "Junior DBA | Data Engineer | Web Developer",
-  target: "Junior DBA | Data Engineer | Web Developer",
+  tagline: "Junior DBA | System Administrator | Web Developer",
+  target: "Junior DBA | System Administrator | Web Developer",
   lokasi: "Depok, Indonesia",
   kampus: "Universitas Gunadarma, Sistem Informasi",
 
@@ -88,7 +88,8 @@ export const profile = {
       demo: "https://portofolio-naufalalihilmi.vercel.app/",
       needsOwnerConfirm: false,
     },
-    {
+    // K2: Belum diputuskan pemilik; disembunyikan dari render publik sampai konfirmasi
+    ...(false ? [{
       id: "simplex-solver",
       judul: "Simplex Solver",
       status: "Dalam Pengembangan",
@@ -101,9 +102,8 @@ export const profile = {
       ],
       repo: null,
       demo: null,
-      // K2: Belum diputuskan pemilik; disembunyikan dari render publik
       needsOwnerConfirm: true,
-    }
+    }] : [])
   ],
 
   // 3 Cabang Skill Tree (Tanpa angka persentase karangan, dilengkapi label bukti Bagian 5)
