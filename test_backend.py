@@ -33,7 +33,8 @@ print("OK: Honeypot silently dropped and not stored in DB")
 
 print("\n--- TEST 4: Guestbook Submission & Moderation ---")
 test_user = f"Petualang_{int(time.time())}"
-res = client.post("/api/guestbook", json={"name": test_user, "message": "Semangat praktikumnya!"})
+unique_ip = f"10.0.0.{int(time.time()) % 250}"
+res = client.post("/api/guestbook", json={"name": test_user, "message": "Semangat praktikumnya!"}, headers={"X-Forwarded-For": unique_ip})
 assert res.status_code == 200
 # Unapproved must NOT appear in public GET /api/guestbook
 res = client.get("/api/guestbook")
