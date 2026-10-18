@@ -66,17 +66,17 @@ export function HomePage() {
         isMobile={isMobile}
       />
 
-      {/* 2. Unified Top Bar (Fixes Point 4: Single elegant, spacious header bar) */}
-      <header className="relative z-30 w-full p-2.5 sm:p-4">
-        <div className="w-full max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 border-4 border-[#24160B] bg-[#F6EBD3] px-3.5 sm:px-5 py-2.5 shadow-[4px_4px_0_#24160B]">
-          {/* Left: Identity */}
-          <div className="flex items-center gap-2.5">
-            <span className="w-3.5 h-3.5 bg-[#5E8B4A] border-2 border-[#24160B] inline-block shadow-[1px_1px_0_#24160B]" />
-            <div>
-              <span className="font-pixel text-base sm:text-lg font-bold tracking-wider block leading-tight text-[#24160B]">
+      {/* 2. Unified Top Bar (Fase 1: Sticky 56px on mobile with safe-area-inset-top) */}
+      <header className="sticky top-0 z-40 w-full bg-[var(--cream)] border-b-4 border-[#24160B] shadow-[0_3px_0_#24160B] pt-[env(safe-area-inset-top)]">
+        <div className="w-full max-w-6xl mx-auto h-[56px] px-3 sm:px-5 flex items-center justify-between gap-2">
+          {/* Left: Identity (single line, truncated if long) */}
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="w-3.5 h-3.5 bg-[#5E8B4A] border-2 border-[#24160B] inline-block shadow-[1px_1px_0_#24160B] flex-shrink-0" />
+            <div className="min-w-0">
+              <span className="font-pixel text-base sm:text-lg font-bold tracking-wider block leading-tight text-[#24160B] truncate">
                 {profile.nama}
               </span>
-              <span className="font-body text-[11px] sm:text-xs text-[#3B5E34] font-bold block">
+              <span className="font-body text-[11px] sm:text-xs text-[#3B5E34] font-bold hidden lg:block truncate">
                 {profile.target}
               </span>
             </div>
@@ -94,7 +94,7 @@ export function HomePage() {
           )}
 
           {/* Right: Quick Tools (Audio, Time Phase, Mode CV) */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <AudioPlayer />
 
             <DayNightIndicator
@@ -104,9 +104,15 @@ export function HomePage() {
             />
 
             <Link to="/cv">
-              <PixelButton variant="secondary" size="sm" title="Lihat sebagai dokumen CV linear standar">
-                MODE CV
-              </PixelButton>
+              <button
+                type="button"
+                className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1.5 border-2 border-[#24160B] bg-[#E8793A] text-white shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none font-pixel text-xs sm:text-sm font-bold cursor-pointer"
+                title="Buka Mode CV (Lihat ringkasan dokumen linear)"
+                aria-label="Mode CV (Lihat sebagai dokumen linear)"
+              >
+                <span className="sm:hidden">CV</span>
+                <span className="hidden sm:inline">MODE CV</span>
+              </button>
             </Link>
           </div>
         </div>
@@ -118,7 +124,7 @@ export function HomePage() {
           <div className="pointer-events-auto">
             <Sprite
               animation={isTraveling ? 'walk' : 'idle'}
-              scale={2.2}
+              scale={isMobile ? 'responsive' : 2.2}
               flip={travelDir}
               onWave={() => {}}
             />
@@ -129,24 +135,32 @@ export function HomePage() {
             <span>{currentLocationMeta.icon}</span>
             <span>Lokasi: {currentLocationMeta.name}</span>
           </div>
+
+          {/* Role Subtitle: Full-width clean text below mascot without form-like box (Fase 1) */}
+          <div className="text-center w-full px-4 mt-2 font-pixel text-xs sm:text-sm text-[#3B5E34] font-bold tracking-wider select-text">
+            {profile.target}
+          </div>
         </div>
       </div>
 
       {/* 4. Overworld Sections (Desktop: Horizontal Stage, Mobile: Vertical Scroll) */}
       <main className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 sm:py-5 flex flex-col justify-center overflow-visible">
         {isMobile ? (
-          // Mobile: Vertical flow of sections
-          <div className="space-y-10 pb-24">
+          // Mobile: Vertical flow of sections with safe-area clearance (Fase 3 & 4)
+          <div className="space-y-8 pb-[calc(6rem+env(safe-area-inset-bottom))]">
             {LOCATIONS.map((loc) => (
               <section
                 key={loc.id}
                 id={`section-${loc.id}`}
-                className="scroll-mt-6"
+                className="scroll-mt-16"
               >
-                <div className="mb-2 font-pixel text-xs font-bold text-[#24160B]/80 uppercase flex items-center gap-1.5">
-                  <span>{loc.icon}</span>
-                  <span>LOKASI: {loc.name.toUpperCase()}</span>
-                </div>
+                {/* Deduplicate hero location tag (Fase 2) */}
+                {loc.id !== 'hero' && (
+                  <div className="mb-2 font-pixel text-xs font-bold text-[#24160B]/80 uppercase flex items-center gap-1.5">
+                    <span>{loc.icon}</span>
+                    <span>LOKASI: {loc.name.toUpperCase()}</span>
+                  </div>
+                )}
                 <LocationSectionContent
                   locId={loc.id}
                   onStartExplore={() => handleSelectLocation('quests')}
@@ -221,10 +235,10 @@ function LocationSectionContent({ locId, onStartExplore }) {
       return <GuildSection />;
 
     case 'contact':
-      return <ContactSection />;
+      return <ContactSection defaultTab="contact" />;
 
     case 'guestbook':
-      return <GuestbookSection />;
+      return <ContactSection defaultTab="guestbook" />;
 
     default:
       return null;

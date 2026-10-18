@@ -8,8 +8,12 @@ import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 /**
  * HeroSection - Desa Awal (Starting Village)
- * Metaphor: Mascot + RPG dialogue box with typewriter effect (30ms/char),
- * skip on click/tap, and clear action buttons.
+ * Implements Mobile Fix Fase 2:
+ * - Single-line name header
+ * - Full-width 48px CTA buttons with 12px spacing
+ * - Mode CV button with subtext "Tampilan halaman biasa"
+ * - 2-column grid for GitHub and LinkedIn on >=360px
+ * - Interactive LANJUT button with arrow icon
  */
 export function HeroSection({ onStartExplore }) {
   const reducedMotion = useReducedMotion();
@@ -38,20 +42,18 @@ export function HeroSection({ onStartExplore }) {
         clearInterval(interval);
         setIsTyping(false);
       }
-    }, 30); // 30ms/char per Section 5
+    }, 30);
 
     return () => clearInterval(interval);
   }, [dialogIndex, currentFullText, reducedMotion]);
 
   const handleAdvanceDialog = () => {
-    // If currently typing, skip immediately to full text
     if (isTyping) {
       setDisplayedText(currentFullText);
       setIsTyping(false);
       return;
     }
 
-    // Otherwise advance to next dialog line
     if (dialogIndex < profile.bio_dialog.length - 1) {
       setDialogIndex((prev) => prev + 1);
     } else {
@@ -60,53 +62,76 @@ export function HeroSection({ onStartExplore }) {
   };
 
   return (
-    <div className="space-y-6 max-w-4xl mx-auto">
+    <div className="space-y-5 max-w-4xl mx-auto">
       {/* RPG Dialogue Box */}
       <DialogBox
         speaker={profile.nama}
-        speakerRole={profile.target}
         showBlinker={!isTyping}
         onNext={handleAdvanceDialog}
         actions={
-          <div className="flex flex-wrap items-center gap-2 pt-1" onClick={(e) => e.stopPropagation()}>
-            <PixelButton
-              variant="primary"
-              size="md"
+          <div
+            className="flex flex-col gap-3 w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CTA 1: Mulai Jelajah (Full Width, 48px height) */}
+            <button
+              type="button"
               onClick={onStartExplore}
+              className="w-full flex items-center justify-center min-h-[48px] px-4 py-2 border-3 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm sm:text-base font-bold tracking-wider shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer"
               aria-label="Mulai jelajahi quest log"
             >
               Mulai Jelajah &rarr;
-            </PixelButton>
+            </button>
 
-            <Link to="/cv">
-              <PixelButton variant="secondary" size="md" title="Buka ringkasan CV linear untuk recruiter">
-                Mode CV (Format Dokumen)
-              </PixelButton>
+            {/* CTA 2: Mode CV (Full Width, 48px height, with subtext) */}
+            <Link to="/cv" className="w-full block">
+              <button
+                type="button"
+                className="w-full flex flex-col items-center justify-center min-h-[48px] px-4 py-1.5 border-3 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center"
+              >
+                <span className="text-sm sm:text-base font-bold leading-tight tracking-wider">
+                  Mode CV
+                </span>
+                <span className="text-[11px] font-body text-white/90 leading-none">
+                  Tampilan halaman biasa (dokumen linear)
+                </span>
+              </button>
             </Link>
 
-            <a
-              href={profile.sosial.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <PixelButton variant="neutral" size="sm">
-                GitHub &rarr;
-              </PixelButton>
-            </a>
+            {/* CTA 3 & 4: GitHub & LinkedIn (2 Columns on >=360px, min-h 48px) */}
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <a
+                href={profile.sosial.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block"
+              >
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-center min-h-[48px] px-2 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs sm:text-sm font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3]"
+                >
+                  GitHub &rarr;
+                </button>
+              </a>
 
-            <a
-              href={profile.sosial.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <PixelButton variant="neutral" size="sm">
-                LinkedIn &rarr;
-              </PixelButton>
-            </a>
+              <a
+                href={profile.sosial.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block"
+              >
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-center min-h-[48px] px-2 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs sm:text-sm font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3]"
+                >
+                  LinkedIn &rarr;
+                </button>
+              </a>
+            </div>
           </div>
         }
       >
-        <div className="min-h-[58px] select-text">
+        <div className="select-text">
           <p className="font-medium text-base sm:text-lg leading-relaxed text-[#24160B]">
             {displayedText}
             {isTyping && (
@@ -118,8 +143,8 @@ export function HeroSection({ onStartExplore }) {
 
       {/* Starting Village Info Board */}
       <Panel title="PAPAN GERBANG DESA AWAL" variant="default">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm leading-relaxed text-[#24160B]">
-          <div className="space-y-2 border-b md:border-b-0 md:border-r border-[#24160B]/20 pb-3 md:pb-0 md:pr-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm leading-relaxed text-[#24160B]">
+          <div className="space-y-1.5 border-b md:border-b-0 md:border-r border-[#24160B]/20 pb-3 md:pb-0 md:pr-4">
             <div className="font-pixel text-sm font-bold text-[#E8793A]">
               PROFIL PETUALANG
             </div>
@@ -129,26 +154,22 @@ export function HeroSection({ onStartExplore }) {
             <p>
               <strong>Institusi:</strong> {profile.kampus}
             </p>
-            <p>
-              <strong>Target Karir:</strong> {profile.target}
-            </p>
             <p className="text-[11px] text-[#24160B]/70 pt-1">
               *Klik kotak dialog di atas untuk membaca baris percakapan berikutnya (tekan untuk lewati efek ketik).
             </p>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <div className="font-pixel text-sm font-bold text-[#3B5E34]">
               PANDUAN EKSPLORASI
             </div>
             <p>
-              Kamu berada di <strong>Desa Awal</strong>. Pilih lokasi di navigasi peta untuk menjelajahi:
+              Gunakan peta navigasi di bawah untuk menjelajahi seluruh area:
             </p>
-            <ul className="list-disc list-inside space-y-1.5 text-xs">
-              <li><strong>Quest Log:</strong> Laporan praktikum administrasi Oracle Database & web solver.</li>
-              <li><strong>Skill Tree:</strong> 3 cabang pohon keahlian (Database Oracle, Linux SysAdmin, Web).</li>
-              <li><strong>Guild Hall:</strong> Rekam jejak organisasi BEM FIKTI & UGPreneurs.</li>
-              <li><strong>Kotak Pos & Papan Pesan:</strong> Kirim surat kontak langsung atau tempel pesan di buku tamu.</li>
+            <ul className="list-disc list-inside space-y-1 text-xs">
+              <li><strong>Quest Log:</strong> Praktikum Oracle Database & web solver.</li>
+              <li><strong>Skill Tree:</strong> 3 cabang keahlian (DBA, Linux, Web).</li>
+              <li><strong>Guild Hall:</strong> Organisasi BEM FIKTI & UGPreneurs.</li>
             </ul>
           </div>
         </div>

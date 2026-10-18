@@ -146,8 +146,8 @@ export function Sprite({
     <div
       className={`relative inline-flex flex-col items-center select-none cursor-pointer transition-transform duration-100 ${className}`}
       style={{
-        width: `${pixelSize}px`,
-        height: `${pixelSize}px`,
+        width: scale === 'responsive' ? 'clamp(96px, 28vw, 140px)' : `${pixelSize}px`,
+        height: scale === 'responsive' ? 'clamp(96px, 28vw, 140px)' : `${pixelSize}px`,
         transform: flip ? 'scaleX(-1)' : 'none',
       }}
       role="img"
@@ -158,8 +158,8 @@ export function Sprite({
       title="Klik atau hover untuk berinteraksi dengan maskot petualang!"
     >
       <svg
-        width={pixelSize}
-        height={pixelSize}
+        width="100%"
+        height="100%"
         viewBox="0 0 48 48"
         className="pixelated overflow-visible"
         shapeRendering="crispEdges"

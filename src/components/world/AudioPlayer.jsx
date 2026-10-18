@@ -3,10 +3,10 @@ import storage from '../../lib/storage';
 
 /**
  * AudioPlayer - Retro sound effects & ambient breeze generator using Web Audio API.
- * Follows Section 7.4:
+ * Follows Section 7.4 & Mobile Fix Fase 1:
  * - Default status: OFF
- * - Stored in localStorage with try/catch
- * - Generates gentle ambient wind and UI click chiptunes
+ * - Minimum 44x44px tap target
+ * - aria-pressed attribute for accessibility
  */
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(() =>
@@ -49,7 +49,6 @@ export function AudioPlayer() {
       const ctx = getAudioContext();
       if (!ctx) return;
 
-      // Create pink noise buffer for gentle wind
       const bufferSize = ctx.sampleRate * 2;
       const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const output = noiseBuffer.getChannelData(0);
@@ -71,7 +70,6 @@ export function AudioPlayer() {
       whiteNoise.buffer = noiseBuffer;
       whiteNoise.loop = true;
 
-      // Lowpass filter for muffled wind
       const filter = ctx.createBiquadFilter();
       filter.type = 'lowpass';
       filter.frequency.setValueAtTime(320, ctx.currentTime);
@@ -129,7 +127,6 @@ export function AudioPlayer() {
     }
   };
 
-  // Expose global click audio listener when audio is on
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -157,13 +154,14 @@ export function AudioPlayer() {
     <button
       type="button"
       onClick={toggleAudio}
-      className="flex items-center gap-1.5 px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] font-pixel text-xs shadow-[2px_2px_0_var(--ink)] active:translate-y-[1px] active:shadow-none cursor-pointer"
+      aria-pressed={isPlaying}
+      className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] font-pixel text-xs shadow-[2px_2px_0_var(--ink)] active:translate-y-[1px] active:shadow-none cursor-pointer"
       title={isPlaying ? 'Matikan Suara Ambience' : 'Nyalakan Suara Ambience'}
       aria-label={isPlaying ? 'Audio aktif. Klik untuk mematikan.' : 'Audio nonaktif. Klik untuk menyalakan.'}
     >
-      <span>{isPlaying ? '🔊' : '🔇'}</span>
-      <span className="hidden sm:inline font-bold">
-        {isPlaying ? 'AUDIO ON' : 'AUDIO OFF'}
+      <span className="text-base sm:text-lg leading-none">{isPlaying ? '🔊' : '🔇'}</span>
+      <span className="hidden lg:inline ml-1 font-bold">
+        {isPlaying ? 'ON' : 'OFF'}
       </span>
     </button>
   );

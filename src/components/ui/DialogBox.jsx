@@ -1,19 +1,20 @@
 import React from 'react';
 
 /**
- * DialogBox - RPG style dialogue box with character nameplate.
- * Fixes Bug 1.a: Integrated nameplate with proper top clearance to prevent clipping.
- * Contrast enhanced: #24160B on #FFFDF7 (contrast ratio > 12:1).
+ * DialogBox - RPG style dialogue box.
+ * Follows Mobile Fix Fase 2:
+ * - Single-line name header (no role clutter in header)
+ * - min-height: auto with clean 16px padding
+ * - Interactive LANJUT button with arrow icon (min 44x44px tap area)
+ * - High contrast 16-18px body text
  *
  * @param {string} speaker - Nameplate speaker label
- * @param {string} speakerRole - Subtitle role for speaker
- * @param {React.ReactNode} actions - Optional action buttons at the bottom
+ * @param {React.ReactNode} actions - Action buttons at the bottom
  * @param {boolean} showBlinker - Blinking indicator when dialogue is waiting
  * @param {() => void} onNext - Trigger on next dialogue or click
  */
 export function DialogBox({
   speaker = 'Naufal Ali Hilmi',
-  speakerRole = 'System Administrator / Oracle DBA Aspirant',
   children,
   actions,
   showBlinker = true,
@@ -21,63 +22,60 @@ export function DialogBox({
   className = '',
 }) {
   return (
-    <div className={`relative pt-4 w-full select-text ${className}`}>
+    <div className={`relative w-full select-text ${className}`}>
       {/* Outer Border & Box */}
       <div
-        className="relative w-full border-4 border-[#24160B] bg-[#FFFDF8] shadow-[4px_4px_0_#24160B] cursor-pointer"
+        className="relative w-full border-3 sm:border-4 border-[#24160B] bg-[#FFFDF8] shadow-[3px_3px_0_#24160B] sm:shadow-[4px_4px_0_#24160B]"
         role="region"
         aria-label={`Dialog dari ${speaker}`}
-        onClick={onNext}
       >
         {/* Corner Pixel Accents */}
-        <div className="absolute -top-[4px] -left-[4px] w-2 h-2 bg-[#24160B]" />
-        <div className="absolute -top-[4px] -right-[4px] w-2 h-2 bg-[#24160B]" />
-        <div className="absolute -bottom-[4px] -left-[4px] w-2 h-2 bg-[#24160B]" />
-        <div className="absolute -bottom-[4px] -right-[4px] w-2 h-2 bg-[#24160B]" />
+        <div className="absolute -top-[3px] -left-[3px] w-2 h-2 bg-[#24160B]" />
+        <div className="absolute -top-[3px] -right-[3px] w-2 h-2 bg-[#24160B]" />
+        <div className="absolute -bottom-[3px] -left-[3px] w-2 h-2 bg-[#24160B]" />
+        <div className="absolute -bottom-[3px] -right-[3px] w-2 h-2 bg-[#24160B]" />
 
-        {/* Integrated Speaker Nameplate Bar (Prevents any clipping issues) */}
+        {/* Integrated Speaker Nameplate Bar: Nama saja, satu baris (Fase 2) */}
         {speaker && (
-          <div className="flex flex-wrap items-center justify-between border-b-4 border-[#24160B] bg-[#F6EBD3] px-4 py-2 select-none">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-[#E8793A] border-2 border-[#24160B] inline-block shadow-[1px_1px_0_#24160B]" />
-              <span className="font-pixel text-sm sm:text-base font-bold text-[#24160B] tracking-wider">
+          <div className="flex items-center justify-between border-b-3 sm:border-b-4 border-[#24160B] bg-[#F6EBD3] px-3.5 sm:px-4 py-2 select-none">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2.5 h-2.5 bg-[#E8793A] border border-[#24160B] inline-block shadow-[1px_1px_0_#24160B] flex-shrink-0" />
+              <span className="font-pixel text-base sm:text-lg font-bold text-[#24160B] tracking-wider truncate">
                 {speaker}
               </span>
-              {speakerRole && (
-                <span className="font-body text-xs sm:text-sm text-[#3B5E34] font-bold bg-[#FFFDF8] border border-[#24160B]/40 px-2 py-0.5 shadow-[1px_1px_0_#24160B]">
-                  {speakerRole}
-                </span>
-              )}
             </div>
 
-            <span className="text-[11px] font-pixel text-[#24160B]/60 hidden sm:inline">
-              *Klik kotak untuk memajukan dialog
+            <span className="text-[11px] font-pixel text-[#24160B]/60 hidden sm:inline flex-shrink-0 ml-2">
+              *Klik dialog / tombol panah untuk lanjut
             </span>
           </div>
         )}
 
-        {/* Message Content: Clean 16-18px font with high contrast */}
+        {/* Message Content: min-height: auto, padding: 16px, font: 16-18px (Fase 2) */}
         <div
-          className="p-4 sm:p-6 min-h-[90px] text-[#24160B] font-body text-base sm:text-lg leading-relaxed selection:bg-[#E8793A] selection:text-white"
+          className="p-4 sm:p-5 text-[#24160B] font-body text-base leading-relaxed selection:bg-[#E8793A] selection:text-white cursor-pointer"
           aria-live="polite"
+          onClick={onNext}
         >
           {children}
         </div>
 
-        {/* Bottom bar with action buttons and waiting indicator */}
-        <div className="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 pb-3 pt-2 border-t-2 border-[#24160B]/15 bg-[#F6EBD3]/40">
-          <div
-            className="flex flex-wrap items-center gap-2"
-            onClick={(e) => e.stopPropagation()}
-          >
+        {/* Bottom bar with action buttons and interactive LANJUT button */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-3.5 sm:px-5 pb-3.5 pt-2 border-t-2 border-[#24160B]/15 bg-[#F6EBD3]/40">
+          <div className="w-full sm:w-auto">
             {actions}
           </div>
 
           {showBlinker && (
-            <div className="flex items-center gap-1.5 text-xs font-pixel text-[#3B5E34] font-bold select-none animate-bounce">
+            <button
+              type="button"
+              onClick={onNext}
+              className="self-end sm:self-auto flex items-center gap-2 px-3 py-1.5 min-h-[44px] border-2 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-xs font-bold shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer"
+              aria-label="Lanjut ke dialog berikutnya"
+            >
               <span>LANJUT</span>
-              <span className="inline-block w-2.5 h-2.5 bg-[#E8793A] border border-[#24160B]" />
-            </div>
+              <span className="text-sm font-bold">&rarr;</span>
+            </button>
           )}
         </div>
       </div>

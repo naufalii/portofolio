@@ -4,22 +4,12 @@ import { TIME_PHASES } from '../../hooks/useTimeOfDay';
 
 /**
  * WorldCanvas - High-Fidelity 2D Pixel-Perfect Overworld Canvas
- * Implements Section 3 & 7 of PLAN.md & Revision:
- * - 6 Parallax layers with enriched depth
- * - Distinct landmarks per section:
- *    1. Hero: Village gate, cozy cottage & lantern
- *    2. Quests: Quest house, bulletin post & mission banner
- *    3. Skills: Ancient Grand Pixel Tree with crystal lanterns
- *    4. Guild: Timber Guild Hall with banners & columns
- *    5. Contact: Postbox & wooden fence with wildflowers
- *    6. Guestbook: Double-posted grand message board
- * - Ambient creatures:
- *    - Flocks of birds gliding across the sky
- *    - Fluttering pixel butterflies (day/dawn)
- *    - Pulsing glowing fireflies (night)
- * - Atmospheric particles: drifting leaves/dandelion seeds & twinkling starfield
- * - Dramatic contrast between Dawn, Day, Dusk, and Night
- * - Low-power self-throttling & auto-pause on tab hidden
+ * Implements Section 3 & 7 of PLAN.md & Mobile Fix Fase 9:
+ * - Proper canvas boundary clipping (fixes top-left white block artifact)
+ * - Cloud wrapping and safe Y offset below sticky header
+ * - Mobile 3-layer parallax optimization
+ * - Mobile particle count capped at 12
+ * - Rich ambient life and section landmarks with 0.8 opacity
  */
 export function WorldCanvas({
   phase = TIME_PHASES.DAY,
@@ -48,13 +38,11 @@ export function WorldCanvas({
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    // Internal low-res pixel buffer (360x200 for cinematic 16:9 pixel art)
     const W = 360;
     const H = 200;
     canvas.width = W;
     canvas.height = H;
 
-    // Dramatic Color Palettes per Time Phase (Point 3 Revision)
     const SKY_COLORS = {
       dawn: {
         top: '#82589F',
@@ -90,21 +78,19 @@ export function WorldCanvas({
       },
     };
 
-    // Ambient birds
     const birds = [
-      { x: 40, y: 35, speed: 0.45, wingFrame: 0 },
-      { x: 55, y: 30, speed: 0.45, wingFrame: 1 },
-      { x: 70, y: 38, speed: 0.45, wingFrame: 2 },
+      { x: 40, y: 45, speed: 0.45, wingFrame: 0 },
+      { x: 55, y: 40, speed: 0.45, wingFrame: 1 },
+      { x: 70, y: 48, speed: 0.45, wingFrame: 2 },
     ];
 
-    // Ambient butterflies (day/dawn)
     const butterflies = [
-      { x: 90, y: 140, baseOriginY: 140, phase: 0, color: '#E8B03A' },
-      { x: 210, y: 145, baseOriginY: 145, phase: 2, color: '#FFFDF8' },
-      { x: 310, y: 138, baseOriginY: 138, phase: 4, color: '#E8793A' },
+      { x: 90, y: 145, baseOriginY: 145, phase: 0, color: '#E8B03A' },
+      { x: 210, y: 150, baseOriginY: 150, phase: 2, color: '#FFFDF8' },
+      { x: 310, y: 142, baseOriginY: 142, phase: 4, color: '#E8793A' },
     ];
 
-    // Atmospheric drifting leaves/seeds
+    // Mobile: max 12 particles per Fase 9
     const maxParticles = isLowPower ? 0 : isMobile ? 12 : 28;
     const particles = Array.from({ length: maxParticles }, () => ({
       x: Math.random() * W,
@@ -116,19 +102,18 @@ export function WorldCanvas({
       timer: Math.random() * Math.PI * 2,
     }));
 
-    // Twinkling stars (night & dusk)
-    const stars = Array.from({ length: 45 }, () => ({
+    const stars = Array.from({ length: isMobile ? 25 : 45 }, () => ({
       x: Math.random() * W,
       y: Math.random() * (H * 0.65),
       size: Math.random() > 0.8 ? 2 : 1,
       flicker: Math.random() * Math.PI * 2,
     }));
 
-    // Clouds
+    // Clouds positioned safely below top header (y >= 40)
     const clouds = [
-      { x: 20, y: 20, width: 64, height: 16, speed: 0.05 },
-      { x: 160, y: 14, width: 80, height: 20, speed: 0.035 },
-      { x: 290, y: 30, width: 52, height: 14, speed: 0.045 },
+      { x: 30, y: 42, width: 64, height: 16, speed: 0.05 },
+      { x: 170, y: 38, width: 80, height: 20, speed: 0.035 },
+      { x: 300, y: 48, width: 52, height: 14, speed: 0.045 },
     ];
 
     let animationFrameId;
@@ -151,7 +136,6 @@ export function WorldCanvas({
     });
     observer.observe(canvas);
 
-    // Main render loop
     const render = (currentTime) => {
       if (!isTabVisible || !isIntersecting) {
         animationFrameId = requestAnimationFrame(render);
@@ -161,7 +145,6 @@ export function WorldCanvas({
       const deltaTime = (currentTime - lastTime) / 1000;
       lastTime = currentTime;
 
-      // Update sway step
       swayTimer += deltaTime;
       if (swayTimer > 0.35) {
         swayFrame = (swayFrame + 1) % 3;
@@ -171,6 +154,12 @@ export function WorldCanvas({
       creatureTimer += deltaTime;
 
       const currentSky = SKY_COLORS[phase] || SKY_COLORS.day;
+
+      // Safe Clipping Boundary to prevent any render artifacts
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, 0, W, H);
+      ctx.clip();
 
       /* -------------------------------------------------------------
        * LAYER 1: SKY GRADIENT
@@ -197,27 +186,29 @@ export function WorldCanvas({
         });
       }
 
-      // Clouds
+      // Clouds with safe wrapping (Fase 9)
       clouds.forEach((cloud) => {
         if (!reducedMotion) {
           cloud.x += cloud.speed;
-          if (cloud.x > W + 60) cloud.x = -cloud.width;
+          if (cloud.x > W + 80) cloud.x = -cloud.width - 20;
         }
 
-        const cloudParallaxX = cloud.x - (cameraX * 0.04) % W;
+        const cloudParallaxX = cloud.x - (cameraX * 0.04);
         const cx = Math.floor(cloudParallaxX);
         const cy = Math.floor(cloud.y);
 
-        ctx.fillStyle =
-          phase === TIME_PHASES.NIGHT
-            ? 'rgba(255, 255, 255, 0.12)'
-            : phase === TIME_PHASES.DUSK
-            ? 'rgba(255, 220, 190, 0.45)'
-            : 'rgba(255, 255, 255, 0.7)';
+        if (cx > -cloud.width && cx < W + cloud.width) {
+          ctx.fillStyle =
+            phase === TIME_PHASES.NIGHT
+              ? 'rgba(255, 255, 255, 0.12)'
+              : phase === TIME_PHASES.DUSK
+              ? 'rgba(255, 220, 190, 0.45)'
+              : 'rgba(255, 255, 255, 0.7)';
 
-        ctx.fillRect(cx + 8, cy, cloud.width - 16, cloud.height);
-        ctx.fillRect(cx + 4, cy + 4, cloud.width - 8, cloud.height - 4);
-        ctx.fillRect(cx, cy + 8, cloud.width, cloud.height - 8);
+          ctx.fillRect(cx + 8, cy, cloud.width - 16, cloud.height);
+          ctx.fillRect(cx + 4, cy + 4, cloud.width - 8, cloud.height - 4);
+          ctx.fillRect(cx, cy + 8, cloud.width, cloud.height - 8);
+        }
       });
 
       /* -------------------------------------------------------------
@@ -228,7 +219,6 @@ export function WorldCanvas({
           bird.x += bird.speed;
           if (bird.x > W + 40) bird.x = -20;
 
-          // Flapping wing step
           const isWingUp = Math.floor(creatureTimer * 6 + bird.wingFrame) % 2 === 0;
           const bx = Math.floor(bird.x);
           const by = Math.floor(bird.y);
@@ -248,7 +238,7 @@ export function WorldCanvas({
       /* -------------------------------------------------------------
        * LAYER 3: DISTANT MOUNTAIN SILHOUETTE
        * ------------------------------------------------------------- */
-      const farParallaxX = -(cameraX * 0.1);
+      const farParallaxX = -(cameraX * (isMobile ? 0.08 : 0.1));
       ctx.fillStyle = currentSky.farHills;
       ctx.beginPath();
       ctx.moveTo(0, H);
@@ -262,25 +252,27 @@ export function WorldCanvas({
       ctx.fill();
 
       /* -------------------------------------------------------------
-       * LAYER 4: MIDDLE HILLS WITH ROLLING CONTOURS
+       * LAYER 4: MIDDLE HILLS (Desktop only; skipped on mobile for 3-layer parallax)
        * ------------------------------------------------------------- */
-      const midParallaxX = -(cameraX * 0.25);
-      ctx.fillStyle = currentSky.midHills;
-      ctx.beginPath();
-      ctx.moveTo(0, H);
-      for (let x = 0; x <= W; x += 4) {
-        const worldX = x - midParallaxX;
-        const y = 124 + Math.sin(worldX * 0.02) * 14 + Math.cos(worldX * 0.038) * 6;
-        ctx.lineTo(x, Math.floor(y));
+      if (!isMobile) {
+        const midParallaxX = -(cameraX * 0.25);
+        ctx.fillStyle = currentSky.midHills;
+        ctx.beginPath();
+        ctx.moveTo(0, H);
+        for (let x = 0; x <= W; x += 4) {
+          const worldX = x - midParallaxX;
+          const y = 124 + Math.sin(worldX * 0.02) * 14 + Math.cos(worldX * 0.038) * 6;
+          ctx.lineTo(x, Math.floor(y));
+        }
+        ctx.lineTo(W, H);
+        ctx.closePath();
+        ctx.fill();
       }
-      ctx.lineTo(W, H);
-      ctx.closePath();
-      ctx.fill();
 
       /* -------------------------------------------------------------
        * LAYER 5: FOREGROUND MEADOW & ROADWAY
        * ------------------------------------------------------------- */
-      const foreParallaxX = -(cameraX * 0.5);
+      const foreParallaxX = -(cameraX * (isMobile ? 0.35 : 0.5));
       ctx.fillStyle = currentSky.foreHills;
       ctx.beginPath();
       ctx.moveTo(0, H);
@@ -293,7 +285,7 @@ export function WorldCanvas({
       ctx.closePath();
       ctx.fill();
 
-      // Cobblestone / Earthy Path winding along the meadow
+      // Cobblestone / Earthy Path
       ctx.fillStyle = phase === TIME_PHASES.NIGHT ? '#1E2C22' : '#8C7456';
       for (let x = 0; x <= W; x += 8) {
         const worldX = x - foreParallaxX;
@@ -305,13 +297,12 @@ export function WorldCanvas({
       }
 
       /* -------------------------------------------------------------
-       * LANDMARKS ALONG THE OVERWORLD (Point 3 Revision)
-       * Landmarks shift according to the foreground camera:
-       * Screen Landmark Position = BaseLandmarkX + foreParallaxX
+       * LANDMARKS ALONG THE OVERWORLD (Opacity 0.8 per Fase 9)
        * ------------------------------------------------------------- */
+      ctx.globalAlpha = 0.8;
+
       const renderLandmark = (landmarkWorldX, type) => {
         const lx = Math.floor(landmarkWorldX + foreParallaxX);
-        // Only render if visible on screen
         if (lx < -80 || lx > W + 80) return;
 
         const baseY = Math.floor(
@@ -319,98 +310,70 @@ export function WorldCanvas({
         );
 
         if (type === 'hero_village') {
-          // Cozy Starting Village Cottage & Wooden Gate
           // Cottage Wall
           ctx.fillStyle = '#F6EBD3';
           ctx.fillRect(lx - 24, baseY - 22, 28, 22);
-          // Roof (Terracotta Orange)
+          // Roof
           ctx.fillStyle = '#B5501B';
           ctx.fillRect(lx - 28, baseY - 30, 36, 4);
           ctx.fillRect(lx - 26, baseY - 26, 32, 4);
           // Door
           ctx.fillStyle = '#3A2012';
           ctx.fillRect(lx - 16, baseY - 14, 8, 14);
-          // Chimney & Smoke
-          ctx.fillStyle = '#754E30';
-          ctx.fillRect(lx - 22, baseY - 36, 4, 8);
-          // Glowing Lantern
+          // Lantern
           ctx.fillStyle = '#E8B03A';
           ctx.fillRect(lx + 10, baseY - 12, 3, 3);
           ctx.fillStyle = '#24160B';
           ctx.fillRect(lx + 11, baseY - 9, 1, 9);
         } else if (type === 'quests_house') {
-          // Mission / Quest Log Board & Guild Post
           ctx.fillStyle = '#5A3A22';
-          // Signposts
           ctx.fillRect(lx - 12, baseY - 26, 3, 26);
           ctx.fillRect(lx + 12, baseY - 26, 3, 26);
-          // Wooden Board
           ctx.fillStyle = '#F6EBD3';
           ctx.fillRect(lx - 14, baseY - 24, 29, 14);
-          ctx.fillStyle = '#24160B';
-          ctx.fillRect(lx - 15, baseY - 25, 31, 1);
-          ctx.fillRect(lx - 15, baseY - 10, 31, 1);
-          // Red Quest Flag
           ctx.fillStyle = '#E8793A';
           ctx.fillRect(lx + 13, baseY - 34, 10, 6);
           ctx.fillStyle = '#24160B';
           ctx.fillRect(lx + 12, baseY - 35, 1, 12);
         } else if (type === 'skills_tree') {
-          // Ancient Grand Pixel Tree with Canopy
-          // Thick Trunk
           ctx.fillStyle = '#3A2012';
           ctx.fillRect(lx - 6, baseY - 42, 12, 42);
-          // Foliage Canopy (Multi-layered green)
           ctx.fillStyle = '#2D4B27';
           ctx.fillRect(lx - 32, baseY - 58, 64, 24);
           ctx.fillStyle = '#486B47';
           ctx.fillRect(lx - 28, baseY - 66, 56, 16);
           ctx.fillStyle = '#659D5B';
           ctx.fillRect(lx - 20, baseY - 74, 40, 12);
-          // Hanging Crystal / Lantern in tree
           ctx.fillStyle = '#8FC6E8';
           ctx.fillRect(lx - 14, baseY - 40, 3, 4);
           ctx.fillRect(lx + 12, baseY - 44, 3, 4);
         } else if (type === 'guild_hall') {
-          // Timber Guild Hall with Columns & Spire
           ctx.fillStyle = '#3A2012';
           ctx.fillRect(lx - 20, baseY - 28, 4, 28);
           ctx.fillRect(lx - 4, baseY - 28, 4, 28);
           ctx.fillRect(lx + 12, baseY - 28, 4, 28);
-          // Roof Spire
           ctx.fillStyle = '#5E8B4A';
           ctx.fillRect(lx - 24, baseY - 34, 44, 6);
           ctx.fillRect(lx - 16, baseY - 40, 28, 6);
-          ctx.fillStyle = '#E8793A';
-          ctx.fillRect(lx - 4, baseY - 46, 4, 6);
-          // Guild Emblem Banner
           ctx.fillStyle = '#FFFDF8';
           ctx.fillRect(lx - 3, baseY - 24, 10, 12);
-          ctx.fillStyle = '#E8793A';
-          ctx.fillRect(lx - 1, baseY - 21, 6, 6);
         } else if (type === 'contact_post') {
-          // Classic Country Postbox & Wooden Split-rail Fence
-          // Fence
           ctx.fillStyle = '#5A3A22';
           ctx.fillRect(lx - 22, baseY - 12, 2, 12);
           ctx.fillRect(lx - 6, baseY - 12, 2, 12);
           ctx.fillRect(lx - 22, baseY - 9, 18, 2);
-          ctx.fillRect(lx - 22, baseY - 5, 18, 2);
-          // Postbox
           ctx.fillStyle = '#24160B';
           ctx.fillRect(lx + 8, baseY - 14, 3, 14);
           ctx.fillStyle = '#E8793A';
           ctx.fillRect(lx + 4, baseY - 22, 11, 8);
           ctx.fillStyle = '#FFFDF8';
-          ctx.fillRect(lx + 12, baseY - 25, 2, 5); // Raised letter flag
+          ctx.fillRect(lx + 12, baseY - 25, 2, 5);
         } else if (type === 'guestbook_board') {
-          // Grand Double-Posted Notice Board with Colorful Memos
           ctx.fillStyle = '#3A2012';
           ctx.fillRect(lx - 16, baseY - 26, 3, 26);
           ctx.fillRect(lx + 14, baseY - 26, 3, 26);
           ctx.fillStyle = '#8C7456';
           ctx.fillRect(lx - 18, baseY - 24, 37, 16);
-          // Sticky notes (yellow, pink, white)
           ctx.fillStyle = '#FFFDF8';
           ctx.fillRect(lx - 14, baseY - 21, 6, 5);
           ctx.fillStyle = '#F2A66B';
@@ -420,13 +383,14 @@ export function WorldCanvas({
         }
       };
 
-      // Render landmarks at distinct world positions (Section 0 to 5)
       renderLandmark(60, 'hero_village');
       renderLandmark(180, 'quests_house');
       renderLandmark(300, 'skills_tree');
       renderLandmark(420, 'guild_hall');
       renderLandmark(540, 'contact_post');
       renderLandmark(660, 'guestbook_board');
+
+      ctx.globalAlpha = 1.0;
 
       /* -------------------------------------------------------------
        * FOREGROUND DECORATIVE PROPS: WILDFLOWERS, BUSHES & SWAYING GRASS
@@ -445,13 +409,11 @@ export function WorldCanvas({
           152 + Math.sin(worldX * 0.03) * 7 + Math.cos(worldX * 0.06) * 3
         );
 
-        // Grass blades
         ctx.fillStyle = phase === TIME_PHASES.NIGHT ? '#3B5E34' : '#73A45C';
         ctx.fillRect(x, baseY - 4, 2, 4);
         ctx.fillRect(x + 2 + swayOffset, baseY - 7, 2, 7);
         ctx.fillRect(x + 4, baseY - 3, 2, 3);
 
-        // Scattered Wildflower Blossoms (Point 3)
         if (x % 28 === 0) {
           const flowerColor =
             x % 56 === 0 ? '#E8793A' : x % 84 === 0 ? '#E8B03A' : '#FFFDF8';
@@ -461,7 +423,7 @@ export function WorldCanvas({
       }
 
       /* -------------------------------------------------------------
-       * AMBIENT CREATURES: BUTTERFLIES (Day / Dawn)
+       * AMBIENT BUTTERFLIES (Day / Dawn)
        * ------------------------------------------------------------- */
       if (phase !== TIME_PHASES.NIGHT && !reducedMotion) {
         butterflies.forEach((b) => {
@@ -485,7 +447,7 @@ export function WorldCanvas({
       }
 
       /* -------------------------------------------------------------
-       * LAYER 6: ATMOSPHERIC PARTICLES (Leaves/Seeds or Fireflies)
+       * LAYER 6: ATMOSPHERIC PARTICLES
        * ------------------------------------------------------------- */
       if (!isLowPower && particles.length > 0) {
         particles.forEach((p) => {
@@ -503,7 +465,6 @@ export function WorldCanvas({
           const py = Math.floor(p.y);
 
           if (phase === TIME_PHASES.NIGHT) {
-            // Glowing Fireflies
             const pulse = 0.4 + Math.sin(p.timer) * 0.55;
             ctx.fillStyle = `rgba(246, 235, 211, ${Math.max(0.1, pulse)})`;
             ctx.fillRect(px, py, p.size, p.size);
@@ -512,7 +473,6 @@ export function WorldCanvas({
               ctx.fillRect(px - 1, py - 1, p.size + 2, p.size + 2);
             }
           } else {
-            // Drifting Autumn / Spring Leaf
             const leafColor =
               phase === TIME_PHASES.DUSK
                 ? 'rgba(232, 121, 58, 0.75)'
@@ -525,6 +485,7 @@ export function WorldCanvas({
         });
       }
 
+      ctx.restore();
       animationFrameId = requestAnimationFrame(render);
     };
 
@@ -546,7 +507,6 @@ export function WorldCanvas({
         aria-hidden="true"
       />
 
-      {/* Atmospheric screen tint crossfade */}
       <div
         className="absolute inset-0 transition-colors duration-1000 pointer-events-none"
         style={{

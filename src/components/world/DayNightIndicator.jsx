@@ -4,8 +4,10 @@ import { TIME_PHASES, TIME_CONFIG } from '../../hooks/useTimeOfDay';
 
 /**
  * DayNightIndicator - Shows current atmospheric time phase and quick controls.
- * Fixes Bug 1.b: Renders dropdown menu via React Portal into document.body
- * so it is NEVER clipped or covered by header/navigation stacking contexts.
+ * Follows Mobile Fix Fase 1:
+ * - Icon-only button on mobile with min 44x44px tap area
+ * - Proper aria-label
+ * - Dropdown menu rendered via Portal to document.body
  */
 export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +19,16 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
   useEffect(() => {
     if (isOpen && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
+      const menuWidth = 192; // w-48 is 12rem = 192px
+      // Keep within screen bounds
+      const calculatedLeft = Math.min(
+        window.innerWidth - menuWidth - 10,
+        Math.max(10, rect.right - menuWidth)
+      );
+
       setMenuPos({
-        top: rect.bottom + window.scrollY + 6,
-        left: Math.max(10, rect.right + window.scrollX - 190), // Align right edge
+        top: rect.bottom + 6,
+        left: calculatedLeft,
       });
     }
   }, [isOpen]);
@@ -59,19 +68,14 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
         ref={buttonRef}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none font-pixel text-xs sm:text-sm cursor-pointer select-none"
+        className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none font-pixel text-xs sm:text-sm cursor-pointer select-none"
         title="Ubah Siklus Waktu (Simulasi)"
-        aria-label={`Waktu saat ini: ${currentConfig.label}. Klik untuk simulasi waktu.`}
+        aria-label={`Ubah siklus waktu. Waktu saat ini: ${currentConfig.label}`}
         aria-expanded={isOpen}
       >
-        <span className="text-sm sm:text-base leading-none">{currentConfig.icon}</span>
-        <span className="font-bold hidden sm:inline">{currentConfig.label.toUpperCase()}</span>
-        {isManual && (
-          <span className="text-[9px] px-1 bg-[var(--sunset)] text-[var(--cloud)] border border-[var(--ink)]">
-            SIMULASI
-          </span>
-        )}
-        <span className="text-[10px] ml-0.5">▼</span>
+        <span className="text-base sm:text-lg leading-none">{currentConfig.icon}</span>
+        <span className="font-bold hidden lg:inline ml-1">{currentConfig.label.toUpperCase()}</span>
+        <span className="text-[10px] ml-1 hidden sm:inline">▼</span>
       </button>
 
       {/* Render via Portal to document.body to prevent any stacking/clipping */}
@@ -91,7 +95,7 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="text-[10px] hover:text-[var(--sunset)] cursor-pointer"
+                className="text-[10px] hover:text-[var(--sunset)] cursor-pointer min-w-[24px] min-h-[24px] flex items-center justify-center"
                 aria-label="Tutup menu"
               >
                 ✕
@@ -106,13 +110,13 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
                   onSelectPhase(key);
                   setIsOpen(false);
                 }}
-                className={`w-full text-left px-2.5 py-1.5 text-xs flex items-center justify-between border-2 transition-all cursor-pointer ${
+                className={`w-full text-left px-2.5 py-2 text-xs flex items-center justify-between border-2 transition-all cursor-pointer min-h-[44px] ${
                   phase === key
                     ? 'border-[var(--ink)] bg-[var(--moss)] text-[var(--cloud)] font-bold shadow-[2px_2px_0_var(--ink)]'
                     : 'border-transparent hover:border-[var(--ink)]/30 hover:bg-[var(--cloud)] text-[var(--ink)]'
                 }`}
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2 text-sm">
                   <span className="text-base">{item.icon}</span>
                   <span>{item.label}</span>
                 </span>
@@ -127,7 +131,7 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
                   onSelectPhase(null);
                   setIsOpen(false);
                 }}
-                className="w-full text-center mt-2 pt-1.5 border-t-2 border-[var(--ink)]/20 text-[10px] text-[var(--sunset)] font-bold hover:underline cursor-pointer"
+                className="w-full text-center mt-2 pt-1.5 border-t-2 border-[var(--ink)]/20 text-[11px] text-[var(--sunset)] font-bold hover:underline cursor-pointer min-h-[36px] flex items-center justify-center"
               >
                 Reset ke Jam Lokal Pengunjung
               </button>
