@@ -1,0 +1,20 @@
+{
+  "initialButtonState": {
+    "text": "🔇\nAUDIO OFF",
+    "ariaPressed": "false",
+    "ariaLabel": "Audio nonaktif. Klik untuk menyalakan."
+  },
+  "initialAudioRequests": [],
+  "afterClickButtonState": {
+    "text": "🔊\nAUDIO ON",
+    "ariaPressed": "true",
+    "ariaLabel": "Audio aktif. Klik untuk mematikan."
+  },
+  "postClickAudioRequests": [],
+  "onReloadButtonState": {
+    "text": "🔇\nAUDIO OFF",
+    "ariaPressed": "false",
+    "ariaLabel": "Audio nonaktif. Klik untuk menyalakan."
+  },
+  "onReloadAudioRequests": []
+}

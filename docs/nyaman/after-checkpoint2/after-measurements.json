@@ -1,0 +1,16 @@
+{
+  "desktop-1280x720": {
+    "ctaPosition": {
+      "top": 532.59375,
+      "bottom": 578.59375,
+      "height": 46
+    }
+  },
+  "mobile-390x844": {
+    "ctaPosition": {
+      "top": 424.1875,
+      "bottom": 472.1875,
+      "height": 48
+    }
+  }
+}
