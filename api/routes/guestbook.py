@@ -122,3 +122,40 @@ def submit_guestbook_entry(payload: GuestbookEntryCreate, request: Request):
         "success": True,
         "message": "Pesan telah ditempel di papan dan akan tampil setelah disetujui moderator!"
     }
+
+import os
+from fastapi import Header
+
+ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "naufalali21")
+
+@router.patch("/api/guestbook/{entry_id}/approve")
+@router.patch("/guestbook/{entry_id}/approve")
+def approve_guestbook_entry(entry_id: int, x_admin_token: Optional[str] = Header(None, alias="X-Admin-Token")):
+    """
+    Approves a guestbook entry by ID using admin token.
+    """
+    if not x_admin_token or x_admin_token != ADMIN_TOKEN:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Token admin tidak valid atau tidak disertakan."
+        )
+
+    with get_db() as conn:
+        cursor = conn.cursor()
+        is_sqlite = "sqlite" in type(conn).__module__
+
+        if is_sqlite:
+            cursor.execute("UPDATE guestbook SET approved = 1 WHERE id = ?", (entry_id,))
+        else:
+            cursor.execute("UPDATE guestbook SET approved = TRUE WHERE id = %s", (entry_id,))
+
+        if cursor.rowcount == 0:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Pesan guestbook dengan id {entry_id} tidak ditemukan."
+            )
+
+    return {
+        "success": True,
+        "message": f"Pesan guestbook #{entry_id} berhasil disetujui!"
+    }
