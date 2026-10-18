@@ -241,7 +241,7 @@ export function HomePage() {
       {/* 6. Footer (Desktop) */}
       <footer className="relative z-20 w-full max-w-5xl mx-auto px-4 py-3 text-center text-xs font-pixel text-[#24160B]/80 hidden lg:block">
         <div className="inline-block bg-[#F6EBD3]/95 border-2 border-[#24160B] px-4 py-1.5 shadow-[2px_2px_0_#24160B]">
-          Portofolio Overworld &bull; Naufal Ali Hilmi &bull; Sistem Informasi Universitas Gunadarma &bull; Navigasi via tombol atau panah keyboard
+          Portofolio Overworld &bull;  Naufal Ali Hilmi  &bull; Sistem Informasi Universitas Gunadarma
         </div>
       </footer>
     </div>
