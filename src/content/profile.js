@@ -7,20 +7,20 @@
 export const profile = {
   nama: "Naufal Ali Hilmi",
   kampus: "Universitas Gunadarma, Sistem Informasi",
-  target: "Internship System Administrator / DBA (Oracle)",
-  tagline: "TODO_OWNER",
+  target: "Database Administrator and Data Engineer",
   
   // 3-5 baris dialog untuk kotak dialog Hero RPG
   bio_dialog: [
     "Halo, pengelana! Saya Naufal Ali Hilmi.",
     "Mahasiswa Sistem Informasi di Universitas Gunadarma.",
-    "Fokus saya adalah Database Administration (terutama Oracle) dan System Administration.",
-    "TODO_OWNER"
+    "Fokus saya adalah Database Administration dan Data Engineering",
+    "Saya memiliki minat dalam bidang Data dan AI.",
+    "Saya berharap dapat berkontribusi dalam pengembangan sistem yang efisien dan handal."
   ],
 
   sosial: {
     github: "https://github.com/naufalii",
-    linkedin: "https://linkedin.com/in/naufalalihilmi",
+    linkedin: "https://www.linkedin.com/in/naufal-ali-hilmi-89a6b4270",
   },
 
   // Proyek / Quest Log
