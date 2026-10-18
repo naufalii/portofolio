@@ -72,8 +72,7 @@ export function HomePage() {
         <header className="sticky top-0 z-40 w-full bg-[var(--cream)] border-b-4 border-[#24160B] shadow-[0_3px_0_#24160B] pt-[env(safe-area-inset-top)]">
           <div className="w-full max-w-6xl mx-auto h-[56px] px-3 flex items-center justify-between gap-2">
             {/* Left: Identity (single line, truncated if long) */}
-            <div className="flex items-center gap-2 min-w-0">
-              <span className="w-3.5 h-3.5 bg-[#5E8B4A] border-2 border-[#24160B] inline-block shadow-[1px_1px_0_#24160B] flex-shrink-0" />
+            <div className="flex items-center gap-2 min-w-0">            
               <div className="min-w-0">
                 <span className="font-pixel text-base font-bold tracking-wider block leading-tight text-[#24160B] truncate">
                   {profile.nama}
