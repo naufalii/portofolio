@@ -68,36 +68,47 @@ export function OverworldMapNav({
     );
   }
 
-  // Desktop Overworld Map Header Bar (Integrated horizontally)
+  // Desktop Overworld Map Header Bar (Section 5 & 8)
   return (
     <nav
       aria-label="Peta Dunia Overworld"
-      className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto select-none"
+      className="relative z-30 w-full max-w-5xl mx-auto border-4 border-[#24160B] bg-[#F6EBD3] shadow-[4px_4px_0_#24160B] px-4 py-2.5"
     >
-      {LOCATIONS.map((loc, i) => {
-        const isActive = activeLocation === loc.id;
-        return (
-          <button
-            key={loc.id}
-            type="button"
-            onClick={() => onSelectLocation(loc.id)}
-            onKeyDown={(e) => handleKeyDown(e, i)}
-            className={`relative flex items-center gap-1.5 px-3 py-1.5 min-h-[40px] font-pixel text-xs sm:text-sm tracking-wide transition-all cursor-pointer select-none ${
-              isActive
-                ? 'bg-[#5E8B4A] text-white border-2 border-[#24160B] shadow-[2px_2px_0_#24160B] -translate-y-0.5 font-bold'
-                : 'bg-[#FFFDF8] text-[#24160B] hover:bg-[#F6EBD3] border-2 border-[#24160B]/40 shadow-[1px_1px_0_#24160B]/20'
-            }`}
-            aria-current={isActive ? 'location' : undefined}
-            title={`Beralih ke ${loc.name}`}
-          >
-            {isActive && (
-              <span className="w-2 h-2 bg-[#E8793A] border border-white inline-block animate-ping" />
-            )}
-            <span className="text-sm">{loc.icon}</span>
-            <span>{loc.name}</span>
-          </button>
-        );
-      })}
+      <div className="flex items-center justify-between gap-2 overflow-x-auto select-none">
+        <div className="flex items-center gap-2 pr-3 border-r-2 border-[#24160B]/20 select-none">
+          <span className="w-3 h-3 bg-[#5E8B4A] border border-[#24160B]" />
+          <span className="font-pixel text-xs lg:text-sm font-bold tracking-wider text-[#24160B]">
+            PETA OVERWORLD
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2 lg:gap-3 flex-1 justify-around">
+          {LOCATIONS.map((loc, i) => {
+            const isActive = activeLocation === loc.id;
+            return (
+              <button
+                key={loc.id}
+                type="button"
+                onClick={() => onSelectLocation(loc.id)}
+                onKeyDown={(e) => handleKeyDown(e, i)}
+                className={`relative flex items-center gap-2 px-3 py-1.5 min-h-[44px] font-pixel text-xs lg:text-sm tracking-wide transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-[#5E8B4A] text-[#F6EBD3] border-2 border-[#24160B] shadow-[2px_2px_0_#24160B] -translate-y-0.5 font-bold'
+                    : 'bg-transparent text-[#24160B] hover:bg-[#FFFDF8] border border-transparent'
+                }`}
+                aria-current={isActive ? 'location' : undefined}
+                title={`Beralih ke ${loc.name}`}
+              >
+                {isActive && (
+                  <span className="w-2 h-2 bg-[#E8793A] border border-[#F6EBD3] inline-block animate-ping" />
+                )}
+                <span>{loc.icon}</span>
+                <span className="font-bold">{loc.name}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </nav>
   );
 }

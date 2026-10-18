@@ -12,8 +12,9 @@ import { getGitHubRepos } from '../../lib/api';
  * - Max 2 stack chips visible when closed
  * - GitHub live repos: max 3 items + 'Lihat semua di GitHub' button
  */
-export function QuestsSection() {
-  const { isMobile } = useDeviceType();
+export function QuestsSection({ isMobile: isMobileProp }) {
+  const { isMobile: isMobileDevice } = useDeviceType();
+  const isMobile = isMobileProp !== undefined ? isMobileProp : isMobileDevice;
   const [selectedQuestId, setSelectedQuestId] = useState(profile.quests[0]?.id || '');
   // Mobile: closed by default per Fase 5
   const [openAccordionId, setOpenAccordionId] = useState('');
@@ -42,7 +43,7 @@ export function QuestsSection() {
   return (
     <div className="space-y-4 max-w-5xl mx-auto">
       <Panel title="QUEST LOG (PAPAN MISI & PROYEK)" icon="📜" variant="default">
-        <p className="text-xs sm:text-sm text-[var(--ink)]/80 mb-4 leading-relaxed">
+        <p className="text-xs lg:text-sm text-[var(--ink)]/80 mb-4 leading-relaxed">
           Daftar misi teknis yang dikerjakan oleh Naufal Ali Hilmi. Ketuk quest untuk membuka objektif dan tautan repositori.
         </p>
 
@@ -276,7 +277,7 @@ export function QuestsSection() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
               {liveRepos.slice(0, 3).map((r, i) => (
                 <a
                   key={i}
@@ -285,7 +286,7 @@ export function QuestsSection() {
                   rel="noopener noreferrer"
                   className="p-3 border-2 border-[#24160B] bg-[#FFFDF8] hover:bg-[#F6EBD3] shadow-[2px_2px_0_#24160B] block transition-all"
                 >
-                  <div className="font-pixel text-xs sm:text-sm font-bold text-[#E8793A] truncate">
+                  <div className="font-pixel text-xs lg:text-sm font-bold text-[#E8793A] truncate">
                     {r.name}
                   </div>
                   <p className="text-xs font-body text-[#24160B]/80 line-clamp-2 my-1">

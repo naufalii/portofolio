@@ -14,6 +14,7 @@
 5. Jangan menyalin aset atau karakter berhak cipta (Studio Ghibli, Nintendo, dll.). Tema Ghibli = *mood* dan palet saja.
 6. Commit kecil dan sering. Pesan commit format: `feat|fix|style|chore: deskripsi singkat`.
 7. Deploy preview ke Vercel **sejak fase 1** dan jaga agar selalu hijau.
+8. Setiap perubahan visual wajib dibuat khusus per breakpoint dan diverifikasi dengan screenshot di **mobile dan desktop** sebelum selesai. Perubahan yang mengubah breakpoint lain dianggap bug.
 
 ## 1. Tujuan
 

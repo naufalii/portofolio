@@ -73,14 +73,14 @@ export function GuestbookSection() {
   return (
     <div className="space-y-4 max-w-5xl mx-auto">
       <Panel title="PAPAN PESAN PETUALANG (GUESTBOOK)" variant="default">
-        <p className="text-xs sm:text-sm text-[var(--ink)]/80 mb-5 leading-relaxed">
+        <p className="text-xs lg:text-sm text-[var(--ink)]/80 mb-5 leading-relaxed">
           Tinggalkan pesan sapaan, kesan petualangan, atau masukan untuk Naufal Ali Hilmi! Untuk menjaga kenyamanan, setiap pesan akan dimoderasi terlebih dahulu sebelum disematkan di papan kayu ini.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: Form */}
-          <div className="md:col-span-5 border-2 border-[var(--ink)] bg-[var(--cloud)] p-4 shadow-[3px_3px_0_var(--ink)]">
-            <h3 className="font-pixel text-xs sm:text-sm font-bold text-[var(--sunset)] uppercase border-b-2 border-[var(--ink)] pb-1 mb-3">
+          <div className="lg:col-span-5 border-2 border-[var(--ink)] bg-[var(--cloud)] p-4 shadow-[3px_3px_0_var(--ink)]">
+            <h3 className="font-pixel text-xs lg:text-sm font-bold text-[var(--sunset)] uppercase border-b-2 border-[var(--ink)] pb-1 mb-3">
               Tulis Catatanmu
             </h3>
 
@@ -113,7 +113,7 @@ export function GuestbookSection() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Nama / Panggilanmu"
-                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)]"
+                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)]"
                 />
               </div>
 
@@ -133,7 +133,7 @@ export function GuestbookSection() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tinggalkan pesan di papan..."
-                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)] resize-none"
+                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)] resize-none"
                 />
               </div>
 
@@ -145,7 +145,7 @@ export function GuestbookSection() {
                   disabled={submitting}
                   className="w-full"
                 >
-                  {submitting ? 'MENYEMATKAN...' : 'TEMPEL DI PAPAN &rarr;'}
+                  {submitting ? 'MENYEMATKAN...' : 'TEMPEL DI PAPAN \u2192'}
                 </PixelButton>
               </div>
 
@@ -156,7 +156,7 @@ export function GuestbookSection() {
           </div>
 
           {/* Right Column: Sticky Notes Board */}
-          <div className="md:col-span-7 space-y-3">
+          <div className="lg:col-span-7 space-y-3">
             <div className="flex items-center justify-between border-b-2 border-[var(--ink)]/20 pb-1.5">
               <span className="font-pixel text-xs font-bold text-[var(--moss-dark)] uppercase">
                 Pesan yang Tersemat ({entries.length})

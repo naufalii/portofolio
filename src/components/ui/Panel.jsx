@@ -29,18 +29,18 @@ export function Panel({
 
   return (
     <div
-      className={`relative border-3 sm:border-4 border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] sm:shadow-[4px_4px_0_var(--ink)] ${variantStyles[variant]} ${className}`}
+      className={`relative border-3 lg:border-4 border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] lg:shadow-[4px_4px_0_var(--ink)] ${variantStyles[variant]} ${className}`}
       {...props}
     >
       {/* Decorative Pixel Corner notches */}
-      <div className="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[var(--ink)]" />
-      <div className="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[var(--ink)]" />
-      <div className="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[var(--ink)]" />
-      <div className="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[var(--ink)]" />
+      <div className="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--ink)]" />
+      <div className="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--ink)]" />
+      <div className="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--ink)]" />
+      <div className="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--ink)]" />
 
       {/* Header bar if title is provided */}
       {title && (
-        <div className="flex items-center justify-between border-b-3 sm:border-b-4 border-[var(--ink)] px-3.5 sm:px-4 py-2 bg-[#F6EBD3] text-[var(--ink)] font-pixel text-sm sm:text-base font-bold tracking-wider select-none">
+        <div className="flex items-center justify-between border-b-3 lg:border-b-4 border-[var(--ink)] px-3.5 lg:px-4 py-2 bg-[#F6EBD3] text-[var(--ink)] font-pixel text-sm lg:text-base font-bold tracking-wider select-none">
           <div className="flex items-center gap-2">
             {icon ? (
               <span className="text-base leading-none">{icon}</span>
@@ -54,7 +54,7 @@ export function Panel({
       )}
 
       {/* Main content body: 16px horizontal padding on mobile */}
-      <div className="p-4 sm:p-6 font-body">{children}</div>
+      <div className="p-4 lg:p-6 font-body">{children}</div>
     </div>
   );
 }

@@ -159,9 +159,9 @@ export function AudioPlayer() {
       title={isPlaying ? 'Matikan Suara Ambience' : 'Nyalakan Suara Ambience'}
       aria-label={isPlaying ? 'Audio aktif. Klik untuk mematikan.' : 'Audio nonaktif. Klik untuk menyalakan.'}
     >
-      <span className="text-base sm:text-lg leading-none">{isPlaying ? '🔊' : '🔇'}</span>
+      <span className="text-base leading-none">{isPlaying ? '🔊' : '🔇'}</span>
       <span className="hidden lg:inline ml-1 font-bold">
-        {isPlaying ? 'ON' : 'OFF'}
+        {isPlaying ? 'AUDIO ON' : 'AUDIO OFF'}
       </span>
     </button>
   );

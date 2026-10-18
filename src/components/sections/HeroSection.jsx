@@ -66,49 +66,50 @@ export function HeroSection({ onStartExplore }) {
       {/* RPG Dialogue Box */}
       <DialogBox
         speaker={profile.nama}
+        speakerRole={profile.target}
         showBlinker={!isTyping}
         onNext={handleAdvanceDialog}
         actions={
           <div
-            className="flex flex-col gap-3 w-full"
+            className="flex flex-col lg:flex-row lg:items-center gap-2.5 lg:gap-2 w-full lg:w-auto pt-1"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* CTA 1: Mulai Jelajah (Full Width, 48px height) */}
+            {/* CTA 1: Mulai Jelajah */}
             <button
               type="button"
               onClick={onStartExplore}
-              className="w-full flex items-center justify-center min-h-[48px] px-4 py-2 border-3 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm sm:text-base font-bold tracking-wider shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer"
+              className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-4 py-2 border-3 lg:border-2 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm font-bold tracking-wider shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
               aria-label="Mulai jelajahi quest log"
             >
               Mulai Jelajah &rarr;
             </button>
 
-            {/* CTA 2: Mode CV (Full Width, 48px height, with subtext) */}
-            <Link to="/cv" className="w-full block">
+            {/* CTA 2: Mode CV */}
+            <Link to="/cv" className="w-full lg:w-auto block">
               <button
                 type="button"
-                className="w-full flex flex-col items-center justify-center min-h-[48px] px-4 py-1.5 border-3 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center"
+                className="w-full lg:w-auto flex flex-col lg:flex-row items-center justify-center min-h-[48px] lg:min-h-[38px] px-4 py-1.5 lg:py-2 border-3 lg:border-2 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center whitespace-nowrap"
               >
-                <span className="text-sm sm:text-base font-bold leading-tight tracking-wider">
+                <span className="text-sm font-bold leading-tight tracking-wider">
                   Mode CV
                 </span>
-                <span className="text-[11px] font-body text-white/90 leading-none">
+                <span className="text-[11px] font-body text-white/90 leading-none lg:hidden">
                   Tampilan halaman biasa (dokumen linear)
                 </span>
               </button>
             </Link>
 
-            {/* CTA 3 & 4: GitHub & LinkedIn (2 Columns on >=360px, min-h 48px) */}
-            <div className="grid grid-cols-2 gap-3 w-full">
+            {/* CTA 3 & 4: GitHub & LinkedIn (2 Columns on mobile, inline on desktop) */}
+            <div className="grid grid-cols-2 lg:flex lg:items-center gap-2.5 lg:gap-2 w-full lg:w-auto">
               <a
                 href={profile.sosial.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full block"
+                className="w-full lg:w-auto block"
               >
                 <button
                   type="button"
-                  className="w-full flex items-center justify-center min-h-[48px] px-2 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs sm:text-sm font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3]"
+                  className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-3 py-2 border-3 lg:border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs lg:text-sm font-bold shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
                 >
                   GitHub &rarr;
                 </button>
@@ -118,11 +119,11 @@ export function HeroSection({ onStartExplore }) {
                 href={profile.sosial.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full block"
+                className="w-full lg:w-auto block"
               >
                 <button
                   type="button"
-                  className="w-full flex items-center justify-center min-h-[48px] px-2 py-2 border-3 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs sm:text-sm font-bold shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3]"
+                  className="w-full lg:w-auto flex items-center justify-center min-h-[48px] lg:min-h-[38px] px-3 py-2 border-3 lg:border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] font-pixel text-xs lg:text-sm font-bold shadow-[3px_3px_0_#24160B] lg:shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer hover:bg-[#F6EBD3] whitespace-nowrap"
                 >
                   LinkedIn &rarr;
                 </button>
@@ -132,7 +133,7 @@ export function HeroSection({ onStartExplore }) {
         }
       >
         <div className="select-text">
-          <p className="font-medium text-base sm:text-lg leading-relaxed text-[#24160B]">
+          <p className="font-medium text-base lg:text-lg leading-relaxed text-[#24160B]">
             {displayedText}
             {isTyping && (
               <span className="inline-block w-2 h-4 ml-1 bg-[#E8793A] animate-pulse" />
@@ -143,8 +144,8 @@ export function HeroSection({ onStartExplore }) {
 
       {/* Starting Village Info Board */}
       <Panel title="PAPAN GERBANG DESA AWAL" variant="default">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm leading-relaxed text-[#24160B]">
-          <div className="space-y-1.5 border-b md:border-b-0 md:border-r border-[#24160B]/20 pb-3 md:pb-0 md:pr-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs lg:text-sm leading-relaxed text-[#24160B]">
+          <div className="space-y-1.5 border-b lg:border-b-0 lg:border-r border-[#24160B]/20 pb-3 lg:pb-0 lg:pr-4">
             <div className="font-pixel text-sm font-bold text-[#E8793A]">
               PROFIL PETUALANG
             </div>
@@ -153,6 +154,9 @@ export function HeroSection({ onStartExplore }) {
             </p>
             <p>
               <strong>Institusi:</strong> {profile.kampus}
+            </p>
+            <p className="hidden lg:block">
+              <strong>Fokus Karir:</strong> {profile.target}
             </p>
             <p className="text-[11px] text-[#24160B]/70 pt-1">
               *Klik kotak dialog di atas untuk membaca baris percakapan berikutnya (tekan untuk lewati efek ketik).
@@ -164,7 +168,8 @@ export function HeroSection({ onStartExplore }) {
               PANDUAN EKSPLORASI
             </div>
             <p>
-              Gunakan peta navigasi di bawah untuk menjelajahi seluruh area:
+              <span className="hidden lg:inline">Gunakan peta navigasi di atas</span>
+              <span className="lg:hidden">Gunakan peta navigasi di bawah</span> untuk menjelajahi seluruh area:
             </p>
             <ul className="list-disc list-inside space-y-1 text-xs">
               <li><strong>Quest Log:</strong> Praktikum Oracle Database & web solver.</li>
