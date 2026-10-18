@@ -94,9 +94,9 @@ export function HomePage() {
               <Link to="/cv">
                 <button
                   type="button"
-                  className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1.5 border-2 border-[#24160B] bg-[#E8793A] text-white shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none font-pixel text-xs font-bold cursor-pointer"
+                  className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1.5 border-2 border-[#24160B] bg-[#E8793A] text-white shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none font-alt-pixel text-xs font-bold cursor-pointer"
                   title="Buka Mode CV (Lihat ringkasan dokumen linear)"
-                  aria-label="Mode CV (Lihat sebagai dokumen linear)"
+                  aria-label="Mode CV"
                 >
                   CV
                 </button>
@@ -129,7 +129,12 @@ export function HomePage() {
               />
 
               <Link to="/cv">
-                <PixelButton variant="secondary" size="sm" title="Lihat sebagai dokumen CV linear standar">
+                <PixelButton
+                  variant="secondary"
+                  size="sm"
+                  aria-label="Mode CV"
+                  title="Lihat sebagai dokumen CV linear standar"
+                >
                   MODE CV
                 </PixelButton>
               </Link>

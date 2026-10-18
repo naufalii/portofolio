@@ -22,13 +22,13 @@ export function CVPage() {
         >
           <Link to="/">
             <PixelButton variant="neutral" size="sm">
-              &larr; KEMBALI KE OVERWORLD (PETA DUNIA)
+              &larr; KEMBALI KE OVERWORLD - PETA DUNIA
             </PixelButton>
           </Link>
 
           <a href={profile.cv_pdf} download="CV_Naufal_Ali_Hilmi.pdf">
             <PixelButton variant="secondary" size="md">
-              UNDUH CV (PDF) &darr;
+              UNDUH CV <span className="font-body font-normal">(PDF)</span> &darr;
             </PixelButton>
           </a>
         </nav>
@@ -49,7 +49,7 @@ export function CVPage() {
                 </p>
               </div>
 
-              <div className="font-pixel text-xs px-3 py-1 bg-[var(--moss)] text-[var(--cloud)] border-2 border-[var(--ink)] shadow-[2px_2px_0_var(--ink)]">
+              <div className="font-alt-pixel text-xs px-3 py-1 bg-[var(--moss)] text-[var(--cloud)] border-2 border-[var(--ink)] shadow-[2px_2px_0_var(--ink)]">
                 TERVERIFIKASI &bull; MODE CV
               </div>
             </div>
@@ -369,7 +369,7 @@ export function CVPage() {
         </Panel>
 
         {/* Footer info */}
-        <div className="text-center text-xs font-pixel text-[var(--ink)]/60 pt-4">
+        <div className="text-center text-xs font-alt-pixel text-[var(--ink)]/60 pt-4">
           Dokumen Curriculum Vitae Naufal Ali Hilmi &bull; Mode CV Linear &bull; Universitas Gunadarma
         </div>
       </div>

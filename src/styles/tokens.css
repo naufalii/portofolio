@@ -12,6 +12,7 @@
 
   /* Typography */
   --font-pixel: 'Pixelify Sans', system-ui, sans-serif;
+  --font-alt-pixel: 'DotGothic16', sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
 
   /* Pixel UI kit theming tokens (--retro-*) */

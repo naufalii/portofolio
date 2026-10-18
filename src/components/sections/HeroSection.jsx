@@ -89,6 +89,7 @@ export function HeroSection({ onStartExplore }) {
                 <PixelButton
                   variant="secondary"
                   size="md"
+                  aria-label="Mode CV"
                   title="Buka ringkasan CV linear untuk recruiter"
                 >
                   Mode CV &rarr;
@@ -121,7 +122,7 @@ export function HeroSection({ onStartExplore }) {
               <button
                 type="button"
                 onClick={onStartExplore}
-                className="w-full flex items-center justify-center min-h-[48px] px-4 py-2 border-3 border-[#24160B] bg-[#5E8B4A] text-white font-pixel text-sm font-bold tracking-wider shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
+                className="w-full flex items-center justify-center min-h-[48px] px-4 py-2 border-3 border-[#24160B] bg-[#5E8B4A] text-white font-alt-pixel text-sm font-bold tracking-wider shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer whitespace-nowrap"
                 aria-label="Mulai jelajahi quest log"
               >
                 Mulai Jelajah &rarr;
@@ -130,7 +131,8 @@ export function HeroSection({ onStartExplore }) {
               <Link to="/cv" className="w-full block">
                 <button
                   type="button"
-                  className="w-full flex flex-col items-center justify-center min-h-[48px] px-4 py-1.5 border-3 border-[#24160B] bg-[#E8793A] text-white font-pixel shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center whitespace-nowrap"
+                  aria-label="Mode CV"
+                  className="w-full flex flex-col items-center justify-center min-h-[48px] px-4 py-1.5 border-3 border-[#24160B] bg-[#E8793A] text-white font-alt-pixel shadow-[3px_3px_0_#24160B] active:translate-y-[1px] active:shadow-none cursor-pointer text-center whitespace-nowrap"
                 >
                   <span className="text-sm font-bold leading-tight tracking-wider">
                     Mode CV

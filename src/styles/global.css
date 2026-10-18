@@ -13,6 +13,7 @@
   --color-ink: var(--ink);
 
   --font-pixel: var(--font-pixel);
+  --font-alt-pixel: var(--font-alt-pixel);
   --font-body: var(--font-body);
 }
 
@@ -29,6 +30,10 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, .font-pixel {
   font-family: var(--font-pixel);
+}
+
+.font-alt-pixel {
+  font-family: var(--font-alt-pixel);
 }
 
 /* Pixel rendering for images & canvases */

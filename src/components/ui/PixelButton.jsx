@@ -18,7 +18,7 @@ export function PixelButton({
   ...props
 }) {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-pixel font-bold select-none cursor-pointer tracking-wider transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sunset)]';
+    'relative inline-flex items-center justify-center font-alt-pixel font-bold select-none cursor-pointer tracking-wider transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sunset)]';
 
   const sizeStyles = {
     sm: 'text-xs px-3 py-1 border-[2px] border-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:shadow-none min-h-[32px]',
