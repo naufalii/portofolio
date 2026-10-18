@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#5E8B4A" />
+  <rect x="2" y="2" width="28" height="28" fill="#F6EBD3" />
+  
+  <!-- Retro Database Cylinder / Adventurer Cap Pixel Art -->
+  <!-- Top Lid -->
+  <rect x="6" y="7" width="20" height="4" fill="#3A2A1E" />
+  <rect x="8" y="8" width="16" height="2" fill="#E8793A" />
+  
+  <!-- Middle Tier -->
+  <rect x="6" y="14" width="20" height="4" fill="#3A2A1E" />
+  <rect x="8" y="15" width="16" height="2" fill="#8FC6E8" />
+  
+  <!-- Bottom Tier -->
+  <rect x="6" y="21" width="20" height="4" fill="#3A2A1E" />
+  <rect x="8" y="22" width="16" height="2" fill="#5E8B4A" />
+  
+  <!-- Border -->
+  <rect x="0" y="0" width="32" height="2" fill="#3A2A1E" />
+  <rect x="0" y="30" width="32" height="2" fill="#3A2A1E" />
+  <rect x="0" y="0" width="2" height="32" fill="#3A2A1E" />
+  <rect x="30" y="0" width="2" height="32" fill="#3A2A1E" />
+</svg>
