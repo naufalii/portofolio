@@ -76,7 +76,6 @@ export function OverworldMapNav({
     >
       <div className="flex items-center justify-between gap-2 overflow-x-auto select-none">
         <div className="flex items-center gap-2 pr-3 border-r-2 border-[#24160B]/20 select-none">
-          <span className="w-3 h-3 bg-[#5E8B4A] border border-[#24160B]" />
           <span className="font-pixel text-xs lg:text-sm font-bold tracking-wider text-[#24160B]">
             PETA OVERWORLD
           </span>

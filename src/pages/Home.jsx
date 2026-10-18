@@ -109,7 +109,6 @@ export function HomePage() {
         <header className="relative z-30 w-full p-4 lg:p-5 flex flex-col gap-3">
           <div className="w-full max-w-5xl mx-auto flex items-center justify-between border-4 border-[#24160B] bg-[#F6EBD3] px-4 py-2.5 shadow-[4px_4px_0_#24160B]">
             <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 bg-[#5E8B4A] border-2 border-[#24160B] inline-block shadow-[1px_1px_0_#24160B]" />
               <div>
                 <span className="font-pixel text-base lg:text-lg font-bold tracking-wider block leading-tight text-[#24160B]">
                   {profile.nama}
