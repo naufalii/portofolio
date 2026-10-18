@@ -11,8 +11,8 @@
 export const profile = {
   // [ID] Identitas
   nama: "Naufal Ali Hilmi",
-  tagline: "Junior DBA | System Administrator | Web Developer",
-  target: "Junior DBA | System Administrator | Web Developer",
+  tagline: "Junior DBA | Data Engineer | Web Developer",
+  target: "Junior DBA | Data Engineer | Web Developer",
   lokasi: "Depok, Indonesia",
   kampus: "Universitas Gunadarma, Sistem Informasi",
 
