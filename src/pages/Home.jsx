@@ -5,12 +5,15 @@ import { WorldCanvas } from '../components/world/WorldCanvas';
 import { Sprite } from '../components/world/Sprite';
 import { OverworldMapNav, LOCATIONS } from '../components/world/OverworldMapNav';
 import { DayNightIndicator } from '../components/world/DayNightIndicator';
+import { PixelCursor } from '../components/world/PixelCursor';
+import { AudioPlayer } from '../components/world/AudioPlayer';
 import { PixelButton } from '../components/ui/PixelButton';
-import { Panel } from '../components/ui/Panel';
 import { HeroSection } from '../components/sections/HeroSection';
 import { QuestsSection } from '../components/sections/QuestsSection';
 import { SkillTreeSection } from '../components/sections/SkillTreeSection';
 import { GuildSection } from '../components/sections/GuildSection';
+import { ContactSection } from '../components/sections/ContactSection';
+import { GuestbookSection } from '../components/sections/GuestbookSection';
 import { profile } from '../content/profile';
 import { useTimeOfDay } from '../hooks/useTimeOfDay';
 import { useDeviceType } from '../hooks/useMediaQuery';
@@ -26,7 +29,6 @@ export function HomePage() {
   const [travelDir, setTravelDir] = useState(false); // false = right, true = left
 
   const activeIndex = LOCATIONS.findIndex((loc) => loc.id === activeLocation);
-  // Calculate horizontal camera offset for desktop parallax (0 to 1200px)
   const cameraX = activeIndex * 240;
 
   const handleSelectLocation = (id) => {
@@ -43,7 +45,6 @@ export function HomePage() {
       }
     }
 
-    // Mascot walks for 350ms during camera slide
     setTimeout(() => {
       setIsTraveling(false);
     }, 350);
@@ -51,6 +52,9 @@ export function HomePage() {
 
   return (
     <div className="relative min-h-[100dvh] text-[var(--ink)] overflow-x-hidden flex flex-col justify-between select-text">
+      {/* Custom Retro Pixel Cursor (Desktop only per Section 6 & 8) */}
+      <PixelCursor />
+
       {/* 1. Canvas Parallax World Background (Section 7) */}
       <WorldCanvas
         phase={phase}
@@ -73,7 +77,11 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Audio Toggle per Section 7.4 */}
+            <AudioPlayer />
+
+            {/* Time of Day Indicator per Section 5 */}
             <DayNightIndicator
               phase={phase}
               onSelectPhase={setManualOverride}
@@ -175,7 +183,7 @@ export function HomePage() {
       {/* 6. Footer (Desktop) */}
       <footer className="relative z-20 w-full max-w-5xl mx-auto px-4 py-3 text-center text-xs font-pixel text-[var(--ink)]/80 hidden sm:block">
         <div className="inline-block bg-[var(--cream)]/90 border-2 border-[var(--ink)] px-4 py-1.5 shadow-[2px_2px_0_var(--ink)]">
-          Peta Dunia Portofolio &bull; Sistem Informasi Universitas Gunadarma &bull; Navigasi via tombol atau panah keyboard
+          Peta Dunia Portofolio &bull; Naufal Ali Hilmi &bull; Sistem Informasi Universitas Gunadarma &bull; Navigasi via tombol atau panah keyboard
         </div>
       </footer>
     </div>
@@ -200,52 +208,10 @@ function LocationSectionContent({ locId, onStartExplore }) {
       return <GuildSection />;
 
     case 'contact':
-      return (
-        <Panel title="KOTAK POS (HUBUNGI SAYA)" variant="default">
-          <div className="space-y-4 max-w-2xl">
-            <p className="text-xs sm:text-sm leading-relaxed">
-              Kirimkan surat atau pesan langsung ke kotak pos Naufal Ali Hilmi. Form interaktif dengan validasi backend FastAPI, rate limiting, dan penyimpanan Postgres akan aktif penuh pada Fase 4.
-            </p>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href={profile.sosial.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <PixelButton variant="primary" size="md">
-                  Hubungi via LinkedIn &rarr;
-                </PixelButton>
-              </a>
-
-              <a
-                href={profile.sosial.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <PixelButton variant="neutral" size="md">
-                  Lihat Profil GitHub &rarr;
-                </PixelButton>
-              </a>
-            </div>
-          </div>
-        </Panel>
-      );
+      return <ContactSection />;
 
     case 'guestbook':
-      return (
-        <Panel title="PAPAN PESAN PETUALANG (GUESTBOOK)" variant="default">
-          <div className="space-y-4 max-w-2xl">
-            <p className="text-xs sm:text-sm leading-relaxed">
-              Tinggalkan jejak kunjunganmu di peta petualangan ini! Pesan pengunjung akan dimoderasi terlebih dahulu sebelum disematkan di papan kayu ini.
-            </p>
-
-            <div className="border-2 border-dashed border-[var(--ink)]/40 p-5 text-center text-xs font-pixel text-[var(--ink)]/70 bg-[var(--cloud)]">
-              Sistem buku tamu terhubung ke Neon Postgres akan diaktifkan pada Fase 4.
-            </div>
-          </div>
-        </Panel>
-      );
+      return <GuestbookSection />;
 
     default:
       return null;

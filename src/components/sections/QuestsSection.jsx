@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Panel } from '../ui/Panel';
 import { PixelButton } from '../ui/PixelButton';
 import { profile } from '../../content/profile';
 import { useDeviceType } from '../../hooks/useMediaQuery';
+import { getGitHubRepos } from '../../lib/api';
 
 /**
- * QuestsSection - Quest Log (Section 5)
- * Desktop: Quest list on the left, full quest parchment detail on the right.
- * Mobile: Interactive accordion cards.
- * Data source strictly from profile.js.
+ * QuestsSection - Quest Log (Section 5 & 9.4)
+ * Displays project quests with verified GitHub live metadata proxy.
+ * Gracefully falls back to profile.js if backend API or GitHub is unavailable.
  */
 export function QuestsSection() {
   const { isMobile } = useDeviceType();
   const [selectedQuestId, setSelectedQuestId] = useState(profile.quests[0]?.id || '');
   const [openAccordionId, setOpenAccordionId] = useState(profile.quests[0]?.id || '');
+  const [liveRepos, setLiveRepos] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    getGitHubRepos().then((repos) => {
+      if (isMounted && repos && repos.length > 0) {
+        setLiveRepos(repos);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const selectedQuest =
     profile.quests.find((q) => q.id === selectedQuestId) || profile.quests[0];
@@ -212,6 +225,43 @@ export function QuestsSection() {
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Live GitHub Proxy Activity Ribbon (Section 9.4) */}
+        {liveRepos.length > 0 && (
+          <div className="mt-6 pt-4 border-t-2 border-[var(--ink)]/20">
+            <div className="flex items-center justify-between mb-3">
+              <span className="font-pixel text-xs font-bold text-[var(--moss-dark)] uppercase">
+                AKTIVITAS GITHUB PUBLIK TERBARU (@{profile.sosial.github.split('/').pop()})
+              </span>
+              <span className="text-[10px] font-pixel text-[var(--ink)]/60">
+                Data real-time via Backend Proxy &bull; CDN Cached
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {liveRepos.slice(0, 3).map((r, i) => (
+                <a
+                  key={i}
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 border border-[var(--ink)] bg-[var(--cloud)] hover:bg-[var(--cream)] shadow-[2px_2px_0_var(--ink)] block transition-all"
+                >
+                  <div className="font-pixel text-xs font-bold text-[var(--sunset)] truncate">
+                    {r.name}
+                  </div>
+                  <p className="text-[11px] font-body text-[var(--ink)]/80 line-clamp-2 my-1">
+                    {r.description || 'Repositori publik.'}
+                  </p>
+                  <div className="flex items-center justify-between text-[10px] font-pixel text-[var(--ink)]/70 mt-1">
+                    <span>{r.language || 'Code'}</span>
+                    <span>★ {r.stars}</span>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         )}
