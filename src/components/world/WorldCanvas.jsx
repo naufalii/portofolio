@@ -324,7 +324,7 @@ export function WorldCanvas({
         ctx.globalAlpha = 0.85;
         const positions = getLandmarkPositions(canvas);
         positions.forEach((pos) => {
-          drawLandmarkPixelArt(ctx, pos.type, Math.floor(pos.canvasX), Math.floor(pos.canvasY));
+          drawLandmarkPixelArt(ctx, pos.type, Math.floor(pos.canvasX), Math.floor(pos.canvasY), phase);
         });
         ctx.globalAlpha = 1.0;
       }

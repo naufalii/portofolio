@@ -75,14 +75,15 @@ export function LandmarkClickLayer({
         const isActive = activeLocation === pos.id;
         const isHovered = hoveredId === pos.id;
 
-        // Button dimensions: logical canvas size scaled to screen + 16px (8px padding per side)
-        // Minimum 44x44px per touch target criteria
-        const targetWidth = Math.max(48, Math.round(pos.width * pos.scaleX + 16));
-        const targetHeight = Math.max(48, Math.round(pos.height * pos.scaleY + 16));
+        // Exact 4px padding surrounding the landmark image on all sides
+        const imgW = Math.round(pos.width * pos.scaleX);
+        const imgH = Math.round(pos.height * pos.scaleY);
+        const boxWidth = imgW + 8; // 4px padding left & right
+        const boxHeight = imgH + 8; // 4px padding top & bottom
 
-        // Position: centered at tabCenterX, bottom at ground baseline
-        const left = Math.round(pos.screenX - targetWidth / 2);
-        const top = Math.round(pos.screenY - targetHeight);
+        // Position: centered at tabCenterX, bottom at pos.screenY + 4px (enclosing ground & shadow)
+        const left = Math.round(pos.screenX - boxWidth / 2);
+        const top = Math.round(pos.screenY - imgH - 4);
 
         return (
           <button
@@ -114,8 +115,8 @@ export function LandmarkClickLayer({
             style={{
               left: `${left}px`,
               top: `${top}px`,
-              width: `${targetWidth}px`,
-              height: `${targetHeight}px`,
+              width: `${boxWidth}px`,
+              height: `${boxHeight}px`,
             }}
           >
             {/* Visual Outline Box */}
