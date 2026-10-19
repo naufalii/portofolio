@@ -1,0 +1,135 @@
+{
+  "mobile": {
+    "night": {
+      "themeAttribute": "night",
+      "tagline": {
+        "color": "rgb(246, 235, 211)",
+        "fontSize": "12px",
+        "box": {
+          "left": 41.3,
+          "top": 216.19,
+          "width": 307.39,
+          "height": 16
+        }
+      },
+      "sectionLabel": {
+        "color": "rgb(246, 235, 211)",
+        "fontSize": "12px",
+        "box": {
+          "left": 16,
+          "top": 1013.19,
+          "width": 358,
+          "height": 16
+        }
+      },
+      "dialogBox": {
+        "left": 16,
+        "top": 248.19,
+        "width": 358,
+        "height": 355
+      },
+      "ctaButton": {
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "day": {
+      "themeAttribute": "day",
+      "tagline": {
+        "color": "rgb(59, 94, 52)",
+        "fontSize": "12px",
+        "box": {
+          "left": 41.3,
+          "top": 216.19,
+          "width": 307.39,
+          "height": 16
+        }
+      },
+      "sectionLabel": {
+        "color": "rgb(36, 22, 11)",
+        "fontSize": "12px",
+        "box": {
+          "left": 16,
+          "top": 1013.19,
+          "width": 358,
+          "height": 16
+        }
+      },
+      "dialogBox": {
+        "left": 16,
+        "top": 248.19,
+        "width": 358,
+        "height": 355
+      },
+      "ctaButton": {
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "dusk": {
+      "themeAttribute": "dusk",
+      "tagline": {
+        "color": "rgb(59, 94, 52)",
+        "fontSize": "12px",
+        "box": {
+          "left": 41.3,
+          "top": 216.19,
+          "width": 307.39,
+          "height": 16
+        }
+      },
+      "sectionLabel": {
+        "color": "rgb(36, 22, 11)",
+        "fontSize": "12px",
+        "box": {
+          "left": 16,
+          "top": 1013.19,
+          "width": 358,
+          "height": 16
+        }
+      },
+      "dialogBox": {
+        "left": 16,
+        "top": 248.19,
+        "width": 358,
+        "height": 355
+      },
+      "ctaButton": {
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "desktopBaseline": {
+    "dialog": {
+      "left": 192,
+      "top": 376.59,
+      "width": 896,
+      "height": 218
+    },
+    "cta": {
+      "left": 220,
+      "top": 532.59,
+      "width": 178,
+      "height": 46
+    }
+  },
+  "contrastAudit": {
+    "skyNightHex": "#1F2A44",
+    "taglineComputedColor": "rgb(246, 235, 211)",
+    "sectionLabelComputedColor": "rgb(246, 235, 211)",
+    "contrastAgainstSkyNight": 12.05,
+    "contrastAgainstCanvasTop": 16.25,
+    "contrastAgainstCanvasBottom": 13.08,
+    "wcagAARequirement": ">= 4.5:1",
+    "wcagAAARequirement": ">= 7.0:1",
+    "isPassingAA": true,
+    "isPassingAAA": true
+  }
+}
