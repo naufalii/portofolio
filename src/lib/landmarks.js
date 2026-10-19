@@ -9,8 +9,8 @@
  * 6. Papan Pesan (guestbook)
  */
 
-// Single uniform ground baseline in canvas (Layer 5 foreground meadow ridge)
-export const CANVAS_GROUND_Y = 152;
+// Single uniform ground baseline in canvas for desktop landmarks & meadow
+export const CANVAS_GROUND_Y = 94;
 
 export const LANDMARK_DEFS = [
   {
@@ -51,9 +51,9 @@ export const LANDMARK_DEFS = [
     short: 'Skill',
     icon: '⚡',
     type: 'skills_tree',
-    // Proportional great tree (gracefully scaled)
-    width: 44,
-    height: 42,
+    // Proportional great tree (harmoniously scaled)
+    width: 40,
+    height: 38,
     shadowRadiusX: 18,
     shadowRadiusY: 3.5,
     anchorX: 0.5,
@@ -215,23 +215,23 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day') {
     ctx.fillStyle = '#E8B03A';
     ctx.fillRect(lx - 4, baseY - 14, 8, 6);
   } else if (type === 'skills_tree') {
-    // Great Skill Tree (harmoniously scaled)
+    // Great Skill Tree (harmoniously scaled to height 38)
     ctx.fillStyle = '#3A2012';
-    ctx.fillRect(lx - 4, baseY - 20, 8, 20);
+    ctx.fillRect(lx - 4, baseY - 18, 8, 18);
     ctx.fillRect(lx - 6, baseY - 4, 12, 4);
     // Foliage Tier 1 (bottom)
     ctx.fillStyle = '#2D4B27';
-    ctx.fillRect(lx - 20, baseY - 28, 40, 10);
+    ctx.fillRect(lx - 19, baseY - 26, 38, 9);
     // Foliage Tier 2 (mid)
     ctx.fillStyle = '#486B47';
-    ctx.fillRect(lx - 16, baseY - 35, 32, 8);
+    ctx.fillRect(lx - 15, baseY - 32, 30, 7);
     // Foliage Tier 3 (top)
     ctx.fillStyle = '#659D5B';
-    ctx.fillRect(lx - 11, baseY - 42, 22, 8);
+    ctx.fillRect(lx - 10, baseY - 38, 20, 7);
     // Glowing orbs / sparks
     ctx.fillStyle = '#8FC6E8';
-    ctx.fillRect(lx - 7, baseY - 27, 2, 2);
-    ctx.fillRect(lx + 8, baseY - 32, 2, 2);
+    ctx.fillRect(lx - 6, baseY - 25, 2, 2);
+    ctx.fillRect(lx + 7, baseY - 30, 2, 2);
   } else if (type === 'guild_hall') {
     // 3 Timber Pillars
     ctx.fillStyle = '#3A2012';

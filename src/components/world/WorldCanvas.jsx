@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { TIME_PHASES } from '../../hooks/useTimeOfDay';
-import { getLandmarkPositions, drawLandmarkPixelArt } from '../../lib/landmarks';
+import { CANVAS_GROUND_Y, getLandmarkPositions, drawLandmarkPixelArt } from '../../lib/landmarks';
 
 /**
  * WorldCanvas - High-Fidelity 2D Pixel-Perfect Overworld Canvas
@@ -86,9 +86,9 @@ export function WorldCanvas({
     ];
 
     const butterflies = [
-      { x: 90, y: 145, baseOriginY: 145, phase: 0, color: '#E8B03A' },
-      { x: 210, y: 150, baseOriginY: 150, phase: 2, color: '#FFFDF8' },
-      { x: 310, y: 142, baseOriginY: 142, phase: 4, color: '#E8793A' },
+      { x: 90, y: isMobile ? 145 : 88, baseOriginY: isMobile ? 145 : 88, phase: 0, color: '#E8B03A' },
+      { x: 210, y: isMobile ? 150 : 92, baseOriginY: isMobile ? 150 : 92, phase: 2, color: '#FFFDF8' },
+      { x: 310, y: isMobile ? 142 : 86, baseOriginY: isMobile ? 142 : 86, phase: 4, color: '#E8793A' },
     ];
 
     // Mobile: max 12 particles per Fase 9
@@ -243,9 +243,10 @@ export function WorldCanvas({
       ctx.fillStyle = currentSky.farHills;
       ctx.beginPath();
       ctx.moveTo(0, H);
+      const farBaseY = isMobile ? 92 : 58;
       for (let x = 0; x <= W; x += 4) {
         const worldX = x - farParallaxX;
-        const y = 92 + Math.sin(worldX * 0.012) * 16 + Math.cos(worldX * 0.024) * 8;
+        const y = farBaseY + Math.sin(worldX * 0.012) * 14 + Math.cos(worldX * 0.024) * 6;
         ctx.lineTo(x, Math.floor(y));
       }
       ctx.lineTo(W, H);
@@ -260,9 +261,10 @@ export function WorldCanvas({
         ctx.fillStyle = currentSky.midHills;
         ctx.beginPath();
         ctx.moveTo(0, H);
+        const midBaseY = 76;
         for (let x = 0; x <= W; x += 4) {
           const worldX = x - midParallaxX;
-          const y = 124 + Math.sin(worldX * 0.02) * 14 + Math.cos(worldX * 0.038) * 6;
+          const y = midBaseY + Math.sin(worldX * 0.02) * 10 + Math.cos(worldX * 0.038) * 5;
           ctx.lineTo(x, Math.floor(y));
         }
         ctx.lineTo(W, H);
@@ -277,9 +279,10 @@ export function WorldCanvas({
       ctx.fillStyle = currentSky.foreHills;
       ctx.beginPath();
       ctx.moveTo(0, H);
+      const foreBaseY = isMobile ? 152 : CANVAS_GROUND_Y;
       for (let x = 0; x <= W; x += 4) {
         const worldX = x - foreParallaxX;
-        const y = 152 + Math.sin(worldX * 0.03) * 7 + Math.cos(worldX * 0.06) * 3;
+        const y = foreBaseY + Math.sin(worldX * 0.03) * 6 + Math.cos(worldX * 0.06) * 3;
         ctx.lineTo(x, Math.floor(y));
       }
       ctx.lineTo(W, H);
@@ -291,10 +294,10 @@ export function WorldCanvas({
       for (let x = 0; x <= W; x += 8) {
         const worldX = x - foreParallaxX;
         const baseY = Math.floor(
-          154 + Math.sin(worldX * 0.03) * 7 + Math.cos(worldX * 0.06) * 3
+          foreBaseY + 2 + Math.sin(worldX * 0.03) * 6 + Math.cos(worldX * 0.06) * 3
         );
-        ctx.fillRect(x, baseY + 6, 6, 2);
-        ctx.fillRect(x + 2, baseY + 9, 5, 2);
+        ctx.fillRect(x, baseY + 4, 6, 2);
+        ctx.fillRect(x + 2, baseY + 7, 5, 2);
       }
 
       /* -------------------------------------------------------------
@@ -343,7 +346,7 @@ export function WorldCanvas({
       for (let x = 2; x < W; x += 14) {
         const worldX = x - foreParallaxX;
         const baseY = Math.floor(
-          152 + Math.sin(worldX * 0.03) * 7 + Math.cos(worldX * 0.06) * 3
+          foreBaseY + Math.sin(worldX * 0.03) * 6 + Math.cos(worldX * 0.06) * 3
         );
 
         ctx.fillStyle = phase === TIME_PHASES.NIGHT ? '#3B5E34' : '#73A45C';

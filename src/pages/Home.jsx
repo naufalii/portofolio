@@ -446,6 +446,30 @@ export function HomePage() {
             style={{ x: mascotX }}
             className="flex flex-col items-center will-change-transform"
           >
+            {/* Dynamic Combined Overhead Badge: "Kamu di sini | Lokasi: <Name>" or "Menuju: <Name>" */}
+            <div
+              className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 px-2.5 py-0.5 mb-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none whitespace-nowrap z-20 ${
+                isTraveling
+                  ? 'border-[#E8793A] bg-[#FFF8F0]'
+                  : 'border-[#24160B]'
+              }`}
+            >
+              {isTraveling ? (
+                <>
+                  <span>🏃</span>
+                  <span>Menuju: {targetMeta.name}</span>
+                </>
+              ) : (
+                <>
+                  <span className="w-2 h-2 bg-[#24160B] border border-[#FFFDF8] inline-block shadow-[1px_1px_0_#24160B]" />
+                  <span>Kamu di sini</span>
+                  <span className="text-[#24160B]/40 font-normal">|</span>
+                  <span>{currentMeta.icon}</span>
+                  <span>Lokasi: {currentMeta.name}</span>
+                </>
+              )}
+            </div>
+
             <div className="pointer-events-auto">
               <Sprite
                 animation={isTraveling ? 'walk' : isWavingHero ? 'wave' : 'idle'}
@@ -454,22 +478,6 @@ export function HomePage() {
                 className="!transition-none"
                 onWave={() => setIsWavingHero(true)}
               />
-            </div>
-
-            {/* Dynamic Location Badge: displays 'Menuju:' while walking and 'Lokasi:' when arrived */}
-            <div
-              className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none ${
-                isTraveling
-                  ? 'border-[#E8793A] bg-[#FFF8F0]'
-                  : 'border-[#24160B]'
-              }`}
-            >
-              <span>{isTraveling ? targetMeta.icon : currentMeta.icon}</span>
-              <span>
-                {isTraveling
-                  ? `Menuju: ${targetMeta.name}`
-                  : `Lokasi: ${currentMeta.name}`}
-              </span>
             </div>
           </motion.div>
         </div>

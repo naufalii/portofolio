@@ -130,15 +130,6 @@ export function LandmarkClickLayer({
               }`}
             />
 
-            {/* Badge for Active state ("Kamu di sini") */}
-            {isActive && (
-              <div
-                className="absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#FFFDF8] text-[#24160B] border-2 border-[#24160B] px-2 py-0.5 font-pixel text-xs font-bold shadow-[2px_2px_0_#24160B] pointer-events-none z-20 animate-none flex items-center gap-1.5"
-              >
-                <span className="w-2 h-2 bg-[#24160B] border border-[#FFFDF8] inline-block shadow-[1px_1px_0_#24160B]" />
-                <span>Kamu di sini</span>
-              </div>
-            )}
 
             {/* Tooltip Badge for Hover state ("Landmark: <Name> ↗") */}
             {!isActive && isHovered && !isTraveling && (
