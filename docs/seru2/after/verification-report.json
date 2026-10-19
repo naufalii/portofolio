@@ -1,0 +1,124 @@
+{
+  "heroMeasurements": {
+    "dialog": {
+      "top": 376.59375,
+      "bottom": 847.34375,
+      "height": 470.75
+    },
+    "ctaButton": {
+      "top": 532.59375,
+      "bottom": 578.59375,
+      "height": 46
+    },
+    "nav": {
+      "top": 104,
+      "bottom": 188,
+      "height": 84
+    },
+    "sprite": {
+      "top": 212,
+      "bottom": 352.59375,
+      "height": 140.59375
+    }
+  },
+  "tabOrderVerified": true,
+  "landmarkClickTests": {
+    "quests": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "📜Kamu di sini"
+    },
+    "skills": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "⚡Kamu di sini"
+    },
+    "guild": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "🏛️Kamu di sini"
+    },
+    "contact": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "📬Kamu di sini"
+    },
+    "guestbook": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "📝Kamu di sini"
+    },
+    "hero": {
+      "isWalkingTriggered": true,
+      "arrived": true,
+      "activeBadge": "🏡Kamu di sini"
+    }
+  },
+  "hoverTests": {
+    "hero-day": {
+      "boxBorder": "rgb(36, 22, 11)",
+      "badgeText": "🏡Kamu di sini",
+      "cursor": "pointer"
+    },
+    "quests-day": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📜Landmark: Quest Log ↗",
+      "cursor": "pointer"
+    },
+    "skills-day": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "⚡Landmark: Skill Tree ↗",
+      "cursor": "pointer"
+    },
+    "guild-day": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "🏛️Landmark: Guild Hall ↗",
+      "cursor": "pointer"
+    },
+    "contact-day": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📬Landmark: Kotak Pos ↗",
+      "cursor": "pointer"
+    },
+    "guestbook-day": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📝Landmark: Papan Pesan ↗",
+      "cursor": "pointer"
+    },
+    "hero-night": {
+      "boxBorder": "rgb(36, 22, 11)",
+      "badgeText": "🏡Kamu di sini",
+      "cursor": "pointer"
+    },
+    "quests-night": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📜Landmark: Quest Log ↗",
+      "cursor": "pointer"
+    },
+    "skills-night": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "⚡Landmark: Skill Tree ↗",
+      "cursor": "pointer"
+    },
+    "guild-night": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "🏛️Landmark: Guild Hall ↗",
+      "cursor": "pointer"
+    },
+    "contact-night": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📬Landmark: Kotak Pos ↗",
+      "cursor": "pointer"
+    },
+    "guestbook-night": {
+      "boxBorder": "rgb(232, 121, 58)",
+      "badgeText": "📝Landmark: Papan Pesan ↗",
+      "cursor": "pointer"
+    }
+  },
+  "activeLandmarkNoAction": true,
+  "interruptedClickIgnored": true,
+  "breakpointTestPassed": true,
+  "reducedMotionPassed": true,
+  "mobileUnaltered": true
+}

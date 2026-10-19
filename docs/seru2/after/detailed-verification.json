@@ -1,0 +1,532 @@
+{
+  "diffResults": [
+    {
+      "vp": "360x800",
+      "sec": "hero",
+      "ph": "day",
+      "diffPixels": 284767,
+      "totalPixels": 1152000,
+      "diffPercent": "24.7194"
+    },
+    {
+      "vp": "360x800",
+      "sec": "hero",
+      "ph": "night",
+      "diffPixels": 285223,
+      "totalPixels": 1152000,
+      "diffPercent": "24.7589"
+    },
+    {
+      "vp": "360x800",
+      "sec": "quests",
+      "ph": "day",
+      "diffPixels": 218580,
+      "totalPixels": 1152000,
+      "diffPercent": "18.9740"
+    },
+    {
+      "vp": "360x800",
+      "sec": "quests",
+      "ph": "night",
+      "diffPixels": 218580,
+      "totalPixels": 1152000,
+      "diffPercent": "18.9740"
+    },
+    {
+      "vp": "360x800",
+      "sec": "skills",
+      "ph": "day",
+      "diffPixels": 248134,
+      "totalPixels": 1152000,
+      "diffPercent": "21.5394"
+    },
+    {
+      "vp": "360x800",
+      "sec": "skills",
+      "ph": "night",
+      "diffPixels": 248134,
+      "totalPixels": 1152000,
+      "diffPercent": "21.5394"
+    },
+    {
+      "vp": "360x800",
+      "sec": "guild",
+      "ph": "day",
+      "diffPixels": 249458,
+      "totalPixels": 1152000,
+      "diffPercent": "21.6543"
+    },
+    {
+      "vp": "360x800",
+      "sec": "guild",
+      "ph": "night",
+      "diffPixels": 249458,
+      "totalPixels": 1152000,
+      "diffPercent": "21.6543"
+    },
+    {
+      "vp": "360x800",
+      "sec": "contact",
+      "ph": "day",
+      "diffPixels": 231428,
+      "totalPixels": 1152000,
+      "diffPercent": "20.0892"
+    },
+    {
+      "vp": "360x800",
+      "sec": "contact",
+      "ph": "night",
+      "diffPixels": 231428,
+      "totalPixels": 1152000,
+      "diffPercent": "20.0892"
+    },
+    {
+      "vp": "360x800",
+      "sec": "guestbook",
+      "ph": "day",
+      "diffPixels": 241581,
+      "totalPixels": 1152000,
+      "diffPercent": "20.9706"
+    },
+    {
+      "vp": "360x800",
+      "sec": "guestbook",
+      "ph": "night",
+      "diffPixels": 241581,
+      "totalPixels": 1152000,
+      "diffPercent": "20.9706"
+    },
+    {
+      "vp": "390x844",
+      "sec": "hero",
+      "ph": "day",
+      "diffPixels": 266028,
+      "totalPixels": 2962440,
+      "diffPercent": "8.9800"
+    },
+    {
+      "vp": "390x844",
+      "sec": "hero",
+      "ph": "night",
+      "diffPixels": 266028,
+      "totalPixels": 2962440,
+      "diffPercent": "8.9800"
+    },
+    {
+      "vp": "390x844",
+      "sec": "quests",
+      "ph": "day",
+      "diffPixels": 279378,
+      "totalPixels": 2962440,
+      "diffPercent": "9.4307"
+    },
+    {
+      "vp": "390x844",
+      "sec": "quests",
+      "ph": "night",
+      "diffPixels": 279378,
+      "totalPixels": 2962440,
+      "diffPercent": "9.4307"
+    },
+    {
+      "vp": "390x844",
+      "sec": "skills",
+      "ph": "day",
+      "diffPixels": 290432,
+      "totalPixels": 2962440,
+      "diffPercent": "9.8038"
+    },
+    {
+      "vp": "390x844",
+      "sec": "skills",
+      "ph": "night",
+      "diffPixels": 290432,
+      "totalPixels": 2962440,
+      "diffPercent": "9.8038"
+    },
+    {
+      "vp": "390x844",
+      "sec": "guild",
+      "ph": "day",
+      "diffPixels": 273940,
+      "totalPixels": 2962440,
+      "diffPercent": "9.2471"
+    },
+    {
+      "vp": "390x844",
+      "sec": "guild",
+      "ph": "night",
+      "diffPixels": 274249,
+      "totalPixels": 2962440,
+      "diffPercent": "9.2575"
+    },
+    {
+      "vp": "390x844",
+      "sec": "contact",
+      "ph": "day",
+      "diffPixels": 282902,
+      "totalPixels": 2962440,
+      "diffPercent": "9.5496"
+    },
+    {
+      "vp": "390x844",
+      "sec": "contact",
+      "ph": "night",
+      "diffPixels": 282902,
+      "totalPixels": 2962440,
+      "diffPercent": "9.5496"
+    },
+    {
+      "vp": "390x844",
+      "sec": "guestbook",
+      "ph": "day",
+      "diffPixels": 280167,
+      "totalPixels": 2962440,
+      "diffPercent": "9.4573"
+    },
+    {
+      "vp": "390x844",
+      "sec": "guestbook",
+      "ph": "night",
+      "diffPixels": 280167,
+      "totalPixels": 2962440,
+      "diffPercent": "9.4573"
+    },
+    {
+      "vp": "412x915",
+      "sec": "hero",
+      "ph": "day",
+      "diffPixels": 293142,
+      "totalPixels": 2598964,
+      "diffPercent": "11.2792"
+    },
+    {
+      "vp": "412x915",
+      "sec": "hero",
+      "ph": "night",
+      "diffPixels": 293142,
+      "totalPixels": 2598964,
+      "diffPercent": "11.2792"
+    },
+    {
+      "vp": "412x915",
+      "sec": "quests",
+      "ph": "day",
+      "diffPixels": 306526,
+      "totalPixels": 2598964,
+      "diffPercent": "11.7942"
+    },
+    {
+      "vp": "412x915",
+      "sec": "quests",
+      "ph": "night",
+      "diffPixels": 306526,
+      "totalPixels": 2598964,
+      "diffPercent": "11.7942"
+    },
+    {
+      "vp": "412x915",
+      "sec": "skills",
+      "ph": "day",
+      "diffPixels": 320090,
+      "totalPixels": 2598964,
+      "diffPercent": "12.3161"
+    },
+    {
+      "vp": "412x915",
+      "sec": "skills",
+      "ph": "night",
+      "diffPixels": 320090,
+      "totalPixels": 2598964,
+      "diffPercent": "12.3161"
+    },
+    {
+      "vp": "412x915",
+      "sec": "guild",
+      "ph": "day",
+      "diffPixels": 306989,
+      "totalPixels": 2598964,
+      "diffPercent": "11.8120"
+    },
+    {
+      "vp": "412x915",
+      "sec": "guild",
+      "ph": "night",
+      "diffPixels": 307562,
+      "totalPixels": 2598964,
+      "diffPercent": "11.8340"
+    },
+    {
+      "vp": "412x915",
+      "sec": "contact",
+      "ph": "day",
+      "diffPixels": 289138,
+      "totalPixels": 2598964,
+      "diffPercent": "11.1251"
+    },
+    {
+      "vp": "412x915",
+      "sec": "contact",
+      "ph": "night",
+      "diffPixels": 288047,
+      "totalPixels": 2598964,
+      "diffPercent": "11.0831"
+    },
+    {
+      "vp": "412x915",
+      "sec": "guestbook",
+      "ph": "day",
+      "diffPixels": 284691,
+      "totalPixels": 2598964,
+      "diffPercent": "10.9540"
+    },
+    {
+      "vp": "412x915",
+      "sec": "guestbook",
+      "ph": "night",
+      "diffPixels": 284691,
+      "totalPixels": 2598964,
+      "diffPercent": "10.9540"
+    }
+  ],
+  "positionReport": {
+    "1024x768": {
+      "hero": {
+        "sectionPanel": null,
+        "dialog": null,
+        "cta": null
+      },
+      "quests": {
+        "sectionPanel": null
+      },
+      "skills": {
+        "sectionPanel": null
+      },
+      "guild": {
+        "sectionPanel": null
+      },
+      "contact": {
+        "sectionPanel": null
+      },
+      "guestbook": {
+        "sectionPanel": null
+      }
+    },
+    "1280x720": {
+      "hero": {
+        "sectionPanel": null,
+        "dialog": null,
+        "cta": null
+      },
+      "quests": {
+        "sectionPanel": null
+      },
+      "skills": {
+        "sectionPanel": null
+      },
+      "guild": {
+        "sectionPanel": null
+      },
+      "contact": {
+        "sectionPanel": null
+      },
+      "guestbook": {
+        "sectionPanel": null
+      }
+    },
+    "1440x900": {
+      "hero": {
+        "sectionPanel": null,
+        "dialog": null,
+        "cta": null
+      },
+      "quests": {
+        "sectionPanel": null
+      },
+      "skills": {
+        "sectionPanel": null
+      },
+      "guild": {
+        "sectionPanel": null
+      },
+      "contact": {
+        "sectionPanel": null
+      },
+      "guestbook": {
+        "sectionPanel": null
+      }
+    },
+    "1920x1080": {
+      "hero": {
+        "sectionPanel": null,
+        "dialog": null,
+        "cta": null
+      },
+      "quests": {
+        "sectionPanel": null
+      },
+      "skills": {
+        "sectionPanel": null
+      },
+      "guild": {
+        "sectionPanel": null
+      },
+      "contact": {
+        "sectionPanel": null
+      },
+      "guestbook": {
+        "sectionPanel": null
+      }
+    }
+  },
+  "alignmentTables": {
+    "1280x720": [
+      {
+        "location": "hero",
+        "tabCenterX": 364.2,
+        "canvasX": 102.42,
+        "lmScreenCenterX": 355,
+        "reprojectedScreenX": 364.2,
+        "deltaX": 9.2
+      },
+      {
+        "location": "quests",
+        "tabCenterX": 508.2,
+        "canvasX": 142.93,
+        "lmScreenCenterX": 490.5,
+        "reprojectedScreenX": 508.2,
+        "deltaX": 17.7
+      },
+      {
+        "location": "skills",
+        "tabCenterX": 649.1,
+        "canvasX": 182.56,
+        "lmScreenCenterX": 632,
+        "reprojectedScreenX": 649.1,
+        "deltaX": 17.1
+      },
+      {
+        "location": "guild",
+        "tabCenterX": 784.7,
+        "canvasX": 220.69,
+        "lmScreenCenterX": 767.5,
+        "reprojectedScreenX": 784.7,
+        "deltaX": 17.2
+      },
+      {
+        "location": "contact",
+        "tabCenterX": 915.5,
+        "canvasX": 257.49,
+        "lmScreenCenterX": 898,
+        "reprojectedScreenX": 915.5,
+        "deltaX": 17.5
+      },
+      {
+        "location": "guestbook",
+        "tabCenterX": 1060.8,
+        "canvasX": 298.34,
+        "lmScreenCenterX": 1052,
+        "reprojectedScreenX": 1060.8,
+        "deltaX": 8.8
+      }
+    ],
+    "1024x768": [
+      {
+        "location": "hero",
+        "tabCenterX": 252.5,
+        "canvasX": 88.78,
+        "lmScreenCenterX": 252.5,
+        "reprojectedScreenX": 252.5,
+        "deltaX": 0
+      },
+      {
+        "location": "quests",
+        "tabCenterX": 389.8,
+        "canvasX": 137.03,
+        "lmScreenCenterX": 389.5,
+        "reprojectedScreenX": 389.8,
+        "deltaX": 0.3
+      },
+      {
+        "location": "skills",
+        "tabCenterX": 524.1,
+        "canvasX": 184.25,
+        "lmScreenCenterX": 524,
+        "reprojectedScreenX": 524.1,
+        "deltaX": 0.1
+      },
+      {
+        "location": "guild",
+        "tabCenterX": 653.4,
+        "canvasX": 229.71,
+        "lmScreenCenterX": 653.5,
+        "reprojectedScreenX": 653.4,
+        "deltaX": 0.1
+      },
+      {
+        "location": "contact",
+        "tabCenterX": 778.2,
+        "canvasX": 273.59,
+        "lmScreenCenterX": 778,
+        "reprojectedScreenX": 778.2,
+        "deltaX": 0.2
+      },
+      {
+        "location": "guestbook",
+        "tabCenterX": 916.5,
+        "canvasX": 322.22,
+        "lmScreenCenterX": 916.5,
+        "reprojectedScreenX": 916.5,
+        "deltaX": 0
+      }
+    ]
+  },
+  "travelFrames": [
+    {
+      "transform": "matrix(1, 0, 0, 1, -249.368, 0)",
+      "badgeText": "📜Menuju: Quest Log",
+      "hasWalkingBadge": true
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -214.393, 0)",
+      "badgeText": "📜Menuju: Quest Log",
+      "hasWalkingBadge": true
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -177.783, 0)",
+      "badgeText": "📜Menuju: Quest Log",
+      "hasWalkingBadge": true
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -150.652, 0)",
+      "badgeText": "📜Menuju: Quest Log",
+      "hasWalkingBadge": true
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -127.117, 0)",
+      "badgeText": "📜Lokasi: Quest Log",
+      "hasWalkingBadge": false
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -127.117, 0)",
+      "badgeText": "📜Lokasi: Quest Log",
+      "hasWalkingBadge": false
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -127.117, 0)",
+      "badgeText": "📜Lokasi: Quest Log",
+      "hasWalkingBadge": false
+    },
+    {
+      "transform": "matrix(1, 0, 0, 1, -127.117, 0)",
+      "badgeText": "📜Lokasi: Quest Log",
+      "hasWalkingBadge": false
+    }
+  ],
+  "endState": {
+    "location": "#quests",
+    "transform": "matrix(1, 0, 0, 1, -127.117, 0)",
+    "badgeText": "📜Lokasi: Quest Log",
+    "panelOpen": true
+  }
+}
