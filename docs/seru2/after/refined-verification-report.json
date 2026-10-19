@@ -1,0 +1,222 @@
+{
+  "1280x720": {
+    "day-hero": {
+      "dialog": {
+        "top": 376.59,
+        "bottom": 847.34,
+        "height": 470.75
+      },
+      "cta": {
+        "top": 532.59,
+        "bottom": 578.59,
+        "height": 46
+      }
+    },
+    "day-hero-box": {
+      "left": 305,
+      "top": 457,
+      "width": 122,
+      "height": 94,
+      "borderColor": "rgb(36, 22, 11)"
+    },
+    "day-quests-box": {
+      "left": 459,
+      "top": 449,
+      "width": 108,
+      "height": 102,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-skills-box": {
+      "left": 566,
+      "top": 392,
+      "width": 164,
+      "height": 159,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-guild-box": {
+      "left": 713,
+      "top": 428,
+      "width": 129,
+      "height": 123,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-contact-box": {
+      "left": 846,
+      "top": 435,
+      "width": 129,
+      "height": 116,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-guestbook-box": {
+      "left": 988,
+      "top": 442,
+      "width": 143,
+      "height": 109,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-hero": {
+      "dialog": {
+        "top": 376.59,
+        "bottom": 847.34,
+        "height": 470.75
+      },
+      "cta": {
+        "top": 532.59,
+        "bottom": 578.59,
+        "height": 46
+      }
+    },
+    "night-hero-box": {
+      "left": 305,
+      "top": 457,
+      "width": 122,
+      "height": 94,
+      "borderColor": "rgb(36, 22, 11)"
+    },
+    "night-quests-box": {
+      "left": 459,
+      "top": 449,
+      "width": 108,
+      "height": 102,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-skills-box": {
+      "left": 566,
+      "top": 392,
+      "width": 164,
+      "height": 159,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-guild-box": {
+      "left": 713,
+      "top": 428,
+      "width": 129,
+      "height": 123,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-contact-box": {
+      "left": 846,
+      "top": 435,
+      "width": 129,
+      "height": 116,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-guestbook-box": {
+      "left": 988,
+      "top": 442,
+      "width": 143,
+      "height": 109,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    }
+  },
+  "1024x768": {
+    "day-hero": {
+      "dialog": {
+        "top": 376.59,
+        "bottom": 847.34,
+        "height": 470.75
+      },
+      "cta": {
+        "top": 532.59,
+        "bottom": 578.59,
+        "height": 46
+      }
+    },
+    "day-hero-box": {
+      "left": 205,
+      "top": 488,
+      "width": 99,
+      "height": 100,
+      "borderColor": "rgb(36, 22, 11)"
+    },
+    "day-quests-box": {
+      "left": 350,
+      "top": 480,
+      "width": 88,
+      "height": 108,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-skills-box": {
+      "left": 456,
+      "top": 419,
+      "width": 133,
+      "height": 169,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-guild-box": {
+      "left": 594,
+      "top": 457,
+      "width": 105,
+      "height": 131,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-contact-box": {
+      "left": 721,
+      "top": 465,
+      "width": 105,
+      "height": 123,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "day-guestbook-box": {
+      "left": 857,
+      "top": 472,
+      "width": 116,
+      "height": 116,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-hero": {
+      "dialog": {
+        "top": 376.59,
+        "bottom": 847.34,
+        "height": 470.75
+      },
+      "cta": {
+        "top": 532.59,
+        "bottom": 578.59,
+        "height": 46
+      }
+    },
+    "night-hero-box": {
+      "left": 205,
+      "top": 488,
+      "width": 99,
+      "height": 100,
+      "borderColor": "rgb(36, 22, 11)"
+    },
+    "night-quests-box": {
+      "left": 350,
+      "top": 480,
+      "width": 88,
+      "height": 108,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-skills-box": {
+      "left": 456,
+      "top": 419,
+      "width": 133,
+      "height": 169,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-guild-box": {
+      "left": 594,
+      "top": 457,
+      "width": 105,
+      "height": 131,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-contact-box": {
+      "left": 721,
+      "top": 465,
+      "width": 105,
+      "height": 123,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "night-guestbook-box": {
+      "left": 857,
+      "top": 472,
+      "width": 116,
+      "height": 116,
+      "borderColor": "rgba(0, 0, 0, 0)"
+    }
+  }
+}
