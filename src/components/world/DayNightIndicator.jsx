@@ -69,17 +69,12 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none font-pixel text-xs lg:text-sm cursor-pointer select-none"
-        title="Ubah Siklus Waktu (Simulasi)"
+        title="Ubah Siklus Waktu"
         aria-label={`Ubah siklus waktu. Waktu saat ini: ${currentConfig.label}`}
         aria-expanded={isOpen}
       >
         <span className="text-base leading-none">{currentConfig.icon}</span>
         <span className="font-bold hidden lg:inline ml-1">{currentConfig.label.toUpperCase()}</span>
-        {isManual && (
-          <span className="text-[9px] px-1 bg-[var(--sunset)] text-[var(--cloud)] border border-[var(--ink)] hidden lg:inline ml-1">
-            SIMULASI
-          </span>
-        )}
         <span className="text-[10px] ml-1 hidden lg:inline">▼</span>
       </button>
 

@@ -305,6 +305,8 @@ export function WorldCanvas({
        * Mobile (<1024px): 100% unaltered drawing and positions with 0.8 opacity
        * Desktop (>=1024px): Synchronized with tabs, locked to tabs (no parallax drift)
        * ------------------------------------------------------------- */
+      const animStep = reducedMotion ? 0 : swayFrame;
+
       if (isMobile) {
         ctx.globalAlpha = 0.8;
         const renderMobileLandmark = (landmarkWorldX, type) => {
@@ -313,7 +315,7 @@ export function WorldCanvas({
           const baseY = Math.floor(
             152 + Math.sin(landmarkWorldX * 0.03) * 7 + Math.cos(landmarkWorldX * 0.06) * 3
           );
-          drawLandmarkPixelArt(ctx, type, lx, baseY);
+          drawLandmarkPixelArt(ctx, type, lx, baseY, phase, animStep);
         };
 
         renderMobileLandmark(60, 'hero_village');
@@ -327,7 +329,7 @@ export function WorldCanvas({
         ctx.globalAlpha = 0.85;
         const positions = getLandmarkPositions(canvas);
         positions.forEach((pos) => {
-          drawLandmarkPixelArt(ctx, pos.type, Math.floor(pos.canvasX), Math.floor(pos.canvasY), phase);
+          drawLandmarkPixelArt(ctx, pos.type, Math.floor(pos.canvasX), Math.floor(pos.canvasY), phase, animStep);
         });
         ctx.globalAlpha = 1.0;
       }
