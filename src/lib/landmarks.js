@@ -186,7 +186,7 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
   // 2. LANDMARK PIXEL ARTWORK (proportional and balanced)
   if (type === 'hero_village') {
     // Wall
-    ctx.fillStyle = '#F6EBD3';
+    ctx.fillStyle = isNight ? '#D4C4A8' : '#F6EBD3';
     ctx.fillRect(lx - 13, baseY - 18, 26, 18);
     // Roof (terracotta 2-tier)
     ctx.fillStyle = '#B5501B';
@@ -198,6 +198,9 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
 
     // Window: blue in day, glowing warm amber/cream at night
     if (isNight) {
+      // Soft light spill around window
+      ctx.fillStyle = 'rgba(232, 176, 58, 0.28)';
+      ctx.fillRect(lx - 11, baseY - 14, 6, 6);
       ctx.fillStyle = '#E8B03A';
       ctx.fillRect(lx - 10, baseY - 13, 4, 4);
       ctx.fillStyle = animStep === 0 ? '#FFFDF8' : '#F6EBD3';
@@ -220,22 +223,35 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
       ctx.fillRect(lx - 10, baseY - 11, 4, 1);
     }
 
-    // Lantern on post
+    // Lantern on post with soft radiant glow around it
     ctx.fillStyle = '#24160B';
     ctx.fillRect(lx + 9, baseY - 8, 1, 8); // timber post
-    ctx.fillRect(lx + 8, baseY - 12, 3, 1); // lantern cap
+    ctx.fillRect(lx + 8, baseY - 12, 3, 1); // iron cap
 
     if (isNight) {
-      // Soft warm halo
-      ctx.fillStyle = 'rgba(232, 176, 58, 0.35)';
-      ctx.fillRect(lx + 7, baseY - 12, 5, 5);
-      // Lantern glass
+      // 1. Soft radial ambient light glow around the lantern
+      const glow = ctx.createRadialGradient(lx + 9.5, baseY - 9.5, 1, lx + 9.5, baseY - 9.5, 8);
+      glow.addColorStop(0, 'rgba(255, 253, 248, 0.75)');
+      glow.addColorStop(0.35, 'rgba(232, 176, 58, 0.45)');
+      glow.addColorStop(0.7, 'rgba(232, 121, 58, 0.18)');
+      glow.addColorStop(1, 'rgba(232, 176, 58, 0)');
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(lx + 9.5, baseY - 9.5, 8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // 2. Soft ground light pool beneath lantern
+      ctx.fillStyle = 'rgba(232, 176, 58, 0.22)';
+      ctx.fillRect(lx + 6, baseY - 2, 7, 2);
+
+      // 3. Lantern glass & flame core
       ctx.fillStyle = '#E8B03A';
       ctx.fillRect(lx + 8, baseY - 11, 3, 3);
-      // Flame core (steps flicker)
       ctx.fillStyle = animStep === 1 ? '#FFFDF8' : '#F6EBD3';
       ctx.fillRect(lx + 9, baseY - 10, 1, 1);
     } else if (isDusk) {
+      ctx.fillStyle = 'rgba(242, 166, 107, 0.35)';
+      ctx.fillRect(lx + 7, baseY - 12, 5, 5);
       ctx.fillStyle = '#F2A66B';
       ctx.fillRect(lx + 8, baseY - 11, 3, 3);
     } else {
@@ -247,46 +263,78 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
     ctx.fillStyle = '#5A3A22';
     ctx.fillRect(lx - 10, baseY - 20, 2, 20);
     ctx.fillRect(lx + 10, baseY - 20, 2, 20);
-    // Notice Parchment / Roof
-    ctx.fillStyle = '#F6EBD3';
+
+    // Quest Cabin Wall (dark timber at night for high contrast, warm wood in day)
+    ctx.fillStyle = isNight ? '#3A2012' : '#F6EBD3';
     ctx.fillRect(lx - 11, baseY - 18, 22, 11);
+    ctx.fillStyle = '#5A3A22';
+    ctx.fillRect(lx - 12, baseY - 19, 24, 2); // Eaves
+
     // Flagpole & Flag
     ctx.fillStyle = '#24160B';
     ctx.fillRect(lx + 8, baseY - 26, 1, 9);
     ctx.fillStyle = '#E8793A';
     ctx.fillRect(lx + 9, baseY - 26, 8, 5);
 
-    // Quest House Window (illuminated at night)
+    // Quest House Window (high contrast warm glowing window on cabin wall)
     if (isNight) {
+      // Warm light spill around window
+      ctx.fillStyle = 'rgba(232, 176, 58, 0.3)';
+      ctx.fillRect(lx - 6, baseY - 16, 12, 9);
+
+      // Window frame outer
+      ctx.fillStyle = '#24160B';
+      ctx.fillRect(lx - 5, baseY - 15, 10, 7);
+
+      // Glowing warm amber glass
       ctx.fillStyle = '#E8B03A';
-      ctx.fillRect(lx - 3, baseY - 15, 6, 6);
-      ctx.fillStyle = animStep === 0 ? '#FFFDF8' : '#F6EBD3';
-      ctx.fillRect(lx - 2, baseY - 14, 2, 2);
-      ctx.fillRect(lx + 1, baseY - 14, 2, 2);
-      // Timber window frame cross
-      ctx.fillStyle = '#3A2012';
-      ctx.fillRect(lx, baseY - 15, 1, 6);
-      ctx.fillRect(lx - 3, baseY - 12, 6, 1);
+      ctx.fillRect(lx - 4, baseY - 14, 8, 5);
+
+      // Bright warm cream core in 2 panes
+      const coreColor = animStep === 0 ? '#FFFDF8' : '#F6EBD3';
+      ctx.fillStyle = coreColor;
+      ctx.fillRect(lx - 3, baseY - 13, 2, 3);
+      ctx.fillRect(lx + 1, baseY - 13, 2, 3);
+
+      // Window frame cross (mullion)
+      ctx.fillStyle = '#24160B';
+      ctx.fillRect(lx - 1, baseY - 14, 1, 5);
+      ctx.fillRect(lx - 4, baseY - 12, 8, 1);
+
+      // Light spill on ground
+      ctx.fillStyle = 'rgba(232, 176, 58, 0.2)';
+      ctx.fillRect(lx - 5, baseY - 2, 10, 2);
     } else if (isDusk) {
+      ctx.fillStyle = '#24160B';
+      ctx.fillRect(lx - 5, baseY - 15, 10, 7);
       ctx.fillStyle = '#F2A66B';
-      ctx.fillRect(lx - 3, baseY - 15, 6, 6);
-      ctx.fillStyle = '#3A2012';
-      ctx.fillRect(lx, baseY - 15, 1, 6);
-      ctx.fillRect(lx - 3, baseY - 12, 6, 1);
+      ctx.fillRect(lx - 4, baseY - 14, 8, 5);
+      ctx.fillStyle = '#24160B';
+      ctx.fillRect(lx - 1, baseY - 14, 1, 5);
+      ctx.fillRect(lx - 4, baseY - 12, 8, 1);
     } else {
+      ctx.fillStyle = '#24160B';
+      ctx.fillRect(lx - 5, baseY - 15, 10, 7);
       ctx.fillStyle = '#8FC6E8';
-      ctx.fillRect(lx - 3, baseY - 15, 6, 6);
+      ctx.fillRect(lx - 4, baseY - 14, 8, 5);
       ctx.fillStyle = '#3A2012';
-      ctx.fillRect(lx, baseY - 15, 1, 6);
-      ctx.fillRect(lx - 3, baseY - 12, 6, 1);
+      ctx.fillRect(lx - 1, baseY - 14, 1, 5);
+      ctx.fillRect(lx - 4, baseY - 12, 8, 1);
     }
 
-    // Quest post lantern on the left
+    // Quest post lantern on the left with soft radiant halo
     ctx.fillStyle = '#24160B';
     ctx.fillRect(lx - 12, baseY - 16, 2, 1); // iron hook
     if (isNight) {
-      ctx.fillStyle = 'rgba(232, 176, 58, 0.35)';
-      ctx.fillRect(lx - 13, baseY - 15, 4, 4);
+      const qGlow = ctx.createRadialGradient(lx - 11, baseY - 14, 1, lx - 11, baseY - 14, 6);
+      qGlow.addColorStop(0, 'rgba(255, 253, 248, 0.7)');
+      qGlow.addColorStop(0.4, 'rgba(232, 176, 58, 0.4)');
+      qGlow.addColorStop(1, 'rgba(232, 176, 58, 0)');
+      ctx.fillStyle = qGlow;
+      ctx.beginPath();
+      ctx.arc(lx - 11, baseY - 14, 6, 0, Math.PI * 2);
+      ctx.fill();
+
       ctx.fillStyle = '#E8B03A';
       ctx.fillRect(lx - 12, baseY - 15, 2, 3);
       ctx.fillStyle = animStep === 2 ? '#FFFDF8' : '#F6EBD3';
@@ -413,12 +461,19 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
     ctx.fillRect(lx - 16, baseY - 11, 14, 2);
     ctx.fillRect(lx - 16, baseY - 5, 14, 2);
 
-    // Fence post lantern
+    // Fence post lantern with soft ambient glow
     ctx.fillStyle = '#24160B';
     ctx.fillRect(lx - 17, baseY - 20, 4, 1); // cap
     if (isNight) {
-      ctx.fillStyle = 'rgba(232, 176, 58, 0.35)';
-      ctx.fillRect(lx - 18, baseY - 20, 6, 6);
+      const pGlow = ctx.createRadialGradient(lx - 15, baseY - 17, 1, lx - 15, baseY - 17, 6);
+      pGlow.addColorStop(0, 'rgba(255, 253, 248, 0.75)');
+      pGlow.addColorStop(0.4, 'rgba(232, 176, 58, 0.4)');
+      pGlow.addColorStop(1, 'rgba(232, 176, 58, 0)');
+      ctx.fillStyle = pGlow;
+      ctx.beginPath();
+      ctx.arc(lx - 15, baseY - 17, 6, 0, Math.PI * 2);
+      ctx.fill();
+
       ctx.fillStyle = '#E8B03A';
       ctx.fillRect(lx - 17, baseY - 19, 4, 5);
       ctx.fillStyle = animStep === 1 ? '#FFFDF8' : '#F6EBD3';
@@ -440,8 +495,17 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
     ctx.fillStyle = '#B5501B';
     ctx.fillRect(lx + 2, baseY - 22, 12, 2);
 
-    // Mailbox intake window / slot
+    // Mailbox indicator light (optional small warm light point) & intake slot
     if (isNight) {
+      // Small warm point light on top of mailbox
+      ctx.fillStyle = 'rgba(232, 176, 58, 0.4)';
+      ctx.fillRect(lx + 6, baseY - 28, 4, 3);
+      ctx.fillStyle = '#E8B03A';
+      ctx.fillRect(lx + 7, baseY - 27, 2, 2);
+      ctx.fillStyle = '#FFFDF8';
+      ctx.fillRect(lx + 7, baseY - 27, 1, 1);
+
+      // Mailbox intake window / slot
       ctx.fillStyle = '#E8B03A';
       ctx.fillRect(lx + 4, baseY - 21, 6, 3);
       ctx.fillStyle = '#FFFDF8';
