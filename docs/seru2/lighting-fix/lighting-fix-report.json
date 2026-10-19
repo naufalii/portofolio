@@ -1,0 +1,488 @@
+{
+  "desktop": {
+    "1280x720": {
+      "day": {
+        "dialog": {
+          "left": 192,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 220,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 943.47,
+          "top": 34,
+          "bottom": 78,
+          "width": 102.33,
+          "height": 44,
+          "text": "☀️SIANG▼"
+        },
+        "modeCvButton": {
+          "left": 1057.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 305,
+            "top": 248,
+            "bottom": 342,
+            "width": 122,
+            "height": 94
+          },
+          "quests": {
+            "left": 459,
+            "top": 240,
+            "bottom": 342,
+            "width": 108,
+            "height": 102
+          },
+          "skills": {
+            "left": 573,
+            "top": 197,
+            "bottom": 342,
+            "width": 150,
+            "height": 145
+          },
+          "guild": {
+            "left": 713,
+            "top": 219,
+            "bottom": 342,
+            "width": 129,
+            "height": 123
+          },
+          "contact": {
+            "left": 846,
+            "top": 226,
+            "bottom": 342,
+            "width": 129,
+            "height": 116
+          },
+          "guestbook": {
+            "left": 988,
+            "top": 233,
+            "bottom": 342,
+            "width": 143,
+            "height": 109
+          }
+        }
+      },
+      "night": {
+        "dialog": {
+          "left": 192,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 220,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 936.2,
+          "top": 34,
+          "bottom": 78,
+          "width": 109.59,
+          "height": 44,
+          "text": "🌙MALAM▼"
+        },
+        "modeCvButton": {
+          "left": 1057.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 305,
+            "top": 248,
+            "bottom": 342,
+            "width": 122,
+            "height": 94
+          },
+          "quests": {
+            "left": 459,
+            "top": 240,
+            "bottom": 342,
+            "width": 108,
+            "height": 102
+          },
+          "skills": {
+            "left": 573,
+            "top": 197,
+            "bottom": 342,
+            "width": 150,
+            "height": 145
+          },
+          "guild": {
+            "left": 713,
+            "top": 219,
+            "bottom": 342,
+            "width": 129,
+            "height": 123
+          },
+          "contact": {
+            "left": 846,
+            "top": 226,
+            "bottom": 342,
+            "width": 129,
+            "height": 116
+          },
+          "guestbook": {
+            "left": 988,
+            "top": 233,
+            "bottom": 342,
+            "width": 143,
+            "height": 109
+          }
+        }
+      },
+      "dusk": {
+        "dialog": {
+          "left": 192,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 220,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 940.98,
+          "top": 34,
+          "bottom": 78,
+          "width": 104.81,
+          "height": 44,
+          "text": "🌇SENJA▼"
+        },
+        "modeCvButton": {
+          "left": 1057.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 305,
+            "top": 248,
+            "bottom": 342,
+            "width": 122,
+            "height": 94
+          },
+          "quests": {
+            "left": 459,
+            "top": 240,
+            "bottom": 342,
+            "width": 108,
+            "height": 102
+          },
+          "skills": {
+            "left": 573,
+            "top": 197,
+            "bottom": 342,
+            "width": 150,
+            "height": 145
+          },
+          "guild": {
+            "left": 713,
+            "top": 219,
+            "bottom": 342,
+            "width": 129,
+            "height": 123
+          },
+          "contact": {
+            "left": 846,
+            "top": 226,
+            "bottom": 342,
+            "width": 129,
+            "height": 116
+          },
+          "guestbook": {
+            "left": 988,
+            "top": 233,
+            "bottom": 342,
+            "width": 143,
+            "height": 109
+          }
+        }
+      }
+    },
+    "1024x768": {
+      "day": {
+        "dialog": {
+          "left": 64,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 92,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 795.47,
+          "top": 34,
+          "bottom": 78,
+          "width": 102.33,
+          "height": 44,
+          "text": "☀️SIANG▼"
+        },
+        "modeCvButton": {
+          "left": 909.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 205,
+            "top": 265,
+            "bottom": 365,
+            "width": 99,
+            "height": 100
+          },
+          "quests": {
+            "left": 350,
+            "top": 257,
+            "bottom": 365,
+            "width": 88,
+            "height": 108
+          },
+          "skills": {
+            "left": 462,
+            "top": 211,
+            "bottom": 365,
+            "width": 122,
+            "height": 154
+          },
+          "guild": {
+            "left": 594,
+            "top": 234,
+            "bottom": 365,
+            "width": 105,
+            "height": 131
+          },
+          "contact": {
+            "left": 721,
+            "top": 242,
+            "bottom": 365,
+            "width": 105,
+            "height": 123
+          },
+          "guestbook": {
+            "left": 857,
+            "top": 249,
+            "bottom": 365,
+            "width": 116,
+            "height": 116
+          }
+        }
+      },
+      "night": {
+        "dialog": {
+          "left": 64,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 92,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 788.2,
+          "top": 34,
+          "bottom": 78,
+          "width": 109.59,
+          "height": 44,
+          "text": "🌙MALAM▼"
+        },
+        "modeCvButton": {
+          "left": 909.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 205,
+            "top": 265,
+            "bottom": 365,
+            "width": 99,
+            "height": 100
+          },
+          "quests": {
+            "left": 350,
+            "top": 257,
+            "bottom": 365,
+            "width": 88,
+            "height": 108
+          },
+          "skills": {
+            "left": 462,
+            "top": 211,
+            "bottom": 365,
+            "width": 122,
+            "height": 154
+          },
+          "guild": {
+            "left": 594,
+            "top": 234,
+            "bottom": 365,
+            "width": 105,
+            "height": 131
+          },
+          "contact": {
+            "left": 721,
+            "top": 242,
+            "bottom": 365,
+            "width": 105,
+            "height": 123
+          },
+          "guestbook": {
+            "left": 857,
+            "top": 249,
+            "bottom": 365,
+            "width": 116,
+            "height": 116
+          }
+        }
+      },
+      "dusk": {
+        "dialog": {
+          "left": 64,
+          "top": 376.59,
+          "bottom": 594.59,
+          "width": 896,
+          "height": 218
+        },
+        "cta": {
+          "left": 92,
+          "top": 532.59,
+          "bottom": 578.59,
+          "width": 178,
+          "height": 46
+        },
+        "timeSelector": {
+          "left": 792.98,
+          "top": 34,
+          "bottom": 78,
+          "width": 104.81,
+          "height": 44,
+          "text": "🌇SENJA▼"
+        },
+        "modeCvButton": {
+          "left": 909.8,
+          "top": 40,
+          "bottom": 72,
+          "width": 74.2,
+          "height": 32
+        },
+        "landmarks": {
+          "hero": {
+            "left": 205,
+            "top": 265,
+            "bottom": 365,
+            "width": 99,
+            "height": 100
+          },
+          "quests": {
+            "left": 350,
+            "top": 257,
+            "bottom": 365,
+            "width": 88,
+            "height": 108
+          },
+          "skills": {
+            "left": 462,
+            "top": 211,
+            "bottom": 365,
+            "width": 122,
+            "height": 154
+          },
+          "guild": {
+            "left": 594,
+            "top": 234,
+            "bottom": 365,
+            "width": 105,
+            "height": 131
+          },
+          "contact": {
+            "left": 721,
+            "top": 242,
+            "bottom": 365,
+            "width": 105,
+            "height": 123
+          },
+          "guestbook": {
+            "left": 857,
+            "top": 249,
+            "bottom": 365,
+            "width": 116,
+            "height": 116
+          }
+        }
+      }
+    }
+  },
+  "mobile": {
+    "day": {
+      "timeSelector": {
+        "left": 282.03,
+        "top": 6,
+        "width": 45.97,
+        "height": 44
+      },
+      "cvButton": {
+        "left": 334,
+        "top": 6,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "night": {
+      "timeSelector": {
+        "left": 282.03,
+        "top": 6,
+        "width": 45.97,
+        "height": 44
+      },
+      "cvButton": {
+        "left": 334,
+        "top": 6,
+        "width": 44,
+        "height": 44
+      }
+    }
+  }
+}
