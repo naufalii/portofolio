@@ -212,6 +212,9 @@ export function HeroSection({ onStartExplore }) {
               <span className="hidden lg:inline">Gunakan peta navigasi di atas</span>
               <span className="lg:hidden">Gunakan peta navigasi di bawah</span> untuk menjelajahi seluruh area:
             </p>
+            <p className="hidden lg:block text-xs font-bold text-[#24160B]">
+              Klik bangunan di peta atau tekan &larr; &rarr;
+            </p>
             <ul className="list-disc list-inside space-y-1 text-xs">
               <li><strong>Quest Log:</strong> Lab Oracle 19c Data Guard & Portofolio Overworld.</li>
               <li><strong>Skill Tree:</strong> 3 cabang keahlian (Database, SysAdmin, Web Dev).</li>

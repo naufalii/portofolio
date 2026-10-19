@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { TIME_PHASES } from '../../hooks/useTimeOfDay';
+import { getLandmarkPositions, drawLandmarkPixelArt } from '../../lib/landmarks';
 
 /**
  * WorldCanvas - High-Fidelity 2D Pixel-Perfect Overworld Canvas
@@ -297,100 +298,36 @@ export function WorldCanvas({
       }
 
       /* -------------------------------------------------------------
-       * LANDMARKS ALONG THE OVERWORLD (Opacity 0.8 per Fase 9)
+       * LANDMARKS ALONG THE OVERWORLD
+       * Mobile (<1024px): 100% unaltered drawing and positions with 0.8 opacity
+       * Desktop (>=1024px): Synchronized with tabs, locked to tabs (no parallax drift)
        * ------------------------------------------------------------- */
-      ctx.globalAlpha = 0.8;
+      if (isMobile) {
+        ctx.globalAlpha = 0.8;
+        const renderMobileLandmark = (landmarkWorldX, type) => {
+          const lx = Math.floor(landmarkWorldX + foreParallaxX);
+          if (lx < -80 || lx > W + 80) return;
+          const baseY = Math.floor(
+            152 + Math.sin(landmarkWorldX * 0.03) * 7 + Math.cos(landmarkWorldX * 0.06) * 3
+          );
+          drawLandmarkPixelArt(ctx, type, lx, baseY);
+        };
 
-      const renderLandmark = (landmarkWorldX, type) => {
-        const lx = Math.floor(landmarkWorldX + foreParallaxX);
-        if (lx < -80 || lx > W + 80) return;
-
-        const baseY = Math.floor(
-          152 + Math.sin(landmarkWorldX * 0.03) * 7 + Math.cos(landmarkWorldX * 0.06) * 3
-        );
-
-        if (type === 'hero_village') {
-          // Cottage Wall
-          ctx.fillStyle = '#F6EBD3';
-          ctx.fillRect(lx - 24, baseY - 22, 28, 22);
-          // Roof
-          ctx.fillStyle = '#B5501B';
-          ctx.fillRect(lx - 28, baseY - 30, 36, 4);
-          ctx.fillRect(lx - 26, baseY - 26, 32, 4);
-          // Door
-          ctx.fillStyle = '#3A2012';
-          ctx.fillRect(lx - 16, baseY - 14, 8, 14);
-          // Lantern
-          ctx.fillStyle = '#E8B03A';
-          ctx.fillRect(lx + 10, baseY - 12, 3, 3);
-          ctx.fillStyle = '#24160B';
-          ctx.fillRect(lx + 11, baseY - 9, 1, 9);
-        } else if (type === 'quests_house') {
-          ctx.fillStyle = '#5A3A22';
-          ctx.fillRect(lx - 12, baseY - 26, 3, 26);
-          ctx.fillRect(lx + 12, baseY - 26, 3, 26);
-          ctx.fillStyle = '#F6EBD3';
-          ctx.fillRect(lx - 14, baseY - 24, 29, 14);
-          ctx.fillStyle = '#E8793A';
-          ctx.fillRect(lx + 13, baseY - 34, 10, 6);
-          ctx.fillStyle = '#24160B';
-          ctx.fillRect(lx + 12, baseY - 35, 1, 12);
-        } else if (type === 'skills_tree') {
-          ctx.fillStyle = '#3A2012';
-          ctx.fillRect(lx - 6, baseY - 42, 12, 42);
-          ctx.fillStyle = '#2D4B27';
-          ctx.fillRect(lx - 32, baseY - 58, 64, 24);
-          ctx.fillStyle = '#486B47';
-          ctx.fillRect(lx - 28, baseY - 66, 56, 16);
-          ctx.fillStyle = '#659D5B';
-          ctx.fillRect(lx - 20, baseY - 74, 40, 12);
-          ctx.fillStyle = '#8FC6E8';
-          ctx.fillRect(lx - 14, baseY - 40, 3, 4);
-          ctx.fillRect(lx + 12, baseY - 44, 3, 4);
-        } else if (type === 'guild_hall') {
-          ctx.fillStyle = '#3A2012';
-          ctx.fillRect(lx - 20, baseY - 28, 4, 28);
-          ctx.fillRect(lx - 4, baseY - 28, 4, 28);
-          ctx.fillRect(lx + 12, baseY - 28, 4, 28);
-          ctx.fillStyle = '#5E8B4A';
-          ctx.fillRect(lx - 24, baseY - 34, 44, 6);
-          ctx.fillRect(lx - 16, baseY - 40, 28, 6);
-          ctx.fillStyle = '#FFFDF8';
-          ctx.fillRect(lx - 3, baseY - 24, 10, 12);
-        } else if (type === 'contact_post') {
-          ctx.fillStyle = '#5A3A22';
-          ctx.fillRect(lx - 22, baseY - 12, 2, 12);
-          ctx.fillRect(lx - 6, baseY - 12, 2, 12);
-          ctx.fillRect(lx - 22, baseY - 9, 18, 2);
-          ctx.fillStyle = '#24160B';
-          ctx.fillRect(lx + 8, baseY - 14, 3, 14);
-          ctx.fillStyle = '#E8793A';
-          ctx.fillRect(lx + 4, baseY - 22, 11, 8);
-          ctx.fillStyle = '#FFFDF8';
-          ctx.fillRect(lx + 12, baseY - 25, 2, 5);
-        } else if (type === 'guestbook_board') {
-          ctx.fillStyle = '#3A2012';
-          ctx.fillRect(lx - 16, baseY - 26, 3, 26);
-          ctx.fillRect(lx + 14, baseY - 26, 3, 26);
-          ctx.fillStyle = '#8C7456';
-          ctx.fillRect(lx - 18, baseY - 24, 37, 16);
-          ctx.fillStyle = '#FFFDF8';
-          ctx.fillRect(lx - 14, baseY - 21, 6, 5);
-          ctx.fillStyle = '#F2A66B';
-          ctx.fillRect(lx - 5, baseY - 19, 7, 5);
-          ctx.fillStyle = '#8FC6E8';
-          ctx.fillRect(lx + 4, baseY - 21, 6, 6);
-        }
-      };
-
-      renderLandmark(60, 'hero_village');
-      renderLandmark(180, 'quests_house');
-      renderLandmark(300, 'skills_tree');
-      renderLandmark(420, 'guild_hall');
-      renderLandmark(540, 'contact_post');
-      renderLandmark(660, 'guestbook_board');
-
-      ctx.globalAlpha = 1.0;
+        renderMobileLandmark(60, 'hero_village');
+        renderMobileLandmark(180, 'quests_house');
+        renderMobileLandmark(300, 'skills_tree');
+        renderMobileLandmark(420, 'guild_hall');
+        renderMobileLandmark(540, 'contact_post');
+        renderMobileLandmark(660, 'guestbook_board');
+        ctx.globalAlpha = 1.0;
+      } else {
+        ctx.globalAlpha = 0.85;
+        const positions = getLandmarkPositions(canvas);
+        positions.forEach((pos) => {
+          drawLandmarkPixelArt(ctx, pos.type, Math.floor(pos.canvasX), Math.floor(pos.canvasY));
+        });
+        ctx.globalAlpha = 1.0;
+      }
 
       /* -------------------------------------------------------------
        * FOREGROUND DECORATIVE PROPS: WILDFLOWERS, BUSHES & SWAYING GRASS

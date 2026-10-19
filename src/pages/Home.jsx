@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useMotionValue, animate } from 'motion/react';
 import { WorldCanvas } from '../components/world/WorldCanvas';
+import { LandmarkClickLayer } from '../components/world/LandmarkClickLayer';
 import { Sprite } from '../components/world/Sprite';
 import { OverworldMapNav, LOCATIONS } from '../components/world/OverworldMapNav';
 import { DayNightIndicator } from '../components/world/DayNightIndicator';
@@ -319,6 +320,14 @@ export function HomePage() {
         isMobile={isMobile}
       />
 
+      {/* 1b. Interactive Landmark Click Layer (Desktop >=1024px) */}
+      <LandmarkClickLayer
+        activeLocation={currentLocation}
+        isTraveling={isTraveling}
+        onSelectLandmark={(id, src) => goTo(id, src || 'landmark')}
+        isMobile={isMobile}
+      />
+
       {/* 2. Top Header & Nav Container (Mobile: Sticky 56px, Desktop: Two Panels per c383241) */}
       {isMobile ? (
         /* Mobile Header (Fase 1: Sticky 56px with safe-area-inset-top) */
@@ -430,6 +439,7 @@ export function HomePage() {
       ) : (
         <div
           ref={stageRef}
+          data-landmark-stage="true"
           className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none overflow-visible"
         >
           <motion.div
