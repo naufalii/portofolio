@@ -1,0 +1,362 @@
+{
+  "1280x720": {
+    "day": {
+      "dialog": {
+        "left": 192,
+        "top": 376.59,
+        "bottom": 594.59,
+        "width": 896,
+        "height": 218
+      },
+      "cta": {
+        "left": 220,
+        "top": 532.59,
+        "bottom": 578.59,
+        "width": 178,
+        "height": 46
+      },
+      "stage": {
+        "left": 192,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 896,
+        "height": 140.59
+      },
+      "mascot": {
+        "left": 243.49,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 244.59,
+        "height": 140.59
+      },
+      "mascotBadge": {
+        "left": 243.49,
+        "top": 212,
+        "bottom": 236,
+        "width": 244.59,
+        "height": 24,
+        "text": "Kamu di sini|🏡Lokasi: Desa Awal"
+      },
+      "mascotSprite": {
+        "left": 312.99,
+        "top": 240,
+        "bottom": 345.59,
+        "width": 105.59,
+        "height": 105.59
+      },
+      "landmarks": {
+        "hero": {
+          "left": 305,
+          "top": 248,
+          "bottom": 342,
+          "width": 122,
+          "height": 94
+        },
+        "quests": {
+          "left": 459,
+          "top": 240,
+          "bottom": 342,
+          "width": 108,
+          "height": 102
+        },
+        "skills": {
+          "left": 573,
+          "top": 197,
+          "bottom": 342,
+          "width": 150,
+          "height": 145
+        },
+        "guild": {
+          "left": 713,
+          "top": 219,
+          "bottom": 342,
+          "width": 129,
+          "height": 123
+        },
+        "contact": {
+          "left": 846,
+          "top": 226,
+          "bottom": 342,
+          "width": 129,
+          "height": 116
+        },
+        "guestbook": {
+          "left": 988,
+          "top": 233,
+          "bottom": 342,
+          "width": 143,
+          "height": 109
+        }
+      }
+    },
+    "night": {
+      "dialog": {
+        "left": 192,
+        "top": 376.59,
+        "bottom": 594.59,
+        "width": 896,
+        "height": 218
+      },
+      "cta": {
+        "left": 220,
+        "top": 532.59,
+        "bottom": 578.59,
+        "width": 178,
+        "height": 46
+      },
+      "stage": {
+        "left": 192,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 896,
+        "height": 140.59
+      },
+      "mascot": {
+        "left": 243.49,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 244.59,
+        "height": 140.59
+      },
+      "mascotBadge": {
+        "left": 243.49,
+        "top": 212,
+        "bottom": 236,
+        "width": 244.59,
+        "height": 24,
+        "text": "Kamu di sini|🏡Lokasi: Desa Awal"
+      },
+      "mascotSprite": {
+        "left": 312.99,
+        "top": 240,
+        "bottom": 345.59,
+        "width": 105.59,
+        "height": 105.59
+      },
+      "landmarks": {
+        "hero": {
+          "left": 305,
+          "top": 248,
+          "bottom": 342,
+          "width": 122,
+          "height": 94
+        },
+        "quests": {
+          "left": 459,
+          "top": 240,
+          "bottom": 342,
+          "width": 108,
+          "height": 102
+        },
+        "skills": {
+          "left": 573,
+          "top": 197,
+          "bottom": 342,
+          "width": 150,
+          "height": 145
+        },
+        "guild": {
+          "left": 713,
+          "top": 219,
+          "bottom": 342,
+          "width": 129,
+          "height": 123
+        },
+        "contact": {
+          "left": 846,
+          "top": 226,
+          "bottom": 342,
+          "width": 129,
+          "height": 116
+        },
+        "guestbook": {
+          "left": 988,
+          "top": 233,
+          "bottom": 342,
+          "width": 143,
+          "height": 109
+        }
+      }
+    }
+  },
+  "1024x768": {
+    "day": {
+      "dialog": {
+        "left": 64,
+        "top": 376.59,
+        "bottom": 594.59,
+        "width": 896,
+        "height": 218
+      },
+      "cta": {
+        "left": 92,
+        "top": 532.59,
+        "bottom": 578.59,
+        "width": 178,
+        "height": 46
+      },
+      "stage": {
+        "left": 64,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 896,
+        "height": 140.59
+      },
+      "mascot": {
+        "left": 131.78,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 244.59,
+        "height": 140.59
+      },
+      "mascotBadge": {
+        "left": 131.78,
+        "top": 212,
+        "bottom": 236,
+        "width": 244.59,
+        "height": 24,
+        "text": "Kamu di sini|🏡Lokasi: Desa Awal"
+      },
+      "mascotSprite": {
+        "left": 201.28,
+        "top": 240,
+        "bottom": 345.59,
+        "width": 105.59,
+        "height": 105.59
+      },
+      "landmarks": {
+        "hero": {
+          "left": 205,
+          "top": 265,
+          "bottom": 365,
+          "width": 99,
+          "height": 100
+        },
+        "quests": {
+          "left": 350,
+          "top": 257,
+          "bottom": 365,
+          "width": 88,
+          "height": 108
+        },
+        "skills": {
+          "left": 462,
+          "top": 211,
+          "bottom": 365,
+          "width": 122,
+          "height": 154
+        },
+        "guild": {
+          "left": 594,
+          "top": 234,
+          "bottom": 365,
+          "width": 105,
+          "height": 131
+        },
+        "contact": {
+          "left": 721,
+          "top": 242,
+          "bottom": 365,
+          "width": 105,
+          "height": 123
+        },
+        "guestbook": {
+          "left": 857,
+          "top": 249,
+          "bottom": 365,
+          "width": 116,
+          "height": 116
+        }
+      }
+    },
+    "night": {
+      "dialog": {
+        "left": 64,
+        "top": 376.59,
+        "bottom": 594.59,
+        "width": 896,
+        "height": 218
+      },
+      "cta": {
+        "left": 92,
+        "top": 532.59,
+        "bottom": 578.59,
+        "width": 178,
+        "height": 46
+      },
+      "stage": {
+        "left": 64,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 896,
+        "height": 140.59
+      },
+      "mascot": {
+        "left": 131.78,
+        "top": 212,
+        "bottom": 352.59,
+        "width": 244.59,
+        "height": 140.59
+      },
+      "mascotBadge": {
+        "left": 131.78,
+        "top": 212,
+        "bottom": 236,
+        "width": 244.59,
+        "height": 24,
+        "text": "Kamu di sini|🏡Lokasi: Desa Awal"
+      },
+      "mascotSprite": {
+        "left": 201.28,
+        "top": 240,
+        "bottom": 345.59,
+        "width": 105.59,
+        "height": 105.59
+      },
+      "landmarks": {
+        "hero": {
+          "left": 205,
+          "top": 265,
+          "bottom": 365,
+          "width": 99,
+          "height": 100
+        },
+        "quests": {
+          "left": 350,
+          "top": 257,
+          "bottom": 365,
+          "width": 88,
+          "height": 108
+        },
+        "skills": {
+          "left": 462,
+          "top": 211,
+          "bottom": 365,
+          "width": 122,
+          "height": 154
+        },
+        "guild": {
+          "left": 594,
+          "top": 234,
+          "bottom": 365,
+          "width": 105,
+          "height": 131
+        },
+        "contact": {
+          "left": 721,
+          "top": 242,
+          "bottom": 365,
+          "width": 105,
+          "height": 123
+        },
+        "guestbook": {
+          "left": 857,
+          "top": 249,
+          "bottom": 365,
+          "width": 116,
+          "height": 116
+        }
+      }
+    }
+  }
+}
