@@ -90,6 +90,13 @@ export function useTimeOfDay(overridePhase = null) {
 
   const currentPhase = activeOverride || phase;
 
+  // Sync atmospheric theme to root documentElement attribute (:root[data-theme="..."])
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', currentPhase);
+    }
+  }, [currentPhase]);
+
   return {
     phase: currentPhase,
     config: TIME_CONFIG[currentPhase],

@@ -26,4 +26,14 @@
 
   /* Spacing unit base: 4px */
   --pixel-unit: 4px;
+
+  /* Overworld Outdoor Text (rendered directly on sky / canvas background) */
+  --outdoor-tagline-color: var(--moss-dark);
+  --outdoor-label-color: #24160B;
+}
+
+:root[data-theme="night"] {
+  /* Night theme override: high-contrast cream on dark sky (#1F2A44), contrast ratio >= 12:1 */
+  --outdoor-tagline-color: var(--cream);
+  --outdoor-label-color: var(--cream);
 }

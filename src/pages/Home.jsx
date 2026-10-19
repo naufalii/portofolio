@@ -22,6 +22,7 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 
 export function HomePage() {
   const { phase, setManualOverride, isManual } = useTimeOfDay();
+  const isNight = phase === 'night';
   const { isMobile } = useDeviceType();
   const reducedMotion = useReducedMotion();
 
@@ -431,7 +432,12 @@ export function HomePage() {
               <span>Lokasi: {currentMeta.name}</span>
             </div>
 
-            <div className="text-center w-full px-4 mt-2 font-pixel text-xs text-[#3B5E34] font-bold tracking-wider select-text">
+            <div
+              data-outdoor-tagline="true"
+              className={`text-center w-full px-4 mt-2 font-pixel text-xs font-bold tracking-wider select-text transition-colors text-outdoor-tagline ${
+                isNight ? 'text-[var(--cream)]' : 'text-[#3B5E34]'
+              }`}
+            >
               {profile.target}
             </div>
           </div>
@@ -495,7 +501,12 @@ export function HomePage() {
                 className="scroll-mt-16"
               >
                 {loc.id !== 'hero' && (
-                  <div className="mb-2 font-pixel text-xs font-bold text-[#24160B]/80 uppercase flex items-center gap-1.5">
+                  <div
+                    data-outdoor-label="true"
+                    className={`mb-2 font-pixel text-xs font-bold uppercase flex items-center gap-1.5 transition-colors text-outdoor-label ${
+                      isNight ? 'text-[var(--cream)]' : 'text-[#24160B]/80'
+                    }`}
+                  >
                     <span>{loc.icon}</span>
                     <span>LOKASI: {loc.name.toUpperCase()}</span>
                   </div>

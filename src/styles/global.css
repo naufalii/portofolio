@@ -75,3 +75,22 @@ h1, h2, h3, h4, h5, h6, .font-pixel {
     scroll-behavior: auto !important;
   }
 }
+
+/* Outdoor text utility classes with theme night override */
+.text-outdoor-tagline {
+  color: var(--outdoor-tagline-color);
+}
+
+.text-outdoor-label {
+  color: var(--outdoor-label-color);
+}
+
+:root[data-theme="night"] .text-outdoor-tagline,
+:root[data-theme="night"] [data-outdoor-tagline] {
+  color: var(--cream) !important;
+}
+
+:root[data-theme="night"] .text-outdoor-label,
+:root[data-theme="night"] [data-outdoor-label] {
+  color: var(--cream) !important;
+}
