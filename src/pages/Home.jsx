@@ -444,7 +444,7 @@ export function HomePage() {
       {isMobile ? (
         <div className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none">
           <div className="flex flex-col items-center">
-            <div className="pointer-events-auto">
+            <div className="pointer-events-none">
               <Sprite
                 animation="idle"
                 scale="responsive"
@@ -509,7 +509,7 @@ export function HomePage() {
             {/* Dynamic Combined Overhead Badge: "Kamu di sini | Lokasi: <Name>" or "Menuju: <Name>" */}
             <div
               data-outdoor-badge="true"
-              className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 px-2.5 py-0.5 mb-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none whitespace-nowrap z-20 ${
+              className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 px-2.5 py-0.5 mb-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none whitespace-nowrap pointer-events-none z-20 ${
                 isTraveling
                   ? 'border-[#E8793A] bg-[#FFF8F0]'
                   : 'border-[#24160B]'
@@ -531,7 +531,7 @@ export function HomePage() {
               )}
             </div>
 
-            <div className="pointer-events-auto">
+            <div className="pointer-events-none">
               <Sprite
                 animation={isTraveling ? 'walk' : isWavingHero ? 'wave' : 'idle'}
                 scale={!isMobile && worldLayout.isDesktop ? worldLayout.mascotScale : 2.2}
@@ -546,7 +546,7 @@ export function HomePage() {
 
       {/* 4. Overworld Sections (Desktop: Sequential Panel Transitions, Mobile: Vertical Scroll) */}
       <main
-        className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible flex flex-col justify-start"
+        className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible flex flex-col justify-start pointer-events-none"
         style={
           !isMobile && worldLayout.isDesktop
             ? {
@@ -557,7 +557,7 @@ export function HomePage() {
       >
         {isMobile ? (
           // Mobile: Vertical flow of sections with safe-area clearance (Fase 3 & 4)
-          <div className="space-y-8 pb-[calc(6rem+env(safe-area-inset-bottom))]">
+          <div className="space-y-8 pb-[calc(6rem+env(safe-area-inset-bottom))] pointer-events-auto">
             {LOCATIONS.map((loc) => (
               <section
                 key={loc.id}
@@ -605,7 +605,7 @@ export function HomePage() {
                           transition: { duration: 0.12, ease: 'easeIn' },
                         }
                   }
-                  className="w-full"
+                  className="w-full pointer-events-auto"
                 >
                   <div
                     id={`active-section-${panelLocation}`}

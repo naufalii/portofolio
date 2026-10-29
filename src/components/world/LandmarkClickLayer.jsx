@@ -41,6 +41,13 @@ export function LandmarkClickLayer({
 
     window.addEventListener('resize', updatePositions);
     window.addEventListener('orientationchange', updatePositions);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updatePositions);
+    }
+    const dprQuery = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia(`(resolution: ${window.devicePixelRatio || 1}dppx)`) : null;
+    if (dprQuery && dprQuery.addEventListener) {
+      dprQuery.addEventListener('change', updatePositions);
+    }
 
     let observer = null;
     const stageEl = document.querySelector('[data-landmark-stage]') ||
@@ -57,6 +64,12 @@ export function LandmarkClickLayer({
       clearTimeout(tId);
       window.removeEventListener('resize', updatePositions);
       window.removeEventListener('orientationchange', updatePositions);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', updatePositions);
+      }
+      if (dprQuery && dprQuery.removeEventListener) {
+        dprQuery.removeEventListener('change', updatePositions);
+      }
       if (observer) observer.disconnect();
     };
   }, [isMobile]);
@@ -121,7 +134,7 @@ export function LandmarkClickLayer({
           >
             {/* Visual Outline Box */}
             <div
-              className={`w-full h-full border-2 transition-colors ${
+              className={`w-full h-full border-2 transition-colors pointer-events-none ${
                 isActive
                   ? 'border-[#24160B] bg-[#FFFDF8]/20 shadow-[0_0_0_2px_#FFFDF8]'
                   : isHovered
