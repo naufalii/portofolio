@@ -84,15 +84,23 @@ export function LandmarkClickLayer({
       className="fixed inset-0 pointer-events-none z-10 overflow-hidden select-none"
       aria-hidden="true"
     >
-      {positions.map((pos) => {
+      {positions.map((pos, idx) => {
         const isActive = activeLocation === pos.id;
         const isHovered = hoveredId === pos.id;
 
         // Exact 4px padding surrounding the landmark image on all sides
         const imgW = Math.round(pos.width * pos.scaleX);
         const imgH = Math.round(pos.height * pos.scaleY);
-        const boxWidth = imgW + 8; // 4px padding left & right
-        const boxHeight = imgH + 8; // 4px padding top & bottom
+
+        // Guard against overlap with adjacent landmarks on extreme viewports (e.g. 3440x1440)
+        const prev = positions[idx - 1];
+        const next = positions[idx + 1];
+        const maxLeftReach = prev ? (pos.screenX - prev.screenX) * 0.48 : (imgW / 2 + 4);
+        const maxRightReach = next ? (next.screenX - pos.screenX) * 0.48 : (imgW / 2 + 4);
+        const halfW = Math.min(imgW / 2 + 4, maxLeftReach, maxRightReach);
+
+        const boxWidth = Math.round(halfW * 2);
+        const boxHeight = imgH + 8;
 
         // Position: centered at tabCenterX, bottom at pos.screenY + 4px (enclosing ground & shadow)
         const left = Math.round(pos.screenX - boxWidth / 2);

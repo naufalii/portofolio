@@ -42,13 +42,29 @@ export function HomePage() {
     updateLayout();
     window.addEventListener('resize', updateLayout);
     window.addEventListener('orientationchange', updateLayout);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updateLayout);
+    }
     if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
       document.fonts.ready.then(updateLayout);
+    }
+
+    let headerObserver = null;
+    const headerEl = document.querySelector('header');
+    if (headerEl && typeof ResizeObserver !== 'undefined') {
+      headerObserver = new ResizeObserver(updateLayout);
+      headerObserver.observe(headerEl);
     }
 
     return () => {
       window.removeEventListener('resize', updateLayout);
       window.removeEventListener('orientationchange', updateLayout);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', updateLayout);
+      }
+      if (headerObserver) {
+        headerObserver.disconnect();
+      }
     };
   }, []);
 
