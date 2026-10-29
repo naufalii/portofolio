@@ -1,3 +1,4 @@
+import { computeWorldLayout } from '../lib/worldLayout';
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useMotionValue, animate } from 'motion/react';
@@ -25,6 +26,31 @@ export function HomePage() {
   const isNight = phase === 'night';
   const { isMobile } = useDeviceType();
   const reducedMotion = useReducedMotion();
+  const [worldLayout, setWorldLayout] = useState(() => {
+    if (typeof window === 'undefined') return { isDesktop: false, scale: 1, groundY: 338.40, dialogTop: 376.59, mascotScale: 2.2 };
+    return computeWorldLayout(window.innerWidth, window.innerHeight);
+  });
+
+  useEffect(() => {
+    const updateLayout = () => {
+      const header = document.querySelector('header');
+      const hr = header ? header.getBoundingClientRect() : null;
+      const headerBottom = hr ? hr.bottom : null;
+      setWorldLayout(computeWorldLayout(window.innerWidth, window.innerHeight, headerBottom));
+    };
+
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    window.addEventListener('orientationchange', updateLayout);
+    if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateLayout);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateLayout);
+      window.removeEventListener('orientationchange', updateLayout);
+    };
+  }, []);
 
   // Helper to determine initial location from URL hash or default to hero
   const getInitialLocation = () => {
@@ -444,7 +470,34 @@ export function HomePage() {
         <div
           ref={stageRef}
           data-landmark-stage="true"
-          className="relative z-20 w-full max-w-4xl mx-auto px-4 flex justify-center items-center my-1 pointer-events-none overflow-visible"
+          className="pointer-events-none overflow-visible"
+          style={
+            !isMobile && worldLayout.isDesktop
+              ? {
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: `${worldLayout.groundY}px`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                  zIndex: 20,
+                }
+              : {
+                  position: 'relative',
+                  zIndex: 20,
+                  width: '100%',
+                  maxWidth: '56rem',
+                  margin: '0 auto',
+                  padding: '0 1rem',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBlock: '0.25rem',
+                }
+          }
         >
           <motion.div
             style={{ x: mascotX }}
@@ -477,7 +530,7 @@ export function HomePage() {
             <div className="pointer-events-auto">
               <Sprite
                 animation={isTraveling ? 'walk' : isWavingHero ? 'wave' : 'idle'}
-                scale={2.2}
+                scale={!isMobile && worldLayout.isDesktop ? worldLayout.mascotScale : 2.2}
                 flip={travelDir}
                 className="!transition-none"
                 onWave={() => setIsWavingHero(true)}
@@ -488,7 +541,16 @@ export function HomePage() {
       )}
 
       {/* 4. Overworld Sections (Desktop: Sequential Panel Transitions, Mobile: Vertical Scroll) */}
-      <main className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-5 flex flex-col justify-center overflow-visible">
+      <main
+        className="relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible flex flex-col justify-start"
+        style={
+          !isMobile && worldLayout.isDesktop
+            ? {
+                paddingTop: `${worldLayout.dialogTop - (worldLayout.headerBottom || 208)}px`,
+              }
+            : undefined
+        }
+      >
         {isMobile ? (
           // Mobile: Vertical flow of sections with safe-area clearance (Fase 3 & 4)
           <div className="space-y-8 pb-[calc(6rem+env(safe-area-inset-bottom))]">
@@ -580,11 +642,13 @@ export function HomePage() {
       )}
 
       {/* 6. Footer (Desktop) */}
-      <footer className="relative z-20 w-full max-w-5xl mx-auto px-4 py-3 text-center text-xs font-pixel text-[#24160B]/80 hidden lg:block">
+      {!isMobile && (
+        <footer className="relative z-20 w-full max-w-5xl mx-auto px-4 py-3 text-center text-xs font-pixel text-[#24160B]/80">
         <div className="inline-block bg-[#F6EBD3]/95 border-2 border-[#24160B] px-4 py-1.5 shadow-[2px_2px_0_#24160B]">
           Portofolio Overworld &bull;  Naufal Ali Hilmi  &bull; Sistem Informasi Universitas Gunadarma
         </div>
       </footer>
+      )}
     </div>
   );
 }

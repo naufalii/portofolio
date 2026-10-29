@@ -36,14 +36,15 @@ export function useMediaQuery(query) {
 }
 
 /**
- * Breakpoint helper hooks based on Section 8.
+ * Breakpoint helper hooks based on Section 8 & Fase C Opsi B:
+ * - isMobile: width < 1024px OR height < 700px (uses mobile vertical layout)
+ * - isDesktop: width >= 1024px AND height >= 700px (uses Overworld desktop stage)
  */
 export function useDeviceType() {
-  const isMobile = useMediaQuery('(max-width: 1023px)');
-  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1023px)');
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 1023px), (max-height: 699px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px) and (min-height: 700px)');
 
-  return { isMobile, isTablet, isDesktop };
+  return { isMobile, isDesktop };
 }
 
 export default useMediaQuery;

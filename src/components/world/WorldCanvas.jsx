@@ -39,8 +39,10 @@ export function WorldCanvas({
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    const W = 360;
+    const isDesk = !isMobile && typeof window !== 'undefined' && window.innerWidth >= 1024 && window.innerHeight >= 700;
     const H = 200;
+    const S = isDesk ? (window.innerHeight / 200) : 1;
+    const W = isDesk ? Math.max(360, Math.round(window.innerWidth / S)) : 360;
     canvas.width = W;
     canvas.height = H;
 
@@ -444,7 +446,7 @@ export function WorldCanvas({
     <div className={`fixed inset-0 pointer-events-none z-0 overflow-hidden ${className}`}>
       <canvas
         ref={canvasRef}
-        className="pixelated w-full h-full object-cover"
+        className={`pixelated w-full h-full ${isMobile ? 'object-cover' : ''}`}
         style={{ imageRendering: 'pixelated' }}
         aria-hidden="true"
       />

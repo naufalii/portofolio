@@ -35,7 +35,6 @@ export function computeWorldLayout(W, H, headerBottom = null) {
       mascotScale: 'responsive',
       headerBottom,
       stageClearance: null,
-      rule140Passed: true,
     };
   }
 
@@ -46,11 +45,9 @@ export function computeWorldLayout(W, H, headerBottom = null) {
   const mascotScale = Math.round(2.2 * (scale / 3.6) * 100) / 100;
 
   let stageClearance = null;
-  let rule140Passed = true;
 
   if (headerBottom !== null && headerBottom !== undefined) {
     stageClearance = Math.round((groundY - headerBottom) * 100) / 100;
-    rule140Passed = stageClearance >= MIN_STAGE_CLEARANCE;
   }
 
   return {
@@ -63,6 +60,5 @@ export function computeWorldLayout(W, H, headerBottom = null) {
     mascotScale,
     headerBottom,
     stageClearance,
-    rule140Passed,
   };
 }

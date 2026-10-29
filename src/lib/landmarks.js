@@ -1,3 +1,4 @@
+import { computeWorldLayout } from './worldLayout';
 /**
  * landmarks.js - Single Source of Truth for Overworld Landmarks
  * Defines coordinates, logical dimensions, and visual definitions for:
@@ -51,9 +52,9 @@ export const LANDMARK_DEFS = [
     short: 'Skill',
     icon: '⚡',
     type: 'skills_tree',
-    // Proportional great tree (harmoniously scaled)
+    // Proportional great tree (Opsi P1: height 35)
     width: 40,
-    height: 38,
+    height: 35,
     shadowRadiusX: 18,
     shadowRadiusY: 3.5,
     anchorX: 0.5,
@@ -115,20 +116,42 @@ export const LANDMARK_DEFS = [
  * Computes screen pixel positions and canvas coordinates for all landmarks.
  * All landmarks stand on the exact same canvas ground baseline (CANVAS_GROUND_Y).
  */
-export function getLandmarkPositions(canvasEl) {
+export function getLandmarkPositions(canvasEl, customLayout = null) {
   if (typeof document === 'undefined') return [];
 
   const cr = canvasEl
     ? canvasEl.getBoundingClientRect()
     : { left: 0, top: 0, width: 1280, height: 720 };
 
-  const W = 360;
-  const H = 200;
-  const scaleX = cr.width / W;
-  const scaleY = cr.height / H;
+  const layout = customLayout || computeWorldLayout(cr.width, cr.height);
 
-  // Single uniform ground baseline in screen pixels
-  const groundScreenY = cr.top + CANVAS_GROUND_Y * scaleY;
+  if (!layout.isDesktop) {
+    const W = 360;
+    const H = 200;
+    const scaleX = cr.width / W;
+    const scaleY = cr.height / H;
+    const groundScreenY = cr.top + CANVAS_GROUND_Y * scaleY;
+
+    return LANDMARK_DEFS.map((lm, idx) => {
+      const proportions = [0.28, 0.40, 0.50, 0.60, 0.71, 0.82];
+      const screenX = cr.left + cr.width * (proportions[idx] || 0.5);
+      const canvasX = (screenX - cr.left) * (W / cr.width);
+      return {
+        ...lm,
+        screenX,
+        screenY: groundScreenY,
+        canvasX,
+        canvasY: CANVAS_GROUND_Y,
+        scaleX,
+        scaleY,
+      };
+    });
+  }
+
+  // Desktop Pendekatan (b): S = H / 200, groundY = 0.47 * H
+  const S = layout.scale;
+  const groundScreenY = layout.groundY;
+  const canvasY = CANVAS_GROUND_Y;
 
   return LANDMARK_DEFS.map((lm, idx) => {
     const tabEl = document.querySelector(`[data-location-id="${lm.id}"]`);
@@ -138,13 +161,11 @@ export function getLandmarkPositions(canvasEl) {
       const tr = tabEl.getBoundingClientRect();
       screenX = tr.left + tr.width / 2;
     } else {
-      // Proportional fallback based on tab layout
       const proportions = [0.28, 0.40, 0.50, 0.60, 0.71, 0.82];
       screenX = cr.left + cr.width * (proportions[idx] || 0.5);
     }
 
-    const canvasX = (screenX - cr.left) * (W / cr.width);
-    const canvasY = CANVAS_GROUND_Y;
+    const canvasX = (screenX - cr.left) / S;
 
     return {
       ...lm,
@@ -152,8 +173,8 @@ export function getLandmarkPositions(canvasEl) {
       screenY: groundScreenY,
       canvasX,
       canvasY,
-      scaleX,
-      scaleY,
+      scaleX: S,
+      scaleY: S,
     };
   });
 }
@@ -351,27 +372,27 @@ export function drawLandmarkPixelArt(ctx, type, lx, baseY, phase = 'day', animSt
     ctx.fillStyle = '#5A3A22';
     ctx.fillRect(lx - 11, baseY - 18, 22, 2);
   } else if (type === 'skills_tree') {
-    // Great Skill Tree (harmoniously scaled to height 38)
+    // Great Skill Tree (Opsi P1: height 35)
     ctx.fillStyle = '#3A2012';
-    ctx.fillRect(lx - 4, baseY - 18, 8, 18);
+    ctx.fillRect(lx - 4, baseY - 17, 8, 17);
     ctx.fillRect(lx - 6, baseY - 4, 12, 4);
     // Foliage Tier 1 (bottom)
     ctx.fillStyle = '#2D4B27';
-    ctx.fillRect(lx - 19, baseY - 26, 38, 9);
+    ctx.fillRect(lx - 19, baseY - 24, 38, 8);
     // Foliage Tier 2 (mid)
     ctx.fillStyle = '#486B47';
-    ctx.fillRect(lx - 15, baseY - 32, 30, 7);
+    ctx.fillRect(lx - 15, baseY - 30, 30, 7);
     // Foliage Tier 3 (top)
     ctx.fillStyle = '#659D5B';
-    ctx.fillRect(lx - 10, baseY - 38, 20, 7);
+    ctx.fillRect(lx - 10, baseY - 35, 20, 6);
     // Glowing orbs / sparks
     ctx.fillStyle = isNight ? '#A5E5FF' : '#8FC6E8';
-    ctx.fillRect(lx - 6, baseY - 25, 2, 2);
-    ctx.fillRect(lx + 7, baseY - 30, 2, 2);
+    ctx.fillRect(lx - 6, baseY - 23, 2, 2);
+    ctx.fillRect(lx + 7, baseY - 28, 2, 2);
     if (isNight) {
       ctx.fillStyle = '#FFFDF8';
-      ctx.fillRect(lx - 5, baseY - 24, 1, 1);
-      ctx.fillRect(lx + 8, baseY - 29, 1, 1);
+      ctx.fillRect(lx - 5, baseY - 22, 1, 1);
+      ctx.fillRect(lx + 8, baseY - 27, 1, 1);
     }
   } else if (type === 'guild_hall') {
     // 3 Timber Pillars
