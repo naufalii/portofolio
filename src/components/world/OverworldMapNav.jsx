@@ -11,17 +11,18 @@ export const LOCATIONS = [
 
 /**
  * OverworldMapNav - World map banner with interactive location markers.
- * Implements Section 5 & 8 & Mobile Fix Fase 3:
+ * Implements Section 5 & 8 & Mobile Fix Fase 3 & D2 Compact Header:
  * - padding-bottom with env(safe-area-inset-bottom) for iPhone home indicator
  * - Active item has --moss background with high-contrast text and border
  * - Minimum 12px label, readable from 50cm distance
- * - Tap targets >= 44x44px
+ * - Tap targets >= 44x44px (Standard & Mobile) or compact 30px (Compact Desktop <=96px total header)
  */
 export function OverworldMapNav({
   activeLocation = 'hero',
   targetLocation = null,
   onSelectLocation,
   isMobile = false,
+  isCompact = false,
 }) {
   const handleKeyDown = (e, index) => {
     if (e.key === 'ArrowRight') {
@@ -71,16 +72,30 @@ export function OverworldMapNav({
     );
   }
 
-  // Desktop Overworld Map Header Bar (Section 5 & 8)
+  // Desktop Overworld Map Header Bar (Section 5 & 8 & D2 Compact Header)
+  const navBoxClass = isCompact
+    ? 'relative z-30 w-full max-w-5xl mx-auto border-2 border-[#24160B] bg-[#F6EBD3] shadow-[2px_2px_0_#24160B] px-2 py-0.5'
+    : 'relative z-30 w-full max-w-5xl mx-auto border-4 border-[#24160B] bg-[#F6EBD3] shadow-[4px_4px_0_#24160B] px-4 py-2.5';
+
+  const titleClass = isCompact
+    ? 'flex items-center gap-1 pr-2 border-r border-[#24160B]/20 select-none flex-shrink-0'
+    : 'flex items-center gap-2 pr-3 border-r-2 border-[#24160B]/20 select-none';
+
+  const titleText = isCompact ? 'PETA' : 'PETA OVERWORLD';
+
+  const btnSizeClass = isCompact
+    ? 'px-2 py-0.5 min-h-[30px] font-pixel text-xs tracking-tight'
+    : 'px-3 py-1.5 min-h-[44px] font-pixel text-xs lg:text-sm tracking-wide';
+
   return (
     <nav
       aria-label="Peta Dunia Overworld"
-      className="relative z-30 w-full max-w-5xl mx-auto border-4 border-[#24160B] bg-[#F6EBD3] shadow-[4px_4px_0_#24160B] px-4 py-2.5"
+      className={navBoxClass}
     >
       <div className="flex items-center justify-between gap-2 overflow-x-auto select-none">
-        <div className="flex items-center gap-2 pr-3 border-r-2 border-[#24160B]/20 select-none">
+        <div className={titleClass}>
           <span className="font-pixel text-xs lg:text-sm font-bold tracking-wider text-[#24160B]">
-            PETA OVERWORLD
+            {titleText}
           </span>
         </div>
 
@@ -104,7 +119,7 @@ export function OverworldMapNav({
                 type="button"
                 onClick={() => onSelectLocation(loc.id, 'nav')}
                 onKeyDown={(e) => handleKeyDown(e, i)}
-                className={`relative flex items-center gap-2 px-3 py-1.5 min-h-[44px] font-pixel text-xs lg:text-sm tracking-wide transition-all cursor-pointer ${buttonClass}`}
+                className={`relative flex items-center gap-2 ${btnSizeClass} transition-all cursor-pointer ${buttonClass}`}
                 aria-current={isActive ? 'location' : undefined}
                 title={isTarget ? `Sedang menuju ke ${loc.name}` : `Beralih ke ${loc.name}`}
               >

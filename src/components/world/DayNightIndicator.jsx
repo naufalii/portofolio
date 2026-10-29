@@ -9,7 +9,7 @@ import { TIME_PHASES, TIME_CONFIG } from '../../hooks/useTimeOfDay';
  * - Proper aria-label
  * - Dropdown menu rendered via Portal to document.body
  */
-export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
+export function DayNightIndicator({ phase, onSelectPhase, isManual, compact = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
   const [menuPos, setMenuPos] = useState({ top: 0, left: 0 });
@@ -68,7 +68,9 @@ export function DayNightIndicator({ phase, onSelectPhase, isManual }) {
         ref={buttonRef}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none font-pixel text-xs lg:text-sm cursor-pointer select-none"
+        className={`flex items-center justify-center border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] shadow-[2px_2px_0_var(--ink)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none font-pixel text-xs lg:text-sm cursor-pointer select-none ${
+          compact ? 'min-w-[32px] min-h-[30px] px-2 py-0.5' : 'min-w-[44px] min-h-[44px] px-2.5 py-1.5'
+        }`}
         title="Ubah Siklus Waktu"
         aria-label={`Ubah siklus waktu. Waktu saat ini: ${currentConfig.label}`}
         aria-expanded={isOpen}

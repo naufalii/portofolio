@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { TIME_PHASES } from '../../hooks/useTimeOfDay';
 import { CANVAS_GROUND_Y, getLandmarkPositions, drawLandmarkPixelArt } from '../../lib/landmarks';
+import { DESKTOP_MIN_W, DESKTOP_MIN_H } from '../../lib/worldLayout';
 
 /**
  * WorldCanvas - High-Fidelity 2D Pixel-Perfect Overworld Canvas
@@ -39,7 +40,7 @@ export function WorldCanvas({
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    const isDesk = !isMobile && typeof window !== 'undefined' && window.innerWidth >= 1024 && window.innerHeight >= 700;
+    const isDesk = !isMobile && typeof window !== 'undefined' && window.innerWidth >= DESKTOP_MIN_W && window.innerHeight >= DESKTOP_MIN_H;
     const H = 200;
     const S = isDesk ? (window.innerHeight / 200) : 1;
     const W = isDesk ? Math.max(360, Math.round(window.innerWidth / S)) : 360;

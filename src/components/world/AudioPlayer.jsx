@@ -8,7 +8,7 @@ import storage from '../../lib/storage';
  * - Minimum 44x44px tap target
  * - aria-pressed attribute for accessibility
  */
-export function AudioPlayer() {
+export function AudioPlayer({ compact = false }) {
   // Always default to false on load per Item 3 (silent first visit, label OFF, aria-pressed false)
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -180,7 +180,9 @@ export function AudioPlayer() {
       type="button"
       onClick={toggleAudio}
       aria-pressed={isPlaying}
-      className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 py-1.5 border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] font-pixel text-xs shadow-[2px_2px_0_var(--ink)] active:translate-y-[1px] active:shadow-none cursor-pointer"
+      className={`flex items-center justify-center border-2 border-[var(--ink)] bg-[var(--cream)] text-[var(--ink)] font-pixel text-xs shadow-[2px_2px_0_var(--ink)] active:translate-y-[1px] active:shadow-none cursor-pointer ${
+        compact ? 'min-w-[32px] min-h-[30px] px-2 py-0.5' : 'min-w-[44px] min-h-[44px] px-2.5 py-1.5'
+      }`}
       title={isPlaying ? 'Matikan Suara Ambience' : 'Nyalakan Suara Ambience'}
       aria-label={isPlaying ? 'Audio aktif. Klik untuk mematikan.' : 'Audio nonaktif. Klik untuk menyalakan.'}
     >
