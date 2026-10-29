@@ -1,0 +1,660 @@
+{
+  "M1": [
+    {
+      "viewport": "1366x625",
+      "mode": "VERTIKAL (Mobile)",
+      "headerH": 60,
+      "hasBottomDock": true,
+      "screenshot": "docs/fixlaptop/before/m1_1366x625.png"
+    },
+    {
+      "viewport": "1280x590",
+      "mode": "VERTIKAL (Mobile)",
+      "headerH": 60,
+      "hasBottomDock": true,
+      "screenshot": "docs/fixlaptop/before/m1_1280x590.png"
+    },
+    {
+      "viewport": "1093x500",
+      "mode": "VERTIKAL (Mobile)",
+      "headerH": 60,
+      "hasBottomDock": true,
+      "screenshot": "docs/fixlaptop/before/m1_1093x500.png"
+    },
+    {
+      "viewport": "1536x720",
+      "mode": "HORIZONTAL (Desktop Overworld)",
+      "headerH": 208,
+      "hasBottomDock": false,
+      "screenshot": "docs/fixlaptop/before/m1_1536x720.png"
+    },
+    {
+      "viewport": "1909x991",
+      "mode": "HORIZONTAL (Desktop Overworld)",
+      "headerH": 208,
+      "hasBottomDock": false,
+      "screenshot": "docs/fixlaptop/before/m1_1909x991.png"
+    },
+    {
+      "viewport": "1920x1080",
+      "mode": "HORIZONTAL (Desktop Overworld)",
+      "headerH": 208,
+      "hasBottomDock": false,
+      "screenshot": "docs/fixlaptop/before/m1_1920x1080.png"
+    },
+    {
+      "viewport": "2560x1080",
+      "mode": "HORIZONTAL (Desktop Overworld)",
+      "headerH": 208,
+      "hasBottomDock": false,
+      "screenshot": "docs/fixlaptop/before/m1_2560x1080.png"
+    },
+    {
+      "viewport": "1280x720",
+      "mode": "HORIZONTAL (Desktop Overworld)",
+      "headerH": 208,
+      "hasBottomDock": false,
+      "screenshot": "docs/fixlaptop/before/m1_1280x720.png"
+    }
+  ],
+  "M2": [
+    {
+      "viewport": "1536x720",
+      "landmarks": [
+        {
+          "id": "hero",
+          "cx": 494,
+          "cy": 295,
+          "btnRect": {
+            "left": 432,
+            "top": 248,
+            "width": 123,
+            "height": 94
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "quests",
+          "cx": 641,
+          "cy": 291,
+          "btnRect": {
+            "left": 586,
+            "top": 240,
+            "width": 109,
+            "height": 102
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "skills",
+          "cx": 776,
+          "cy": 275,
+          "btnRect": {
+            "left": 700,
+            "top": 208,
+            "width": 152,
+            "height": 134
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guild",
+          "cx": 905,
+          "cy": 281,
+          "btnRect": {
+            "left": 840,
+            "top": 219,
+            "width": 130,
+            "height": 123
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "contact",
+          "cx": 1039,
+          "cy": 284,
+          "btnRect": {
+            "left": 974,
+            "top": 226,
+            "width": 130,
+            "height": 116
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guestbook",
+          "cx": 1188,
+          "cy": 288,
+          "btnRect": {
+            "left": 1115,
+            "top": 233,
+            "width": 145,
+            "height": 109
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        }
+      ]
+    },
+    {
+      "viewport": "1909x991",
+      "landmarks": [
+        {
+          "id": "hero",
+          "cx": 681,
+          "cy": 407,
+          "btnRect": {
+            "left": 597,
+            "top": 343,
+            "width": 167,
+            "height": 127
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "quests",
+          "cx": 828,
+          "cy": 402,
+          "btnRect": {
+            "left": 754,
+            "top": 333,
+            "width": 147,
+            "height": 137
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "skills",
+          "cx": 962,
+          "cy": 380,
+          "btnRect": {
+            "left": 859,
+            "top": 289,
+            "width": 206,
+            "height": 181
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guild",
+          "cx": 1092,
+          "cy": 387,
+          "btnRect": {
+            "left": 1004,
+            "top": 303,
+            "width": 176,
+            "height": 167
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "contact",
+          "cx": 1225,
+          "cy": 392,
+          "btnRect": {
+            "left": 1137,
+            "top": 313,
+            "width": 176,
+            "height": 157
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guestbook",
+          "cx": 1374,
+          "cy": 397,
+          "btnRect": {
+            "left": 1276,
+            "top": 323,
+            "width": 196,
+            "height": 147
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        }
+      ]
+    },
+    {
+      "viewport": "1920x1080",
+      "landmarks": [
+        {
+          "id": "hero",
+          "cx": 686,
+          "cy": 443,
+          "btnRect": {
+            "left": 595,
+            "top": 374,
+            "width": 181,
+            "height": 138
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "quests",
+          "cx": 833,
+          "cy": 438,
+          "btnRect": {
+            "left": 753,
+            "top": 364,
+            "width": 159,
+            "height": 148
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "skills",
+          "cx": 968,
+          "cy": 414,
+          "btnRect": {
+            "left": 856,
+            "top": 315,
+            "width": 224,
+            "height": 197
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guild",
+          "cx": 1097,
+          "cy": 422,
+          "btnRect": {
+            "left": 1001,
+            "top": 331,
+            "width": 192,
+            "height": 181
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "contact",
+          "cx": 1231,
+          "cy": 427,
+          "btnRect": {
+            "left": 1135,
+            "top": 342,
+            "width": 192,
+            "height": 170
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guestbook",
+          "cx": 1380,
+          "cy": 433,
+          "btnRect": {
+            "left": 1273,
+            "top": 353,
+            "width": 213,
+            "height": 159
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        }
+      ]
+    },
+    {
+      "viewport": "2560x1080",
+      "landmarks": [
+        {
+          "id": "hero",
+          "cx": 1006,
+          "cy": 443,
+          "btnRect": {
+            "left": 915,
+            "top": 374,
+            "width": 181,
+            "height": 138
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "quests",
+          "cx": 1153,
+          "cy": 438,
+          "btnRect": {
+            "left": 1073,
+            "top": 364,
+            "width": 159,
+            "height": 148
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "skills",
+          "cx": 1288,
+          "cy": 414,
+          "btnRect": {
+            "left": 1176,
+            "top": 315,
+            "width": 224,
+            "height": 197
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guild",
+          "cx": 1417,
+          "cy": 422,
+          "btnRect": {
+            "left": 1321,
+            "top": 331,
+            "width": 192,
+            "height": 181
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "contact",
+          "cx": 1551,
+          "cy": 427,
+          "btnRect": {
+            "left": 1455,
+            "top": 342,
+            "width": 192,
+            "height": 170
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guestbook",
+          "cx": 1700,
+          "cy": 433,
+          "btnRect": {
+            "left": 1593,
+            "top": 353,
+            "width": 213,
+            "height": 159
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        }
+      ]
+    },
+    {
+      "viewport": "1280x720",
+      "landmarks": [
+        {
+          "id": "hero",
+          "cx": 366,
+          "cy": 295,
+          "btnRect": {
+            "left": 304,
+            "top": 248,
+            "width": 123,
+            "height": 94
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "quests",
+          "cx": 513,
+          "cy": 291,
+          "btnRect": {
+            "left": 458,
+            "top": 240,
+            "width": 109,
+            "height": 102
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "skills",
+          "cx": 648,
+          "cy": 275,
+          "btnRect": {
+            "left": 572,
+            "top": 208,
+            "width": 152,
+            "height": 134
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guild",
+          "cx": 777,
+          "cy": 281,
+          "btnRect": {
+            "left": 712,
+            "top": 219,
+            "width": 130,
+            "height": 123
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "contact",
+          "cx": 911,
+          "cy": 284,
+          "btnRect": {
+            "left": 846,
+            "top": 226,
+            "width": 130,
+            "height": 116
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        },
+        {
+          "id": "guestbook",
+          "cx": 1060,
+          "cy": 288,
+          "btnRect": {
+            "left": 987,
+            "top": 233,
+            "width": 145,
+            "height": 109
+          },
+          "topTag": "main",
+          "topClass": "relative z-20 flex-1 w-full max-w-5xl mx-auto px-4 py-3 lg:py-0 overflow-visible",
+          "topId": "",
+          "isBlocked": true,
+          "blockerDesc": "<main class=\"relative z-20 flex-1 w-full max-w-5xl mx\">"
+        }
+      ]
+    }
+  ],
+  "M3": [
+    {
+      "viewport": "desktop_1280x720",
+      "phase": "day",
+      "tagline": {
+        "contrast": null
+      },
+      "label": {
+        "contrast": null
+      },
+      "screenshot": "docs/fixlaptop/before/m3_desktop_1280x720_day.png"
+    },
+    {
+      "viewport": "desktop_1280x720",
+      "phase": "dusk",
+      "tagline": {
+        "contrast": null
+      },
+      "label": {
+        "contrast": null
+      },
+      "screenshot": "docs/fixlaptop/before/m3_desktop_1280x720_dusk.png"
+    },
+    {
+      "viewport": "desktop_1280x720",
+      "phase": "night",
+      "tagline": {
+        "contrast": null
+      },
+      "label": {
+        "contrast": null
+      },
+      "screenshot": "docs/fixlaptop/before/m3_desktop_1280x720_night.png"
+    },
+    {
+      "viewport": "mobile_390x844",
+      "phase": "day",
+      "tagline": {
+        "text": "Junior DBA | Data Engineer | System Administrator",
+        "color": "rgb(36, 22, 11)",
+        "backgroundColor": "rgb(255, 253, 248)",
+        "contrast": 17.29
+      },
+      "label": {
+        "text": "📜\nLOKASI: QUEST LOG",
+        "color": "rgb(36, 22, 11)",
+        "backgroundColor": "rgb(246, 235, 211)",
+        "contrast": 14.85
+      },
+      "screenshot": "docs/fixlaptop/before/m3_mobile_390x844_day.png"
+    },
+    {
+      "viewport": "mobile_390x844",
+      "phase": "dusk",
+      "tagline": {
+        "text": "Junior DBA | Data Engineer | System Administrator",
+        "color": "rgb(246, 235, 211)",
+        "backgroundColor": "rgb(255, 253, 248)",
+        "contrast": 1.16
+      },
+      "label": {
+        "text": "📜\nLOKASI: QUEST LOG",
+        "color": "rgb(246, 235, 211)",
+        "backgroundColor": "rgb(246, 235, 211)",
+        "contrast": 1
+      },
+      "screenshot": "docs/fixlaptop/before/m3_mobile_390x844_dusk.png"
+    },
+    {
+      "viewport": "mobile_390x844",
+      "phase": "night",
+      "tagline": {
+        "text": "Junior DBA | Data Engineer | System Administrator",
+        "color": "rgb(246, 235, 211)",
+        "backgroundColor": "rgb(255, 253, 248)",
+        "contrast": 1.16
+      },
+      "label": {
+        "text": "📜\nLOKASI: QUEST LOG",
+        "color": "rgb(246, 235, 211)",
+        "backgroundColor": "rgb(246, 235, 211)",
+        "contrast": 1
+      },
+      "screenshot": "docs/fixlaptop/before/m3_mobile_390x844_night.png"
+    }
+  ],
+  "M4": {
+    "element": "div",
+    "className": "w-full h-full border-2 transition-colors border-[#24160B] bg-[#FFFDF8]/20 shadow-[0_0_0_2px_#FFFDF8]",
+    "backgroundColor": "rgba(255, 253, 248, 0.2)",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 253, 248) 0px 0px 0px 2px",
+    "border": "2px solid rgb(36, 22, 11)"
+  }
+}
