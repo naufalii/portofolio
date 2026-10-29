@@ -132,14 +132,14 @@ export function LandmarkClickLayer({
               height: `${boxHeight}px`,
             }}
           >
-            {/* Visual Outline Box */}
+            {/* Visual Outline Box (2px stepped border, NO background fill per M4) */}
             <div
               className={`w-full h-full border-2 transition-colors pointer-events-none ${
                 isActive
-                  ? 'border-[#24160B] bg-[#FFFDF8]/20 shadow-[0_0_0_2px_#FFFDF8]'
+                  ? 'border-[#24160B] bg-transparent shadow-[0_0_0_2px_#FFFDF8]'
                   : isHovered
-                  ? 'border-[#E8793A] bg-[#E8793A]/10 shadow-[0_0_0_2px_#24160B]'
-                  : 'border-transparent'
+                  ? 'border-[#E8793A] bg-transparent shadow-[0_0_0_2px_#24160B]'
+                  : 'border-transparent bg-transparent'
               }`}
             />
 
