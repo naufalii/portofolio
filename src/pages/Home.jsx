@@ -376,7 +376,7 @@ export function HomePage() {
                 <span className="font-pixel text-base lg:text-lg font-bold tracking-wider block leading-tight text-[#24160B]">
                   {profile.nama}
                 </span>
-                <span className="font-body text-xs text-[#3B5E34] font-bold block">
+                <span className="font-body text-xs text-[#24160B]/80 font-bold block">
                   {profile.homeTagline}
                 </span>
               </div>
@@ -434,9 +434,7 @@ export function HomePage() {
 
             <div
               data-outdoor-tagline="true"
-              className={`text-center w-full px-4 mt-2 font-pixel text-xs font-bold tracking-wider select-text transition-colors text-outdoor-tagline ${
-                isNight ? 'text-[var(--cream)]' : 'text-[#3B5E34]'
-              }`}
+              className="mt-1.5 px-3 py-0.5 font-pixel text-xs font-bold tracking-wider select-text bg-[#FFFDF8] border-2 border-[#24160B] text-[#24160B] shadow-[2px_2px_0_#24160B] text-center max-w-full"
             >
               {profile.homeTagline}
             </div>
@@ -503,9 +501,7 @@ export function HomePage() {
                 {loc.id !== 'hero' && (
                   <div
                     data-outdoor-label="true"
-                    className={`mb-2 font-pixel text-xs font-bold uppercase flex items-center gap-1.5 transition-colors text-outdoor-label ${
-                      isNight ? 'text-[var(--cream)]' : 'text-[#24160B]/80'
-                    }`}
+                    className="mb-2 font-pixel text-xs font-bold uppercase inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#F6EBD3] border border-[#24160B] text-[#24160B] shadow-[1px_1px_0_#24160B]"
                   >
                     <span>{loc.icon}</span>
                     <span>LOKASI: {loc.name.toUpperCase()}</span>

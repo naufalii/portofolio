@@ -76,20 +76,19 @@ h1, h2, h3, h4, h5, h6, .font-pixel {
   }
 }
 
-/* Outdoor text utility classes with theme night override */
-.text-outdoor-tagline {
-  color: var(--outdoor-tagline-color);
-}
-
+/* Outdoor text utility classes with theme dusk & night override */
+.text-on-world,
+.text-outdoor-tagline,
 .text-outdoor-label {
-  color: var(--outdoor-label-color);
+  color: var(--text-on-world);
 }
 
+:root[data-theme="dusk"] .text-outdoor-tagline,
+:root[data-theme="dusk"] [data-outdoor-tagline],
+:root[data-theme="dusk"] .text-outdoor-label,
+:root[data-theme="dusk"] [data-outdoor-label],
 :root[data-theme="night"] .text-outdoor-tagline,
-:root[data-theme="night"] [data-outdoor-tagline] {
-  color: var(--cream) !important;
-}
-
+:root[data-theme="night"] [data-outdoor-tagline],
 :root[data-theme="night"] .text-outdoor-label,
 :root[data-theme="night"] [data-outdoor-label] {
   color: var(--cream) !important;

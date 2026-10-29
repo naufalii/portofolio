@@ -27,13 +27,24 @@
   /* Spacing unit base: 4px */
   --pixel-unit: 4px;
 
-  /* Overworld Outdoor Text (rendered directly on sky / canvas background) */
-  --outdoor-tagline-color: var(--moss-dark);
+  /* Semantic token for text on world background (Item B) */
+  --text-on-world: #24160B; /* Daytime default: Deep ink (#24160B) */
+  --text-on-world-shadow: 1px 1px 0 rgba(255, 253, 248, 0.7);
+  --outdoor-tagline-color: #24160B;
   --outdoor-label-color: #24160B;
+}
+
+:root[data-theme="dusk"] {
+  --text-on-world: var(--cream);
+  --text-on-world-shadow: 1px 1px 0 var(--ink);
+  --outdoor-tagline-color: var(--cream);
+  --outdoor-label-color: var(--cream);
 }
 
 :root[data-theme="night"] {
   /* Night theme override: high-contrast cream on dark sky (#1F2A44), contrast ratio >= 12:1 */
+  --text-on-world: var(--cream);
+  --text-on-world-shadow: 1px 1px 0 var(--ink);
   --outdoor-tagline-color: var(--cream);
   --outdoor-label-color: var(--cream);
 }
