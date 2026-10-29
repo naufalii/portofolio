@@ -77,19 +77,20 @@ h1, h2, h3, h4, h5, h6, .font-pixel {
 }
 
 /* Outdoor text utility classes with theme dusk & night override */
-.text-on-world,
-.text-outdoor-tagline,
-.text-outdoor-label {
+.text-on-world {
   color: var(--text-on-world);
 }
 
-:root[data-theme="dusk"] .text-outdoor-tagline,
-:root[data-theme="dusk"] [data-outdoor-tagline],
-:root[data-theme="dusk"] .text-outdoor-label,
-:root[data-theme="dusk"] [data-outdoor-label],
-:root[data-theme="night"] .text-outdoor-tagline,
-:root[data-theme="night"] [data-outdoor-tagline],
-:root[data-theme="night"] .text-outdoor-label,
-:root[data-theme="night"] [data-outdoor-label] {
-  color: var(--cream) !important;
+/* Cream protective plates: text inside must ALWAYS be ink (#24160B) across all time phases */
+:root [data-outdoor-tagline],
+:root [data-outdoor-tagline] *,
+:root .text-outdoor-tagline,
+:root .text-outdoor-tagline *,
+:root [data-outdoor-label],
+:root [data-outdoor-label] *,
+:root .text-outdoor-label,
+:root .text-outdoor-label *,
+:root [data-outdoor-badge],
+:root [data-outdoor-badge] * {
+  color: #24160B !important;
 }

@@ -453,7 +453,10 @@ export function HomePage() {
               />
             </div>
 
-            <div className="font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold">
+            <div
+              data-outdoor-badge="true"
+              className="font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 border-[#24160B] px-3 py-0.5 mt-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold"
+            >
               <span>{currentMeta.icon}</span>
               <span>Lokasi: {currentMeta.name}</span>
             </div>
@@ -505,6 +508,7 @@ export function HomePage() {
           >
             {/* Dynamic Combined Overhead Badge: "Kamu di sini | Lokasi: <Name>" or "Menuju: <Name>" */}
             <div
+              data-outdoor-badge="true"
               className={`font-pixel text-xs text-[#24160B] bg-[#FFFDF8] border-2 px-2.5 py-0.5 mb-1 shadow-[2px_2px_0_#24160B] flex items-center gap-1.5 font-bold select-none whitespace-nowrap z-20 ${
                 isTraveling
                   ? 'border-[#E8793A] bg-[#FFF8F0]'
