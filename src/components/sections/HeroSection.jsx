@@ -66,7 +66,7 @@ export function HeroSection({ onStartExplore }) {
       {/* RPG Dialogue Box */}
       <DialogBox
         speaker={profile.nama}
-        speakerRole={profile.target}
+        speakerRole={profile.homeTagline}
         showBlinker={!isTyping}
         onNext={handleAdvanceDialog}
         actions={
@@ -200,7 +200,7 @@ export function HeroSection({ onStartExplore }) {
               <strong>Institusi:</strong> {profile.kampus}
             </p>
             <p className="hidden lg:block">
-              <strong>Fokus Karir:</strong> {profile.target}
+              <strong>Fokus Karir:</strong> {profile.homeTagline}
             </p>
           </div>
 

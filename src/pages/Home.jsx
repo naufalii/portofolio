@@ -377,7 +377,7 @@ export function HomePage() {
                   {profile.nama}
                 </span>
                 <span className="font-body text-xs text-[#3B5E34] font-bold block">
-                  {profile.target}
+                  {profile.homeTagline}
                 </span>
               </div>
             </div>
@@ -438,7 +438,7 @@ export function HomePage() {
                 isNight ? 'text-[var(--cream)]' : 'text-[#3B5E34]'
               }`}
             >
-              {profile.target}
+              {profile.homeTagline}
             </div>
           </div>
         </div>
