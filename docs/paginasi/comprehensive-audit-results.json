@@ -1,0 +1,1737 @@
+{
+  "desktopResults": [
+    {
+      "name": "1255x589 (Laptop Compact Primary)",
+      "viewport": "1255x589",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 370,
+          "clientHeight": 370
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 88,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1280x590 (Laptop Compact)",
+      "viewport": "1280x590",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 370,
+          "clientHeight": 370
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 71,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1366x625 (HD Laptop Windowed)",
+      "viewport": "1366x625",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 370,
+          "clientHeight": 370
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 88,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1024x480 (Desktop Min Threshold)",
+      "viewport": "1024x480",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 5,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 367,
+          "clientHeight": 367
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 36,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1280x699 (Compact Boundary)",
+      "viewport": "1280x699",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 430,
+          "clientHeight": 430
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 123,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1280x700 (Standard Boundary)",
+      "viewport": "1280x700",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 74,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1280x720 (Standard HD Baseline)",
+      "viewport": "1280x720",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 85,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1366x768 (Standard HD Laptop)",
+      "viewport": "1366x768",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 110,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1536x730 (Laptop Windowed/Surface)",
+      "viewport": "1536x730",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 90,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1680x1050 (WSXGA+ Standard)",
+      "viewport": "1680x1050",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 668,
+          "clientHeight": 668
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 260,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 (FHD Desktop Standard)",
+      "viewport": "1920x1080",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 668,
+          "clientHeight": 668
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 276,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "2560x1080 (Ultrawide Standard)",
+      "viewport": "2560x1080",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 668,
+          "clientHeight": 668
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 276,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "2560x1440 (QHD Standard)",
+      "viewport": "2560x1440",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 806,
+          "clientHeight": 806
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 467,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "3440x1440 (UWQHD Ultrawide)",
+      "viewport": "3440x1440",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 806,
+          "clientHeight": 806
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 467,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1024x600 (Netbook WSVGA)",
+      "viewport": "1024x600",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 370,
+          "clientHeight": 370
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 93,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1024x768 (XGA 4:3)",
+      "viewport": "1024x768",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 110,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1152x864 (XGA+)",
+      "viewport": "1152x864",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 531,
+          "clientHeight": 531
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 161,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1280x800 (WXGA 16:10)",
+      "viewport": "1280x800",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 531,
+          "clientHeight": 531
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 127,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1440x900 (WXGA+)",
+      "viewport": "1440x900",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 180,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1600x900 (HD+)",
+      "viewport": "1600x900",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 180,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x947 (FHD Windowed)",
+      "viewport": "1920x947",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 205,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1200 (WUXGA 16:10)",
+      "viewport": "1920x1200",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 737,
+          "clientHeight": 737
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 339,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1180x820 (iPad Air Landscape)",
+      "viewport": "1180x820",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 531,
+          "clientHeight": 531
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 138,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 @ 67% (CSS 2865x1612)",
+      "viewport": "2865x1612",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 806,
+          "clientHeight": 806
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 558,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 @ 80% (CSS 2400x1350)",
+      "viewport": "2400x1350",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 805,
+          "clientHeight": 805
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 419,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 @ 110% (CSS 1745x982)",
+      "viewport": "1745x982",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 224,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 @ 125% (CSS 1536x864)",
+      "viewport": "1536x864",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 531,
+          "clientHeight": 531
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 161,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1920x1080 @ 150% (CSS 1280x720)",
+      "viewport": "1280x720",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 474,
+          "clientHeight": 474
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 444,
+          "clientHeight": 444
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 85,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1366x768 @ 67% (CSS 2038x1146)",
+      "viewport": "2038x1146",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 737,
+          "clientHeight": 737
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 311,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1366x768 @ 80% (CSS 1707x960)",
+      "viewport": "1707x960",
+      "mode": "Desktop Standar",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 574,
+          "clientHeight": 574
+        },
+        "skills": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        },
+        "guild": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 652,
+          "clientHeight": 652
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 212,
+          "scrollHeight": 302,
+          "clientHeight": 302
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 486,
+          "clientHeight": 486
+        }
+      }
+    },
+    {
+      "name": "1366x768 @ 110% (CSS 1241x698)",
+      "viewport": "1241x698",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 430,
+          "clientHeight": 430
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 140,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    },
+    {
+      "name": "1366x768 @ 125% (CSS 1092x614)",
+      "viewport": "1092x614",
+      "mode": "Desktop Padat",
+      "sections": {
+        "quests": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 395,
+          "clientHeight": 395
+        },
+        "skills": {
+          "pages": 3,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 370,
+          "clientHeight": 370
+        },
+        "guild": {
+          "pages": 2,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 357,
+          "clientHeight": 357
+        },
+        "contact": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": 100,
+          "scrollHeight": 228,
+          "clientHeight": 228
+        },
+        "guestbook": {
+          "pages": 1,
+          "overflow": 0,
+          "submitVisible": true,
+          "clearanceBottom": null,
+          "scrollHeight": 321,
+          "clientHeight": 321
+        }
+      }
+    }
+  ],
+  "questComparison": {
+    "1920x1080 (100% Zoom)": {
+      "windowW": 1920,
+      "windowH": 1080,
+      "groundY": 507.6,
+      "dialogTop": 545.79,
+      "panelTop": 546,
+      "reservedHeight": 120,
+      "availableH": 414,
+      "totalPages": 3,
+      "page1Items": [
+        {
+          "id": "dba-labs",
+          "height": 367
+        }
+      ],
+      "page2Items": [
+        {
+          "id": "portfolio-overworld",
+          "height": 344
+        }
+      ],
+      "page3Items": [
+        {
+          "id": "github-activity",
+          "height": 152
+        }
+      ]
+    },
+    "1920x1080 @ 67% Zoom (CSS 2865x1612)": {
+      "windowW": 2865,
+      "windowH": 1612,
+      "groundY": 757.64,
+      "dialogTop": 795.83,
+      "panelTop": 796,
+      "reservedHeight": 120,
+      "availableH": 696,
+      "totalPages": 2,
+      "page1Items": [
+        {
+          "id": "portfolio-overworld",
+          "height": 344
+        },
+        {
+          "id": "github-activity",
+          "height": 152
+        }
+      ],
+      "page2Items": [],
+      "page3Items": []
+    }
+  },
+  "mobileResults": [
+    {
+      "name": "768x1024 (iPad Portrait)",
+      "w": 768,
+      "h": 1024,
+      "type": "Tablet Portrait",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4849,
+        "clientHeight": 1024,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 3825,
+        "maxScroll": 3825,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": 23,
+        "btnBottom": 71,
+        "windowH": 1024,
+        "insideViewport": true
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "820x1180 (iPad Air Portrait)",
+      "w": 820,
+      "h": 1180,
+      "type": "Tablet Portrait",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4829,
+        "clientHeight": 1180,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 3649,
+        "maxScroll": 3649,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": 180,
+        "btnBottom": 228,
+        "windowH": 1180,
+        "insideViewport": true
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "834x1194 (iPad Pro 11 Portrait)",
+      "w": 834,
+      "h": 1194,
+      "type": "Tablet Portrait",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4829,
+        "clientHeight": 1194,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 3635,
+        "maxScroll": 3635,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": 194,
+        "btnBottom": 242,
+        "windowH": 1194,
+        "insideViewport": true
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "667x375 (iPhone SE Landscape)",
+      "w": 667,
+      "h": 375,
+      "type": "HP Landscape",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4920,
+        "clientHeight": 375,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 4545,
+        "maxScroll": 4545,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": -625,
+        "btnBottom": -577,
+        "windowH": 375,
+        "insideViewport": false
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "844x390 (iPhone 12/13/14 Landscape)",
+      "w": 844,
+      "h": 390,
+      "type": "HP Landscape",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4829,
+        "clientHeight": 390,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 4439,
+        "maxScroll": 4439,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": -610,
+        "btnBottom": -562,
+        "windowH": 390,
+        "insideViewport": false
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "932x430 (iPhone 14 Pro Max Landscape)",
+      "w": 932,
+      "h": 430,
+      "type": "HP Landscape",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4829,
+        "clientHeight": 430,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 4399,
+        "maxScroll": 4399,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": -570,
+        "btnBottom": -522,
+        "windowH": 430,
+        "insideViewport": false
+      },
+      "clickSuccess": true
+    },
+    {
+      "name": "911x512 (Windows 150% Fullscreen)",
+      "w": 911,
+      "h": 512,
+      "type": "Windows 150%",
+      "topMetrics": {
+        "headerH": 60,
+        "dockH": 60,
+        "taglineTop": 245,
+        "scrollHeight": 4829,
+        "clientHeight": 512,
+        "scrollable": true
+      },
+      "bottomMetrics": {
+        "currentScrollY": 4317,
+        "maxScroll": 4317,
+        "reachedBottom": true,
+        "btnFound": true,
+        "btnTop": -488,
+        "btnBottom": -440,
+        "windowH": 512,
+        "insideViewport": false
+      },
+      "clickSuccess": true
+    }
+  ]
+}
