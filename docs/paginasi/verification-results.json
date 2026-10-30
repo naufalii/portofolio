@@ -11,7 +11,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 395
         },
         "skills": {
           "totalPages": 3,
@@ -21,7 +24,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 370
         },
         "guild": {
           "totalPages": 2,
@@ -32,13 +38,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 357
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 88,
+          "panelHeight": 228
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 321
         }
       },
       "keyPositions": {
@@ -59,7 +80,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 395
         },
         "skills": {
           "totalPages": 3,
@@ -69,7 +93,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 370
         },
         "guild": {
           "totalPages": 2,
@@ -80,13 +107,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 357
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 71,
+          "panelHeight": 228
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 321
         }
       },
       "keyPositions": {
@@ -107,7 +149,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 395
         },
         "skills": {
           "totalPages": 3,
@@ -117,7 +162,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 370
         },
         "guild": {
           "totalPages": 2,
@@ -128,13 +176,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 357
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 88,
+          "panelHeight": 228
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 321
         }
       },
       "keyPositions": {
@@ -155,7 +218,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 395
         },
         "skills": {
           "totalPages": 5,
@@ -164,7 +230,10 @@
           "uniqueIds": [
             "Oracle 19c",
             "Oracle SQL Developer"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 367
         },
         "guild": {
           "totalPages": 2,
@@ -175,13 +244,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 357
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 36,
+          "panelHeight": 228
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 321
         }
       },
       "keyPositions": {
@@ -189,6 +273,75 @@
         "dockH": 0,
         "dialogTop": 251.05,
         "ctaTop": 407.05
+      }
+    },
+    {
+      "viewport": "1366x768",
+      "name": "1366x768 (Standard HD Laptop)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 474
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 110,
+          "panelHeight": 302
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 399.14,
+        "ctaTop": 555.14
       }
     },
     {
@@ -202,7 +355,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 3,
@@ -212,7 +368,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 474
         },
         "guild": {
           "totalPages": 2,
@@ -223,13 +382,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 85,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -250,7 +424,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -263,7 +440,10 @@
             "Data Guard (HA/DR)",
             "Switchover/Failover",
             "Automasi Data Broker dan Failover"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 668
         },
         "guild": {
           "totalPages": 1,
@@ -281,13 +461,28 @@
             "ce-4",
             "ce-5",
             "ce-6"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 276,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -308,7 +503,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -321,7 +519,10 @@
             "Data Guard (HA/DR)",
             "Switchover/Failover",
             "Automasi Data Broker dan Failover"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 668
         },
         "guild": {
           "totalPages": 1,
@@ -339,10 +540,365 @@
             "ce-4",
             "ce-5",
             "ce-6"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 276,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 545.78,
+        "ctaTop": 701.78
+      }
+    },
+    {
+      "viewport": "1536x730",
+      "name": "1536x730 (Laptop Windowed/Surface)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 474
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 90,
+          "panelHeight": 302
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 381.28,
+        "ctaTop": 537.28
+      }
+    },
+    {
+      "viewport": "1680x1050",
+      "name": "1680x1050 (WSXGA+ Standard)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 6,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 668
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 260,
+          "panelHeight": 302
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 531.69,
+        "ctaTop": 687.69
+      }
+    },
+    {
+      "viewport": "2560x1440",
+      "name": "2560x1440 (QHD Standard)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
+        },
+        "skills": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 9,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover",
+            "RMAN Backup",
+            "Shell Scripting",
+            "SQL Queries"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 806
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 467,
+          "panelHeight": 302
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 714.98,
+        "ctaTop": 870.98
+      }
+    },
+    {
+      "viewport": "1023x800",
+      "name": "1023x800 (Mode Boundary: W < 1024 -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "1024x479",
+      "name": "1024x479 (Mode Boundary: H < 480 -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 208
+      }
+    },
+    {
+      "viewport": "1280x699",
+      "name": "1280x699 (Height Boundary: H < 700 -> Compact Desktop)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 365.61,
+        "ctaTop": 521.61
+      }
+    },
+    {
+      "viewport": "1280x700",
+      "name": "1280x700 (Height Boundary: H >= 700 -> Standard Desktop)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
           "overflow": 0,
           "itemsCount": 0,
           "uniqueIds": []
@@ -351,8 +907,407 @@
       "keyPositions": {
         "headerH": 208,
         "dockH": 0,
-        "dialogTop": 545.78,
-        "ctaTop": 701.78
+        "dialogTop": 367.19,
+        "ctaTop": 523.19
+      }
+    },
+    {
+      "viewport": "2865x1612",
+      "name": "1920x1080 @ 67% Zoom (CSS 2865x1612)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 795.83,
+        "ctaTop": 951.83
+      }
+    },
+    {
+      "viewport": "2400x1350",
+      "name": "1920x1080 @ 80% Zoom (CSS 2400x1350)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 672.69,
+        "ctaTop": 828.69
+      }
+    },
+    {
+      "viewport": "1745x982",
+      "name": "1920x1080 @ 110% Zoom (CSS 1745x982)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 499.72,
+        "ctaTop": 655.72
+      }
+    },
+    {
+      "viewport": "1536x864",
+      "name": "1920x1080 @ 125% Zoom (CSS 1536x864)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 444.27,
+        "ctaTop": 600.27
+      }
+    },
+    {
+      "viewport": "1280x720",
+      "name": "1920x1080 @ 150% Zoom (CSS 1280x720)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 376.58,
+        "ctaTop": 532.58
+      }
+    },
+    {
+      "viewport": "2038x1146",
+      "name": "1366x768 @ 67% Zoom (CSS 2038x1146)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 576.8,
+        "ctaTop": 732.8
+      }
+    },
+    {
+      "viewport": "1707x960",
+      "name": "1366x768 @ 80% Zoom (CSS 1707x960)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 489.38,
+        "ctaTop": 645.38
+      }
+    },
+    {
+      "viewport": "1241x698",
+      "name": "1366x768 @ 110% Zoom (CSS 1241x698 Compact)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 365.08,
+        "ctaTop": 521.08
+      }
+    },
+    {
+      "viewport": "1092x614",
+      "name": "1366x768 @ 125% Zoom (CSS 1092x614 Compact)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "skills": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guild": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "contact": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        },
+        "guestbook": {
+          "totalPages": 0,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 321.14,
+        "ctaTop": 477.14
+      }
+    },
+    {
+      "viewport": "911x512",
+      "name": "1366x768 @ 150% Zoom (CSS 911x512 -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
       }
     },
     {
@@ -366,7 +1321,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 3,
@@ -376,7 +1334,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 474
         },
         "guild": {
           "totalPages": 2,
@@ -387,13 +1348,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 99,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -414,7 +1390,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 395
         },
         "skills": {
           "totalPages": 3,
@@ -424,7 +1403,10 @@
             "Oracle 19c",
             "Oracle SQL Developer",
             "Linux"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 370
         },
         "guild": {
           "totalPages": 2,
@@ -435,13 +1417,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 357
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 90,
+          "panelHeight": 228
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 321
         }
       },
       "keyPositions": {
@@ -462,7 +1459,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 3,
@@ -473,7 +1473,10 @@
             "Oracle SQL Developer",
             "Linux",
             "Data Guard (HA/DR)"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 531
         },
         "guild": {
           "totalPages": 2,
@@ -484,13 +1487,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 161,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -511,7 +1529,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 3,
@@ -522,7 +1543,10 @@
             "Oracle SQL Developer",
             "Linux",
             "Data Guard (HA/DR)"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 531
         },
         "guild": {
           "totalPages": 2,
@@ -533,13 +1557,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 127,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -560,7 +1599,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -572,7 +1614,10 @@
             "Linux",
             "Data Guard (HA/DR)",
             "Switchover/Failover"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 600
         },
         "guild": {
           "totalPages": 2,
@@ -583,13 +1628,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 180,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -597,55 +1657,6 @@
         "dockH": 0,
         "dialogTop": 461.19,
         "ctaTop": 617.19
-      }
-    },
-    {
-      "viewport": "1536x864",
-      "name": "1536x864 (Laptop 150% scaled)",
-      "mode": "Desktop",
-      "sections": {
-        "quests": {
-          "totalPages": 3,
-          "overflow": 0,
-          "itemsCount": 1,
-          "uniqueIds": [
-            "dba-labs"
-          ]
-        },
-        "skills": {
-          "totalPages": 3,
-          "overflow": 0,
-          "itemsCount": 4,
-          "uniqueIds": [
-            "Oracle 19c",
-            "Oracle SQL Developer",
-            "Linux",
-            "Data Guard (HA/DR)"
-          ]
-        },
-        "guild": {
-          "totalPages": 2,
-          "overflow": 0,
-          "itemsCount": 4,
-          "uniqueIds": [
-            "balai-organisasi",
-            "bem-fikti",
-            "ugpreneurs",
-            "gdoc"
-          ]
-        },
-        "guestbook": {
-          "totalPages": 1,
-          "overflow": 0,
-          "itemsCount": 0,
-          "uniqueIds": []
-        }
-      },
-      "keyPositions": {
-        "headerH": 208,
-        "dockH": 0,
-        "dialogTop": 444.27,
-        "ctaTop": 600.27
       }
     },
     {
@@ -659,7 +1670,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -671,7 +1685,10 @@
             "Linux",
             "Data Guard (HA/DR)",
             "Switchover/Failover"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 600
         },
         "guild": {
           "totalPages": 2,
@@ -682,13 +1699,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 180,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -709,7 +1741,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -721,7 +1756,10 @@
             "Linux",
             "Data Guard (HA/DR)",
             "Switchover/Failover"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 600
         },
         "guild": {
           "totalPages": 2,
@@ -732,13 +1770,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 205,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -759,7 +1812,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 2,
@@ -773,7 +1829,10 @@
             "Switchover/Failover",
             "Automasi Data Broker dan Failover",
             "RMAN Backup"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 737
         },
         "guild": {
           "totalPages": 1,
@@ -791,13 +1850,28 @@
             "ce-4",
             "ce-5",
             "ce-6"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 339,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -818,7 +1892,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 1,
@@ -834,7 +1911,10 @@
             "RMAN Backup",
             "Shell Scripting",
             "SQL Queries"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 806
         },
         "guild": {
           "totalPages": 1,
@@ -852,13 +1932,28 @@
             "ce-4",
             "ce-5",
             "ce-6"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 652
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 467,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -939,7 +2034,10 @@
           "itemsCount": 1,
           "uniqueIds": [
             "dba-labs"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 574
         },
         "skills": {
           "totalPages": 3,
@@ -950,7 +2048,10 @@
             "Oracle SQL Developer",
             "Linux",
             "Data Guard (HA/DR)"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 531
         },
         "guild": {
           "totalPages": 2,
@@ -961,13 +2062,28 @@
             "bem-fikti",
             "ugpreneurs",
             "gdoc"
-          ]
+          ],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 444
+        },
+        "contact": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 100,
+          "panelHeight": 302
         },
         "guestbook": {
           "totalPages": 1,
           "overflow": 0,
           "itemsCount": 0,
-          "uniqueIds": []
+          "uniqueIds": [],
+          "submitVisible": true,
+          "clearanceBottom": 0,
+          "panelHeight": 486
         }
       },
       "keyPositions": {
@@ -1028,18 +2144,6 @@
     {
       "viewport": "911x450",
       "name": "911x450 (Windows 150% Normal)",
-      "mode": "Mobile",
-      "sections": {},
-      "keyPositions": {
-        "headerH": 60,
-        "dockH": 0,
-        "dialogTop": 0,
-        "ctaTop": 0
-      }
-    },
-    {
-      "viewport": "911x512",
-      "name": "911x512 (Windows 150% Fullscreen)",
       "mode": "Mobile",
       "sections": {},
       "keyPositions": {

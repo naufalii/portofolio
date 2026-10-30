@@ -70,7 +70,7 @@ export function Panel({
       )}
 
       {/* Main content body: tightly padded in compact mode, standard in normal */}
-      <div className={`${isCompact ? 'p-2.5 lg:p-3' : 'p-4 lg:p-6'} font-body`}>
+      <div className={`${isCompact ? 'p-2 lg:p-2' : 'p-4 lg:p-6'} font-body`}>
         {children}
       </div>
     </div>

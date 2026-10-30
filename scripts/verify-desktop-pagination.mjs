@@ -12,19 +12,42 @@ const DESKTOP_MATRIX = [
   { w: 1280, h: 590, name: '1280x590 (Laptop Compact)' },
   { w: 1366, h: 625, name: '1366x625 (HD Laptop Windowed)' },
   { w: 1024, h: 480, name: '1024x480 (Desktop Threshold Min)' },
+  { w: 1366, h: 768, name: '1366x768 (Standard HD Laptop)' },
   { w: 1280, h: 720, name: '1280x720 (Standard HD Baseline)' },
   { w: 1920, h: 1080, name: '1920x1080 (FHD Desktop Standard)' },
   { w: 2560, h: 1080, name: '2560x1080 (Ultrawide Standard)' },
+  { w: 1536, h: 730, name: '1536x730 (Laptop Windowed/Surface)' },
+  { w: 1680, h: 1050, name: '1680x1050 (WSXGA+ Standard)' },
+  { w: 2560, h: 1440, name: '2560x1440 (QHD Standard)' },
 ];
 
 const ADDITIONAL_MATRIX = [
-  // Additional Desktop
+  // Boundaries (Mode & Height Boundaries)
+  { w: 1023, h: 800, name: '1023x800 (Mode Boundary: W < 1024 -> Mobile)' },
+  { w: 1024, h: 479, name: '1024x479 (Mode Boundary: H < 480 -> Mobile)' },
+  { w: 1280, h: 699, name: '1280x699 (Height Boundary: H < 700 -> Compact Desktop)' },
+  { w: 1280, h: 700, name: '1280x700 (Height Boundary: H >= 700 -> Standard Desktop)' },
+
+  // Zoom Simulations for 1920x1080 (CSS Viewport = Physical / Zoom)
+  { w: 2865, h: 1612, name: '1920x1080 @ 67% Zoom (CSS 2865x1612)' },
+  { w: 2400, h: 1350, name: '1920x1080 @ 80% Zoom (CSS 2400x1350)' },
+  { w: 1745, h: 982, name: '1920x1080 @ 110% Zoom (CSS 1745x982)' },
+  { w: 1536, h: 864, name: '1920x1080 @ 125% Zoom (CSS 1536x864)' },
+  { w: 1280, h: 720, name: '1920x1080 @ 150% Zoom (CSS 1280x720)' },
+
+  // Zoom Simulations for 1366x768 (CSS Viewport = Physical / Zoom)
+  { w: 2038, h: 1146, name: '1366x768 @ 67% Zoom (CSS 2038x1146)' },
+  { w: 1707, h: 960, name: '1366x768 @ 80% Zoom (CSS 1707x960)' },
+  { w: 1241, h: 698, name: '1366x768 @ 110% Zoom (CSS 1241x698 Compact)' },
+  { w: 1092, h: 614, name: '1366x768 @ 125% Zoom (CSS 1092x614 Compact)' },
+  { w: 911, h: 512, name: '1366x768 @ 150% Zoom (CSS 911x512 -> Mobile)' },
+
+  // Additional Desktop & Ultrawide
   { w: 1024, h: 768, name: '1024x768 (XGA 4:3)' },
   { w: 1024, h: 600, name: '1024x600 (Netbook/WSVGA)' },
   { w: 1152, h: 864, name: '1152x864 (XGA+)' },
   { w: 1280, h: 800, name: '1280x800 (WXGA 16:10)' },
   { w: 1440, h: 900, name: '1440x900 (WXGA+)' },
-  { w: 1536, h: 864, name: '1536x864 (Laptop 150% scaled)' },
   { w: 1600, h: 900, name: '1600x900 (HD+)' },
   { w: 1920, h: 947, name: '1920x947 (FHD Browser Windowed)' },
   { w: 1920, h: 1200, name: '1920x1200 (WUXGA 16:10)' },
@@ -46,7 +69,6 @@ const ADDITIONAL_MATRIX = [
   // Windows 150% Scale (physical 1366x768 -> CSS 911x...)
   { w: 911, h: 430, name: '911x430 (Windows 150% Windowed)' },
   { w: 911, h: 450, name: '911x450 (Windows 150% Normal)' },
-  { w: 911, h: 512, name: '911x512 (Windows 150% Fullscreen)' },
 
   // Mobile Standard
   { w: 390, h: 844, name: '390x844 (iPhone 12/13/14 Portrait)' },
@@ -54,7 +76,7 @@ const ADDITIONAL_MATRIX = [
   { w: 412, h: 915, name: '412x915 (Pixel 7 Portrait)' },
 ];
 
-const SECTIONS = ['quests', 'skills', 'guild', 'guestbook'];
+const SECTIONS = ['quests', 'skills', 'guild', 'contact', 'guestbook'];
 
 async function run() {
   const browser = await puppeteer.launch({ channel: 'chrome', headless: true });
@@ -134,11 +156,25 @@ async function run() {
             if (match) totalPages = parseInt(match[1], 10);
           }
 
+          let submitVisible = true;
+          let clearanceBottom = 0;
+          if (secId === 'contact') {
+            const submitBtn = panel.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              const sr = submitBtn.getBoundingClientRect();
+              submitVisible = sr.bottom <= window.innerHeight;
+              clearanceBottom = Math.round(window.innerHeight - sr.bottom);
+            }
+          }
+
           return {
             totalPages,
             overflow,
             itemsCount: itemEls.length,
             uniqueIds,
+            submitVisible,
+            clearanceBottom,
+            panelHeight: Math.round(panel.offsetHeight),
           };
         }, sec);
 
