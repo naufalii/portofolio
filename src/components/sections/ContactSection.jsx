@@ -10,7 +10,7 @@ import { profile } from '../../content/profile';
  * - Desktop: 12-column layout with contact form on left and interactive pixel mailbox on right (identik c383241)
  * - Mobile: Tabbed view ('Kirim Surat' & 'Papan Pesan') with 16px inputs and 48px buttons (identik mobile-current)
  */
-export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
+export function ContactSection({ defaultTab = 'contact', isMobile = false, isCompact = false }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
   useEffect(() => {
@@ -131,18 +131,18 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
   };
 
   return (
-    <div className="space-y-4 max-w-4xl mx-auto">
+    <div className={`${isCompact ? 'space-y-2' : 'space-y-4'} max-w-4xl mx-auto`}>
       {!isMobile ? (
-        /* Desktop View (Identik c383241): Form di Kiri (8 cols) + Kotak Pos Ghozali di Kanan (4 cols) */
-        <Panel title="KOTAK POS (HUBUNGI SAYA)" variant="default">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        /* Desktop View: Form di Kiri (8 cols) + Kotak Pos di Kanan (4 cols) */
+        <Panel title="KOTAK POS (HUBUNGI SAYA)" variant="default" isCompact={isCompact}>
+          <div className={`grid grid-cols-1 lg:grid-cols-12 ${isCompact ? 'gap-3.5' : 'gap-6'} items-start`}>
             {/* Left Column: Form */}
-            <div className="lg:col-span-8 space-y-4">
-              <p className="text-xs lg:text-sm text-[#24160B]/80 leading-relaxed">
+            <div className={`lg:col-span-8 ${isCompact ? 'space-y-2' : 'space-y-4'}`}>
+              <p className={`${isCompact ? 'text-xs line-clamp-1 mb-1' : 'text-xs lg:text-sm mb-0'} text-[#24160B]/80 leading-relaxed`}>
                 Ingin mendiskusikan peluang kerja, internship, kolaborasi teknis, atau sekadar bertukar wawasan? Tuliskan suratmu di bawah ini:
               </p>
 
-              <form onSubmit={handleContactSubmit} className="space-y-3.5" noValidate>
+              <form onSubmit={handleContactSubmit} className={isCompact ? 'space-y-1.5' : 'space-y-3.5'} noValidate>
                 {/* Honeypot anti-spam field */}
                 <div className="hidden" aria-hidden="true">
                   <label htmlFor="website-desktop">Website</label>
@@ -162,7 +162,7 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                 <div>
                   <label
                     htmlFor="contact-name-desktop"
-                    className="block font-pixel text-xs font-bold text-[#24160B] mb-1 uppercase"
+                    className="block font-pixel text-xs font-bold text-[#24160B] mb-0.5 uppercase"
                   >
                     Nama Petualang / Pengirim:
                   </label>
@@ -177,14 +177,14 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                       setContactData((prev) => ({ ...prev, name: e.target.value }))
                     }
                     placeholder="Contoh: HR / Lead Engineer"
-                    className="w-full p-2.5 bg-[#FFFDF8] border-2 border-[#24160B] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[#E8793A]"
+                    className={`w-full ${isCompact ? 'py-1 px-2 text-xs' : 'p-2.5 text-xs lg:text-sm'} bg-[#FFFDF8] border-2 border-[#24160B] font-body focus:outline-none focus:ring-2 focus:ring-[#E8793A]`}
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="contact-email-desktop"
-                    className="block font-pixel text-xs font-bold text-[#24160B] mb-1 uppercase"
+                    className="block font-pixel text-xs font-bold text-[#24160B] mb-0.5 uppercase"
                   >
                     Alamat Email:
                   </label>
@@ -198,14 +198,14 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                       setContactData((prev) => ({ ...prev, email: e.target.value }))
                     }
                     placeholder="nama@perusahaan.com"
-                    className="w-full p-2.5 bg-[#FFFDF8] border-2 border-[#24160B] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[#E8793A]"
+                    className={`w-full ${isCompact ? 'py-1 px-2 text-xs' : 'p-2.5 text-xs lg:text-sm'} bg-[#FFFDF8] border-2 border-[#24160B] font-body focus:outline-none focus:ring-2 focus:ring-[#E8793A]`}
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="contact-message-desktop"
-                    className="block font-pixel text-xs font-bold text-[#24160B] mb-1 uppercase"
+                    className="block font-pixel text-xs font-bold text-[#24160B] mb-0.5 uppercase"
                   >
                     Isi Surat / Pesan ({contactData.message.length}/500):
                   </label>
@@ -213,14 +213,14 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                     id="contact-message-desktop"
                     name="message"
                     required
-                    rows={4}
+                    rows={isCompact ? 2 : 4}
                     maxLength={500}
                     value={contactData.message}
                     onChange={(e) =>
                       setContactData((prev) => ({ ...prev, message: e.target.value }))
                     }
                     placeholder="Tuliskan pesanmu di sini..."
-                    className="w-full p-2.5 bg-[#FFFDF8] border-2 border-[#24160B] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[#E8793A] resize-none"
+                    className={`w-full ${isCompact ? 'py-1 px-2 text-xs' : 'p-2.5 text-xs lg:text-sm'} bg-[#FFFDF8] border-2 border-[#24160B] font-body focus:outline-none focus:ring-2 focus:ring-[#E8793A] resize-none`}
                   />
                 </div>
 
@@ -228,10 +228,10 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                   <PixelButton
                     type="submit"
                     variant="primary"
-                    size="md"
+                    size={isCompact ? 'sm' : 'md'}
                     disabled={contactLoading}
                   >
-                    {contactLoading ? 'MEMASUKKAN SURAT...' : 'KIRIM SURAT \u2192'}
+                    {contactLoading ? 'MEMASUKKAN SURAT...' : 'KIRIM SURAT →'}
                   </PixelButton>
 
                   <span className="text-[10px] font-pixel text-[#24160B]/60">
@@ -242,18 +242,18 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
             </div>
 
             {/* Right Column: Interactive Pixel Mailbox Illustration */}
-            <div className="lg:col-span-4 border-2 border-[#24160B] bg-[#FFFDF8] p-4 shadow-[3px_3px_0_#24160B] flex flex-col items-center justify-center text-center">
-              <div className="font-pixel text-xs font-bold text-[#E8793A] mb-3 uppercase">
+            <div className={`lg:col-span-4 border-2 border-[#24160B] bg-[#FFFDF8] ${isCompact ? 'p-2' : 'p-4'} shadow-[3px_3px_0_#24160B] flex flex-col items-center justify-center text-center`}>
+              <div className="font-pixel text-xs font-bold text-[#E8793A] mb-2 uppercase">
                 KOTAK POS GHOZALI
               </div>
 
               {/* Mailbox SVG with Letter Animation */}
-              <div className="relative w-28 h-28 my-2 flex items-center justify-center">
+              <div className={`relative ${isCompact ? 'w-12 h-12 my-0.5' : 'w-28 h-28 my-2'} flex items-center justify-center`}>
                 {/* Sliding Envelope upon success */}
                 <div
                   className={`absolute z-10 transition-all duration-700 ${
                     isSuccess
-                      ? 'top-10 opacity-100 scale-90 translate-y-3'
+                      ? (isCompact ? 'top-6 opacity-100 scale-75' : 'top-10 opacity-100 scale-90 translate-y-3')
                       : '-top-6 opacity-0'
                   }`}
                 >
@@ -264,10 +264,10 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
 
                 {/* Pixel Mailbox */}
                 <svg
-                  width="80"
-                  height="80"
+                  width={isCompact ? 44 : 80}
+                  height={isCompact ? 44 : 80}
                   viewBox="0 0 32 32"
-                  className="pixelated drop-shadow-[3px_3px_0_#24160B]"
+                  className="pixelated drop-shadow-[2px_2px_0_#24160B]"
                   shapeRendering="crispEdges"
                 >
                   {/* Post */}
@@ -295,13 +295,13 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                 </svg>
               </div>
 
-              <p className="text-xs font-pixel text-[#24160B] mt-2">
+              <p className={`font-pixel text-[#24160B] ${isCompact ? 'text-[11px] mt-1' : 'text-xs mt-2'}`}>
                 {isSuccess
-                  ? 'Surat telah masuk ke dalam kotak pos!'
+                  ? 'Surat telah masuk!'
                   : 'Kotak pos siap menerima pesanmu.'}
               </p>
 
-              <div className="mt-4 pt-3 border-t border-[#24160B]/20 w-full space-y-2">
+              <div className={`${isCompact ? 'mt-1.5 pt-1.5 space-y-1' : 'mt-4 pt-3 space-y-2'} border-t border-[#24160B]/20 w-full`}>
                 <a
                   href={profile.sosial.linkedin}
                   target="_blank"
@@ -309,7 +309,7 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                   className="block"
                 >
                   <PixelButton variant="neutral" size="sm" className="w-full">
-                    LinkedIn Profil &rarr;
+                    LinkedIn Profil →
                   </PixelButton>
                 </a>
 
@@ -320,7 +320,7 @@ export function ContactSection({ defaultTab = 'contact', isMobile = true }) {
                   className="block"
                 >
                   <PixelButton variant="neutral" size="sm" className="w-full">
-                    GitHub Profil &rarr;
+                    GitHub Profil →
                   </PixelButton>
                 </a>
               </div>

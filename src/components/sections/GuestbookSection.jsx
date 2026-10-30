@@ -3,14 +3,21 @@ import { Panel } from '../ui/Panel';
 import { PixelButton } from '../ui/PixelButton';
 import { Toast } from '../ui/Toast';
 import { getGuestbook, submitGuestbook } from '../../lib/api';
+import { useDeviceType } from '../../hooks/useMediaQuery';
+import { useSectionPagination } from '../../hooks/useSectionPagination';
 
 /**
  * GuestbookSection - Papan Pesan Petualang (Buku Tamu)
- * Implements Section 5 & 9:
- * - Approved messages rendered as sticky notes on a wooden board
- * - Submission form with moderation disclaimer and rate limiting
+ * Follows Bagian 1, 2, 3 of Desktop Pagination Specification:
+ * - Desktop: Sticky notes paginated into clean pages without internal scrollbars
+ * - Left column: Submission form with moderation note
+ * - Right column: Paginated sticky notes with tape accents
  */
-export function GuestbookSection() {
+export function GuestbookSection({ isMobile: isMobileProp, isDesktop: isDesktopProp, isCompact = false }) {
+  const { isMobile: isMobileDevice } = useDeviceType();
+  const isMobile = isMobileProp !== undefined ? isMobileProp : isMobileDevice;
+  const isDesktop = isDesktopProp !== undefined ? isDesktopProp : !isMobile;
+
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -21,7 +28,7 @@ export function GuestbookSection() {
     try {
       setLoading(true);
       const data = await getGuestbook();
-      setEntries(data);
+      setEntries(data || []);
     } catch (err) {
       console.warn('Guestbook fetch notice:', err);
     } finally {
@@ -32,6 +39,19 @@ export function GuestbookSection() {
   useEffect(() => {
     fetchEntries();
   }, []);
+
+  // Items for sticky notes pagination (each note is an item)
+  const noteItems = (entries && entries.length > 0 ? entries : []).map((e) => ({
+    id: String(e.id),
+    ...e,
+    estimatedHeight: isCompact ? 75 : 90,
+  }));
+
+  const pagination = useSectionPagination(noteItems, isDesktop, {
+    sectionKey: 'guestbook',
+    reservedHeight: isCompact ? 100 : 120,
+    minItemHeight: 70,
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,20 +91,24 @@ export function GuestbookSection() {
   };
 
   return (
-    <div className="space-y-4 max-w-5xl mx-auto">
-      <Panel title="PAPAN PESAN PETUALANG (GUESTBOOK)" variant="default">
-        <p className="text-xs lg:text-sm text-[var(--ink)]/80 mb-5 leading-relaxed">
+    <div className="space-y-2 max-w-5xl mx-auto" ref={pagination.containerRef}>
+      <Panel
+        title="PAPAN PESAN PETUALANG (GUESTBOOK)"
+        variant="default"
+        isCompact={isCompact}
+      >
+        <p className={`${isCompact ? 'text-xs mb-2 line-clamp-1' : 'text-xs lg:text-sm mb-4'} text-[var(--ink)]/80 leading-relaxed`}>
           Tinggalkan pesan sapaan, kesan petualangan, atau masukan untuk Naufal Ali Hilmi! Untuk menjaga kenyamanan, setiap pesan akan dimoderasi terlebih dahulu sebelum disematkan di papan kayu ini.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className={`grid grid-cols-1 lg:grid-cols-12 ${isCompact ? 'gap-3' : 'gap-5'} items-start`}>
           {/* Left Column: Form */}
-          <div className="lg:col-span-5 border-2 border-[var(--ink)] bg-[var(--cloud)] p-4 shadow-[3px_3px_0_var(--ink)]">
-            <h3 className="font-pixel text-xs lg:text-sm font-bold text-[var(--sunset)] uppercase border-b-2 border-[var(--ink)] pb-1 mb-3">
+          <div className={`lg:col-span-5 border-2 border-[var(--ink)] bg-[var(--cloud)] ${isCompact ? 'p-2 shadow-[2px_2px_0_var(--ink)]' : 'p-3.5 shadow-[3px_3px_0_var(--ink)]'}`}>
+            <h3 className={`font-pixel text-xs lg:text-sm font-bold text-[var(--sunset)] uppercase border-b-2 border-[var(--ink)] ${isCompact ? 'pb-0.5 mb-1.5' : 'pb-1 mb-2.5'}`}>
               Tulis Catatanmu
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-3" noValidate>
+            <form onSubmit={handleSubmit} className={isCompact ? "space-y-1.5" : "space-y-2.5"} noValidate>
               {/* Honeypot field */}
               <div className="hidden" aria-hidden="true">
                 <input
@@ -100,7 +124,7 @@ export function GuestbookSection() {
               <div>
                 <label
                   htmlFor="gb-name"
-                  className="block font-pixel text-xs font-bold text-[var(--ink)] mb-1"
+                  className="block font-pixel text-xs font-bold text-[var(--ink)] mb-0.5"
                 >
                   Nama Petualang:
                 </label>
@@ -113,14 +137,14 @@ export function GuestbookSection() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Nama / Panggilanmu"
-                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)]"
+                  className={`w-full ${isCompact ? 'p-1.5 text-xs' : 'p-2 text-xs lg:text-sm'} bg-[var(--cream)] border-2 border-[var(--ink)] font-body focus:outline-none focus:ring-2 focus:ring-[var(--sunset)]`}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="gb-message"
-                  className="block font-pixel text-xs font-bold text-[var(--ink)] mb-1"
+                  className="block font-pixel text-xs font-bold text-[var(--ink)] mb-0.5"
                 >
                   Pesan ({formData.message.length}/500):
                 </label>
@@ -128,20 +152,20 @@ export function GuestbookSection() {
                   id="gb-message"
                   name="message"
                   required
-                  rows={4}
+                  rows={isCompact ? 2 : 3}
                   maxLength={500}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tinggalkan pesan di papan..."
-                  className="w-full p-2 bg-[var(--cream)] border-2 border-[var(--ink)] font-body text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[var(--sunset)] resize-none"
+                  className={`w-full ${isCompact ? 'p-1.5 text-xs' : 'p-2 text-xs lg:text-sm'} bg-[var(--cream)] border-2 border-[var(--ink)] font-body focus:outline-none focus:ring-2 focus:ring-[var(--sunset)] resize-none`}
                 />
               </div>
 
-              <div className="pt-1">
+              <div className="pt-0.5">
                 <PixelButton
                   type="submit"
                   variant="primary"
-                  size="md"
+                  size={isCompact ? "sm" : "md"}
                   disabled={submitting}
                   className="w-full"
                 >
@@ -155,9 +179,9 @@ export function GuestbookSection() {
             </form>
           </div>
 
-          {/* Right Column: Sticky Notes Board */}
-          <div className="lg:col-span-7 space-y-3">
-            <div className="flex items-center justify-between border-b-2 border-[var(--ink)]/20 pb-1.5">
+          {/* Right Column: Sticky Notes Board (Paginated on Desktop) */}
+          <div className="lg:col-span-7 space-y-2">
+            <div className="flex items-center justify-between border-b-2 border-[var(--ink)]/20 pb-1">
               <span className="font-pixel text-xs font-bold text-[var(--moss-dark)] uppercase">
                 Pesan yang Tersemat ({entries.length})
               </span>
@@ -171,30 +195,31 @@ export function GuestbookSection() {
             </div>
 
             {loading ? (
-              <div className="p-8 text-center font-pixel text-xs text-[var(--ink)]/70">
+              <div className="p-6 text-center font-pixel text-xs text-[var(--ink)]/70">
                 Memuat tempelan pesan...
               </div>
             ) : entries.length === 0 ? (
-              <div className="border-2 border-dashed border-[var(--ink)]/40 p-6 text-center bg-[#FFFDF7]">
+              <div className="border-2 border-dashed border-[var(--ink)]/40 p-5 text-center bg-[#FFFDF7]">
                 <p className="font-pixel text-xs text-[var(--ink)]/70">
                   Belum ada pesan yang disetujui. Jadilah petualang pertama yang menempelkan pesan!
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[460px] overflow-y-auto pr-1">
-                {entries.map((entry) => (
+              <div className={`grid grid-cols-1 sm:grid-cols-2 ${isCompact ? 'gap-2' : 'gap-2.5'}`}>
+                {pagination.currentItems.map((entry) => (
                   <div
                     key={entry.id}
-                    className="relative border-2 border-[var(--ink)] bg-[#FFFDF7] p-3.5 shadow-[3px_3px_0_var(--ink)] flex flex-col justify-between"
+                    data-page-item-id={entry.id}
+                    className="relative border-2 border-[var(--ink)] bg-[#FFFDF7] p-2.5 shadow-[2px_2px_0_var(--ink)] flex flex-col justify-between"
                   >
                     {/* Retro sticky tape simulation */}
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-2.5 bg-[var(--cream)] border border-[var(--ink)]/40 opacity-80" />
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-2 bg-[var(--cream)] border border-[var(--ink)]/40 opacity-80" />
 
-                    <p className="font-body text-xs text-[var(--ink)] leading-relaxed mb-3 mt-1 break-words">
+                    <p className="font-body text-xs text-[var(--ink)] leading-relaxed mb-2 mt-0.5 break-words line-clamp-3">
                       "{entry.message}"
                     </p>
 
-                    <div className="border-t border-[var(--ink)]/15 pt-2 flex items-center justify-between font-pixel text-[10px] text-[var(--moss-dark)]">
+                    <div className="border-t border-[var(--ink)]/15 pt-1.5 flex items-center justify-between font-pixel text-[10px] text-[var(--moss-dark)]">
                       <span className="font-bold truncate max-w-[120px]">
                         ~ {entry.name}
                       </span>

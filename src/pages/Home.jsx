@@ -447,11 +447,11 @@ export function HomePage() {
                 <Link to="/cv">
                   <button
                     type="button"
-                    className="flex items-center justify-center px-2 py-0.5 border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none font-pixel text-xs font-bold cursor-pointer hover:bg-[#F6EBD3]"
+                    className="flex items-center justify-center px-2 py-0.5 border-2 border-[#24160B] bg-[#FFFDF8] text-[#24160B] shadow-[2px_2px_0_#24160B] active:translate-y-[1px] active:shadow-none font-alt-pixel text-xs font-bold cursor-pointer hover:bg-[#F6EBD3]"
                     title="Buka Mode CV"
                     aria-label="Mode CV"
                   >
-                    MODE CV
+                    Mode CV
                   </button>
                 </Link>
               </div>
@@ -485,7 +485,7 @@ export function HomePage() {
                     aria-label="Mode CV"
                     title="Lihat sebagai dokumen CV linear standar"
                   >
-                    MODE CV
+                    Mode CV
                   </PixelButton>
                 </Link>
               </div>
@@ -640,6 +640,7 @@ export function HomePage() {
                   locId={loc.id}
                   onStartExplore={() => goTo('quests', 'cta')}
                   isMobile={true}
+                  isDesktop={false}
                 />
               </section>
             ))}
@@ -672,8 +673,8 @@ export function HomePage() {
                 >
                   <div
                     id={`active-section-${panelLocation}`}
-                    tabIndex={-1}
-                    className="outline-none"
+                    tabIndex={0}
+                    className="outline-none pixel-scrollbar"
                     style={
                       worldLayout.isCompact
                         ? {
@@ -687,6 +688,8 @@ export function HomePage() {
                       locId={panelLocation}
                       onStartExplore={() => goTo('quests', 'cta')}
                       isMobile={false}
+                      isDesktop={worldLayout.isDesktop}
+                      isCompact={worldLayout.isCompact}
                     />
                   </div>
                 </motion.div>
@@ -731,25 +734,25 @@ export function HomePage() {
 /**
  * Renders the content corresponding to the current active map location.
  */
-function LocationSectionContent({ locId, onStartExplore, isMobile }) {
+function LocationSectionContent({ locId, onStartExplore, isMobile, isDesktop = !isMobile, isCompact = false }) {
   switch (locId) {
     case 'hero':
-      return <HeroSection onStartExplore={onStartExplore} isMobile={isMobile} />;
+      return <HeroSection onStartExplore={onStartExplore} isMobile={isMobile} isCompact={isCompact} />;
 
     case 'quests':
-      return <QuestsSection isMobile={isMobile} />;
+      return <QuestsSection isMobile={isMobile} isDesktop={isDesktop} isCompact={isCompact} />;
 
     case 'skills':
-      return <SkillTreeSection isMobile={isMobile} />;
+      return <SkillTreeSection isMobile={isMobile} isDesktop={isDesktop} isCompact={isCompact} />;
 
     case 'guild':
-      return <GuildSection isMobile={isMobile} />;
+      return <GuildSection isMobile={isMobile} isDesktop={isDesktop} isCompact={isCompact} />;
 
     case 'contact':
-      return isMobile ? <ContactSection defaultTab="contact" isMobile={true} /> : <ContactSection isMobile={false} />;
+      return isMobile ? <ContactSection defaultTab="contact" isMobile={true} /> : <ContactSection isMobile={false} isDesktop={isDesktop} isCompact={isCompact} />;
 
     case 'guestbook':
-      return isMobile ? <ContactSection defaultTab="guestbook" isMobile={true} /> : <GuestbookSection />;
+      return isMobile ? <ContactSection defaultTab="guestbook" isMobile={true} /> : <GuestbookSection isMobile={false} isDesktop={isDesktop} isCompact={isCompact} />;
 
     default:
       return null;
