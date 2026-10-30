@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Panel } from '../ui/Panel';
+import { PaginationControls } from '../ui/PaginationControls';
 import { profile } from '../../content/profile';
 import { useDeviceType } from '../../hooks/useMediaQuery';
 import { useSectionPagination } from '../../hooks/useSectionPagination';
@@ -281,6 +282,17 @@ export function SkillTreeSection({ isMobile: isMobileProp, isDesktop: isDesktopP
           </>
         )}
       </Panel>
+
+      {/* Pagination Controls toolbar (Desktop only, totalPages > 1) */}
+      {isDesktop && (
+        <PaginationControls
+          currentPage={pagination.currentPage}
+          totalPages={pagination.totalPages}
+          onPrev={pagination.prevPage}
+          onNext={pagination.nextPage}
+          sectionTitle={`Skill Tree (${currentBranchData.fullTitle})`}
+        />
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Panel } from '../ui/Panel';
 import { PixelButton } from '../ui/PixelButton';
+import { PaginationControls } from '../ui/PaginationControls';
 import { Toast } from '../ui/Toast';
 import { getGuestbook, submitGuestbook } from '../../lib/api';
 import { useDeviceType } from '../../hooks/useMediaQuery';
@@ -234,6 +235,17 @@ export function GuestbookSection({ isMobile: isMobileProp, isDesktop: isDesktopP
           </div>
         </div>
       </Panel>
+
+      {/* Pagination Controls toolbar (Desktop only, totalPages > 1) */}
+      {isDesktop && (
+        <PaginationControls
+          currentPage={pagination.currentPage}
+          totalPages={pagination.totalPages}
+          onPrev={pagination.prevPage}
+          onNext={pagination.nextPage}
+          sectionTitle="Papan Pesan"
+        />
+      )}
 
       <Toast
         message={toast.message}

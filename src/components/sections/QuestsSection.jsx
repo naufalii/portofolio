@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Panel } from '../ui/Panel';
 import { PixelButton } from '../ui/PixelButton';
+import { PaginationControls } from '../ui/PaginationControls';
 import { profile } from '../../content/profile';
 import { useDeviceType } from '../../hooks/useMediaQuery';
 import { useSectionPagination } from '../../hooks/useSectionPagination';
@@ -370,6 +371,17 @@ export function QuestsSection({ isMobile: isMobileProp, isDesktop: isDesktopProp
           </div>
         )}
       </Panel>
+
+      {/* Pagination Controls toolbar (Desktop only, totalPages > 1) */}
+      {isDesktop && (
+        <PaginationControls
+          currentPage={pagination.currentPage}
+          totalPages={pagination.totalPages}
+          onPrev={pagination.prevPage}
+          onNext={pagination.nextPage}
+          sectionTitle="Quest Log"
+        />
+      )}
     </div>
   );
 }

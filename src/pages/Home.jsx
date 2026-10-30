@@ -319,7 +319,10 @@ export function HomePage() {
         if (activeEl.isContentEditable) return;
         if (
           activeEl.closest &&
-          (activeEl.closest('[role="dialog"]') || activeEl.closest('[role="menu"]'))
+          (activeEl.closest('[role="dialog"]') ||
+           activeEl.closest('[role="menu"]') ||
+           activeEl.closest('[id^="active-section-"]') ||
+           activeEl.closest('nav[aria-label="Paginasi Halaman Section"]'))
         ) {
           return;
         }

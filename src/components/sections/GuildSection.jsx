@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Panel } from '../ui/Panel';
+import { PaginationControls } from '../ui/PaginationControls';
 import { profile } from '../../content/profile';
 import { useDeviceType } from '../../hooks/useMediaQuery';
 import { useSectionPagination } from '../../hooks/useSectionPagination';
@@ -321,6 +322,17 @@ export function GuildSection({ isMobile: isMobileProp, isDesktop: isDesktopProp,
             </Panel>
           )}
         </div>
+      )}
+
+      {/* Pagination Controls toolbar (Desktop only, totalPages > 1) */}
+      {isDesktop && (
+        <PaginationControls
+          currentPage={pagination.currentPage}
+          totalPages={pagination.totalPages}
+          onPrev={pagination.prevPage}
+          onNext={pagination.nextPage}
+          sectionTitle="Guild Hall"
+        />
       )}
     </div>
   );
