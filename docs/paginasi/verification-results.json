@@ -1,0 +1,1101 @@
+{
+  "results": [
+    {
+      "viewport": "1255x589",
+      "name": "1255x589 (Laptop Compact Primary)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 308.06,
+        "ctaTop": 464.06
+      }
+    },
+    {
+      "viewport": "1280x590",
+      "name": "1280x590 (Laptop Compact)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 308.58,
+        "ctaTop": 464.58
+      }
+    },
+    {
+      "viewport": "1366x625",
+      "name": "1366x625 (HD Laptop Windowed)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 326.89,
+        "ctaTop": 482.89
+      }
+    },
+    {
+      "viewport": "1024x480",
+      "name": "1024x480 (Desktop Threshold Min)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 5,
+          "overflow": 0,
+          "itemsCount": 2,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 251.05,
+        "ctaTop": 407.05
+      }
+    },
+    {
+      "viewport": "1280x720",
+      "name": "1280x720 (Standard HD Baseline)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 376.58,
+        "ctaTop": 532.58
+      }
+    },
+    {
+      "viewport": "1920x1080",
+      "name": "1920x1080 (FHD Desktop Standard)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 6,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover"
+          ]
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 545.78,
+        "ctaTop": 701.78
+      }
+    },
+    {
+      "viewport": "2560x1080",
+      "name": "2560x1080 (Ultrawide Standard)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 6,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover"
+          ]
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 545.78,
+        "ctaTop": 701.78
+      }
+    },
+    {
+      "viewport": "1024x768",
+      "name": "1024x768 (XGA 4:3)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 399.14,
+        "ctaTop": 555.14
+      }
+    },
+    {
+      "viewport": "1024x600",
+      "name": "1024x600 (Netbook/WSVGA)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 3,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 94,
+        "dockH": 0,
+        "dialogTop": 313.83,
+        "ctaTop": 469.83
+      }
+    },
+    {
+      "viewport": "1152x864",
+      "name": "1152x864 (XGA+)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 444.27,
+        "ctaTop": 600.27
+      }
+    },
+    {
+      "viewport": "1280x800",
+      "name": "1280x800 (WXGA 16:10)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 414.19,
+        "ctaTop": 570.19
+      }
+    },
+    {
+      "viewport": "1440x900",
+      "name": "1440x900 (WXGA+)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 5,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 461.19,
+        "ctaTop": 617.19
+      }
+    },
+    {
+      "viewport": "1536x864",
+      "name": "1536x864 (Laptop 150% scaled)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 444.27,
+        "ctaTop": 600.27
+      }
+    },
+    {
+      "viewport": "1600x900",
+      "name": "1600x900 (HD+)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 5,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 461.19,
+        "ctaTop": 617.19
+      }
+    },
+    {
+      "viewport": "1920x947",
+      "name": "1920x947 (FHD Browser Windowed)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 5,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 483.27,
+        "ctaTop": 639.27
+      }
+    },
+    {
+      "viewport": "1920x1200",
+      "name": "1920x1200 (WUXGA 16:10)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 7,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover",
+            "RMAN Backup"
+          ]
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 602.19,
+        "ctaTop": 758.19
+      }
+    },
+    {
+      "viewport": "3440x1440",
+      "name": "3440x1440 (UWQHD Ultrawide)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 9,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)",
+            "Switchover/Failover",
+            "Automasi Data Broker dan Failover",
+            "RMAN Backup",
+            "Shell Scripting",
+            "SQL Queries"
+          ]
+        },
+        "guild": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 11,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc",
+            "piagam-shelf",
+            "ce-1",
+            "ce-2",
+            "ce-3",
+            "ce-4",
+            "ce-5",
+            "ce-6"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 714.98,
+        "ctaTop": 870.98
+      }
+    },
+    {
+      "viewport": "1024x1366",
+      "name": "1024x1366 (iPad Pro Portrait -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 220
+      }
+    },
+    {
+      "viewport": "1080x1920",
+      "name": "1080x1920 (FHD Portrait -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 220
+      }
+    },
+    {
+      "viewport": "768x1024",
+      "name": "768x1024 (iPad Portrait -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "820x1180",
+      "name": "820x1180 (iPad Air Portrait -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "834x1194",
+      "name": "834x1194 (iPad Pro 11 Portrait -> Mobile)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "1180x820",
+      "name": "1180x820 (iPad Air Landscape -> Desktop)",
+      "mode": "Desktop",
+      "sections": {
+        "quests": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 1,
+          "uniqueIds": [
+            "dba-labs"
+          ]
+        },
+        "skills": {
+          "totalPages": 3,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "Oracle 19c",
+            "Oracle SQL Developer",
+            "Linux",
+            "Data Guard (HA/DR)"
+          ]
+        },
+        "guild": {
+          "totalPages": 2,
+          "overflow": 0,
+          "itemsCount": 4,
+          "uniqueIds": [
+            "balai-organisasi",
+            "bem-fikti",
+            "ugpreneurs",
+            "gdoc"
+          ]
+        },
+        "guestbook": {
+          "totalPages": 1,
+          "overflow": 0,
+          "itemsCount": 0,
+          "uniqueIds": []
+        }
+      },
+      "keyPositions": {
+        "headerH": 208,
+        "dockH": 0,
+        "dialogTop": 423.58,
+        "ctaTop": 579.58
+      }
+    },
+    {
+      "viewport": "667x375",
+      "name": "667x375 (iPhone SE Landscape)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "844x390",
+      "name": "844x390 (iPhone 12/13/14 Landscape)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "932x430",
+      "name": "932x430 (iPhone 14 Pro Max Landscape)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "911x430",
+      "name": "911x430 (Windows 150% Windowed)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "911x450",
+      "name": "911x450 (Windows 150% Normal)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "911x512",
+      "name": "911x512 (Windows 150% Fullscreen)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "390x844",
+      "name": "390x844 (iPhone 12/13/14 Portrait)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "360x800",
+      "name": "360x800 (Android Standard)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    },
+    {
+      "viewport": "412x915",
+      "name": "412x915 (Pixel 7 Portrait)",
+      "mode": "Mobile",
+      "sections": {},
+      "keyPositions": {
+        "headerH": 60,
+        "dockH": 0,
+        "dialogTop": 0,
+        "ctaTop": 0
+      }
+    }
+  ],
+  "navTest": {
+    "initialText": "Halaman1/3",
+    "page2Text": "Halaman2/3",
+    "backText": "Halaman1/3",
+    "clickedNext": true,
+    "clickedPrev": true
+  },
+  "rotation": {
+    "landscapeMode": "Desktop",
+    "portraitMode": "Mobile",
+    "backLandscapeMode": "Desktop"
+  }
+}
