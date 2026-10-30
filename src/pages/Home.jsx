@@ -677,12 +677,11 @@ export function HomePage() {
                   <div
                     id={`active-section-${panelLocation}`}
                     tabIndex={0}
-                    className="outline-none pixel-scrollbar"
+                    className="outline-none"
                     style={
-                      worldLayout.isCompact
+                      worldLayout.isDesktop
                         ? {
-                            maxHeight: `calc(100dvh - ${worldLayout.dialogTop}px - 8px)`,
-                            overflowY: 'auto',
+                            overflow: 'hidden',
                           }
                         : undefined
                     }

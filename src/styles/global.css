@@ -81,6 +81,29 @@ h1, h2, h3, h4, h5, h6, .font-pixel {
   color: var(--text-on-world);
 }
 
+/* Eliminate visual scrollbars globally while preserving scrollability on mobile */
+html, body, * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.pixel-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pixel-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 /* Cream protective plates: text inside must ALWAYS be ink (#24160B) across all time phases */
 :root [data-outdoor-tagline],
 :root [data-outdoor-tagline] *,
