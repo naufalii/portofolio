@@ -24,12 +24,13 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 export function HomePage() {
   const { phase, setManualOverride, isManual } = useTimeOfDay();
   const isNight = phase === 'night';
-  const { isMobile } = useDeviceType();
   const reducedMotion = useReducedMotion();
   const [worldLayout, setWorldLayout] = useState(() => {
     if (typeof window === 'undefined') return { isDesktop: false, scale: 1, groundY: 338.40, dialogTop: 376.59, mascotScale: 2.2 };
     return computeWorldLayout(window.innerWidth, window.innerHeight);
   });
+  const isDesktop = worldLayout.isDesktop;
+  const isMobile = !isDesktop;
 
   useEffect(() => {
     const updateLayout = () => {
@@ -361,6 +362,7 @@ export function HomePage() {
         phase={phase}
         cameraX={cameraX}
         isMobile={isMobile}
+        worldLayout={worldLayout}
       />
 
       {/* 1b. Interactive Landmark Click Layer (Desktop >=1024px) */}

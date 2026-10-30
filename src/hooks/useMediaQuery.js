@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DESKTOP_MIN_W, DESKTOP_MIN_H } from '../lib/worldLayout';
+import { computeWorldLayout } from '../lib/worldLayout';
 
 /**
  * Hook to match media queries reactively.
@@ -37,15 +37,40 @@ export function useMediaQuery(query) {
 }
 
 /**
- * Breakpoint helper hooks based on D1 Single Source of Truth:
- * - isMobile: width < DESKTOP_MIN_W (1024px) OR height < DESKTOP_MIN_H (480px)
- * - isDesktop: width >= DESKTOP_MIN_W (1024px) AND height >= DESKTOP_MIN_H (480px)
+ * Breakpoint helper hook - Single Source of Truth derived directly from computeWorldLayout.
+ * Synchronized across resize, orientation change, and visualViewport.
  */
 export function useDeviceType() {
-  const isMobile = useMediaQuery(`(max-width: ${DESKTOP_MIN_W - 1}px), (max-height: ${DESKTOP_MIN_H - 1}px), (orientation: portrait)`);
-  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP_MIN_W}px) and (min-height: ${DESKTOP_MIN_H}px) and (orientation: landscape)`);
+  const [deviceType, setDeviceType] = useState(() => {
+    if (typeof window === 'undefined') return { isMobile: false, isDesktop: true };
+    const layout = computeWorldLayout(window.innerWidth, window.innerHeight);
+    return { isMobile: !layout.isDesktop, isDesktop: layout.isDesktop };
+  });
 
-  return { isMobile, isDesktop };
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleUpdate = () => {
+      const layout = computeWorldLayout(window.innerWidth, window.innerHeight);
+      setDeviceType({ isMobile: !layout.isDesktop, isDesktop: layout.isDesktop });
+    };
+
+    window.addEventListener('resize', handleUpdate);
+    window.addEventListener('orientationchange', handleUpdate);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleUpdate);
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleUpdate);
+      window.removeEventListener('orientationchange', handleUpdate);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleUpdate);
+      }
+    };
+  }, []);
+
+  return deviceType;
 }
 
 export default useMediaQuery;
