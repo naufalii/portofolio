@@ -42,8 +42,8 @@ export function useMediaQuery(query) {
  * - isDesktop: width >= DESKTOP_MIN_W (1024px) AND height >= DESKTOP_MIN_H (480px)
  */
 export function useDeviceType() {
-  const isMobile = useMediaQuery(`(max-width: ${DESKTOP_MIN_W - 1}px), (max-height: ${DESKTOP_MIN_H - 1}px)`);
-  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP_MIN_W}px) and (min-height: ${DESKTOP_MIN_H}px)`);
+  const isMobile = useMediaQuery(`(max-width: ${DESKTOP_MIN_W - 1}px), (max-height: ${DESKTOP_MIN_H - 1}px), (orientation: portrait)`);
+  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP_MIN_W}px) and (min-height: ${DESKTOP_MIN_H}px) and (orientation: landscape)`);
 
   return { isMobile, isDesktop };
 }

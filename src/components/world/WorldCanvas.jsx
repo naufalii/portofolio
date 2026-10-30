@@ -40,7 +40,7 @@ export function WorldCanvas({
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    const isDesk = !isMobile && typeof window !== 'undefined' && window.innerWidth >= DESKTOP_MIN_W && window.innerHeight >= DESKTOP_MIN_H;
+    const isDesk = !isMobile && typeof window !== 'undefined' && window.innerWidth >= DESKTOP_MIN_W && window.innerHeight >= DESKTOP_MIN_H && window.innerWidth >= window.innerHeight;
     const H = 200;
     const S = isDesk ? (window.innerHeight / 200) : 1;
     const W = isDesk ? Math.max(360, Math.round(window.innerWidth / S)) : 360;

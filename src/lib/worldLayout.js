@@ -26,7 +26,7 @@ export const DIALOG_GROUND_GAP = 38.19; // 376.59 - 338.40 = 38.19
  * @returns {object} Layout parameters
  */
 export function computeWorldLayout(W, H, headerBottom = null) {
-  const isDesktop = W >= DESKTOP_MIN_W && H >= DESKTOP_MIN_H;
+  const isDesktop = W >= DESKTOP_MIN_W && H >= DESKTOP_MIN_H && W >= H;
 
   if (!isDesktop) {
     return {
